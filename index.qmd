@@ -1,0 +1,223 @@
+--- 
+title: Retrospective clinical data harmonisation Reporting Using R and Quarto
+author: Jeremy Selva [`r fontawesome::fa(name = "linkedin", fill = "#0077ac")`](https://www.linkedin.com/in/jeremy-selva-085b9112a/){target="_blank"} <br> @JauntyJJS [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS){target="_blank"} [`r fontawesome::fa(name = "fab fa-square-x-twitter", fill = "#000000")`](https://twitter.com/JauntyJJS){target="_blank"} [`r fontawesome::fa(name = "bluesky", fill = "#1084ff")`](https://bsky.app/profile/jauntyjjs.bsky.social){target="_blank"} [<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5f53e7;overflow:visible;position:relative;"><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54a102.5 102.5 0 0 1 -.9-13.9c85.6 20.9 158.7 9.1 178.8 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.3V197c0-58.5-64-56.6-64-6.9v114.2H90.2c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175z"/></svg>](https://fosstodon.org/@JauntyJJS){target="_blank"} <br> [*https://jeremy-selva.netlify.app* `r fontawesome::fa(name = "link", fill = "#666666")`](https://jeremy-selva.netlify.app/){target="_blank"} <br> For [HAT 2025 `r fontawesome::fa(name = "link", fill = "#666666")`](https://www.eventbrite.sg/o/cgh-harvest-analytics-together-hat-90682070963){target="_blank"}
+date: 2025-11-14
+date-format: "D[<sup style='font-size:65%;font-style:italic;'>th</sup>] MMMM YYYY"
+lightbox: true
+format:
+  revealjs:
+    theme: [custom.scss]
+    mainfont: "Onest"
+    code-line-numbers: true
+    code-annotations: false
+    code-overflow: scroll
+    controls: true
+    progress: true
+    #slide-number: true # slide number determined be no_logo_at_title_slide.js
+    scrollable: true
+    transition: fade
+    background-transition: fade
+    highlight-style: arrow-dark
+    # logo: images/qr.png
+    include-after-body: no_logo_at_title_slide.js
+
+--- 
+
+```{r}
+#| label: for presentation
+#| include: false
+
+library(fontawesome)
+library(knitr)
+library(yaml)
+library(rmarkdown)
+
+out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
+```
+
+## whoami
+
+Research Officer from [National Heart Centre Singapore](https://www.nhcs.com.sg/){target="_blank"} who collects, cleans and harmonises clinical data.
+
+![](images/allison_horst2.png){fig-alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster." fig-align="center" width="70%"}
+
+[Taming the Data Beast from ["Cleaning Medical Data with R"](https://www.pipinghotdata.com/workshops/2023-06-06-cleaning-medical-data-with-r/){target="_blank"} workshop by Shannon Pileggi, Crystal Lewis and Peter Higgins presented at R/Medicine 2023. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## About Data Harmonisation
+
+Data harmonisation is part of data wrangling process where
+
+::: {.fragment}
+-  [Similar variables from different datasets are identified.]{style="font-size: 80%;"}
+:::
+::: {.fragment}
+-  [Grouped based on a generalised concept they represent.]{style="font-size: 80%;"}
+:::
+::: {.fragment}
+-  [Transformed into unified harmonised variables for analysis.]{style="font-size: 80%;"}
+:::
+
+![](images/data_harmonisation.png){fig-alt="The data harmonization process: Study data variables collected from different sources need to be mapped to one another, classified into the generalized concepts they represent, and transformed into unified harmonized variables for analysis" fig-align="center" width="100%"}
+
+[Image from Mallya et al. Circ Cardiovasc Qual Outcomes. 2023 Nov; 16(11):e009938 doi: [10.1161/CIRCOUTCOMES.123.009938](https://doi.org/10.1161/CIRCOUTCOMES.123.009938){target="_blank"}]{style="font-size: 60%;"}.
+
+## How it started
+
+![](images/welcome.png){fig-alt="Figure showing me welcoming the collaborator to the project and sending them a data dictionary and template file for them to use and send the data back to me." fig-align="center" width="90%"}
+
+[[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## How it started
+
+![](images/collaborator_issue.png){fig-alt="Figure showing the collaborator sharing that he does not have an analyst to do the mapping and warns that if his end were to do it himself, it will take a long time." fig-align="center" width="90%"}
+
+[[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## How it started
+
+![](images/collaborator_request_1.png){fig-alt="Figure showing the collaborator saying that they will send the data to me and ask me to do the data harmonisation instead." fig-align="center" width="90%"}
+
+[[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## How it started
+
+![](images/qa_image_monkeyuser.png){fig-alt="Figure showing a sad guy receving a package/data full of bugs and issue." fig-align="center" width="90%"}
+
+[[snapshot from Ready for QA | MonkeyUser 2SP Animation Video](https://www.youtube.com/watch?v=5Z8HDADU57U&ab_channel=MonkeyUser){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/)]{style="font-size: 60%;"}.
+
+## How it started
+
+![](images/qa_image_monkeyuser_9_times.png){fig-alt="A 3 by 3 repeared figure showing a sad guy receving a package/data full of bugs and issue." fig-align="center" width="90%"}
+
+[[snapshot from Ready for QA | MonkeyUser 2SP Animation Video](https://www.youtube.com/watch?v=5Z8HDADU57U&ab_channel=MonkeyUser){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/)]{style="font-size: 60%;"}.
+
+## How it started
+
+Turn my sorrow into opportunities.
+
+```{=html}
+<iframe width="990" height="560" src="https://jauntyjjs.github.io/useR-2024/#/title-slide" frameborder="0" allowfullscreen></iframe>
+```
+
+## Why a harmonisation report
+
+![](images/collaborator_request_2.png){fig-alt="Figure showing the collaborator saying that they need the harmonised dataset back with a report for higher management to show to data auditors." fig-align="center" width="90%"}
+
+[[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## Why a harmonisation report
+
+Some data fields just cannot be planned in advanced.
+
+![](images/ethnicity_table.png){fig-alt="Figure showing different race or ethnicity grouping from different collaborators that it is impossible to plan race or ethnicity grouping." fig-align="center" width="90%"}
+
+## Issues
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+While there are R packages to facilitate data harmonisation,
+
+*  [`retroharmonize`](https://github.com/rOpenGov/retroharmonize/){target="_blank"} for survey data.
+
+*  [`Rmonize`](https://maelstrom-research.github.io/Rmonize-documentation/index.html){target="_blank"} for epidemiological data.
+
+*  [`psHarmonize`](https://github.com/NUDACC/psHarmonize){target="_blank"} for health and education data.
+
+There are limited resources on how to make a data harmonisation report.
+
+:::
+
+::: {.column width="50%"}
+
+![](images/210-denvercoder9.png){fig-alt="Comic from Monkeyuser.com showing that it is hard to get help with programming issues." fig-align="center" width="100%"}
+
+[[Denvercoder9](https://www.monkeyuser.com/2021/denvercoder9/){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/){target="_blank"}]{style="font-size: 60%;"}
+
+:::
+
+::::
+
+## Harmonisation Project Template
+
+A template to offer a systematic way to report data harmonisation processes. 
+
+[Link: <https://jauntyjjs.github.io/harmonisation/>]
+
+```{=html}
+<iframe width="1000" height="500" src="https://jauntyjjs.github.io/harmonisation/" title="Harmonisation template" ></iframe>
+```
+
+
+## Tools to create documentation
+
+![](images/r_and_quarto.png){fig-alt="Figure showing the logo of the R programming language and hexsticker of Quarto." fig-align="center" width="80%"}
+
+[[R Programming Logo](https://www.cleanpng.com/png-scalable-vector-graphics-cran-statgraphics-rnn-vit-6890332/download-png.html){target="_blank"} from [CleanPNG](https://www.cleanpng.com/){target="_blank"} and [Quarto Hex Sticker](https://rstudio.github.io/cheatsheets/html/quarto.html){target="_blank"} from [Posit](https://posit.co/){target="_blank"}]{style="font-size: 60%;"}.
+
+## 
+
+<br>
+
+::: {.center-x .r-fit-text}
+What [*Did*]{.important} We Forget <br> to Teach You about R ?
+:::
+
+![](images/what_is_R_programming.png){fig-alt="Figure showing a Google search on what is the R Programming Language." fig-align="center" width="80%"}
+
+##
+
+![](images/everything-else.png){fig-alt="Figure showing that R is taught only as a tool to do statistics but not other stuffs." fig-align="center" width="80%"}
+
+[Image from [Project Oriented Workflows slides](https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides/#/title-slide){target="_blank"} from [What They Forgot to Teach You About R](http://rstats.wtf)]{style="font-size: 60%;"}.
+
+<br>
+
+We will share a glimpse of "Everything else" R and its friends can do.
+
+## Project Organisation
+
+[*Organise*]{.important} your project as you go instead of waiting for "tomorrow". 
+
+Data is cheap but time is expensive.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/research_compendium.svg){fig-alt="Figure showing Research Compendium as a tool to sort out different analysis." fig-align="center" width="80%"}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/project_layout.png){fig-alt="Comic from Monkeyuser.com showing that it is hard to get help with programming issues." fig-align="center" width="80%"}
+
+:::
+
+::::
+
+[[Research Compendium](https://book.the-turing-way.org/reproducible-research/compendia/){target="_blank"} by Scriberia from [The Turing Way project](https://book.the-turing-way.org/){target="_blank"} and Project Layout from [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510){target="_blank"}]{style="font-size: 60%;"}.
+
+## Project Organisation
+
+My harmoniation template organisation is based on the R pacakge `rcompendium` but there are others as well.
+
+```{r}
+
+hexsession::make_tile(
+  local_images = c(
+    here::here("images", "hex_rcompendium.png"),
+    here::here("images", "hex_workflowr.png"),
+    here::here("images", "hex_orderly.png")
+  ),
+  local_urls = c(
+    "https://frbcesab.github.io/rcompendium/",
+    "https://workflowr.github.io/workflowr/",
+    "https://mrc-ide.github.io/orderly/"
+  )
+)
+
+```
+
