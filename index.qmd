@@ -208,7 +208,6 @@ My harmoniation template organisation is based on the R pacakge `rcompendium` bu
 ```{r}
 #| label: hexsession
 #| include: false
-#| echo: false
 
 hexsession::make_tile(
   local_images = c(
@@ -225,6 +224,6 @@ hexsession::make_tile(
 
 ```
 
-```{=html}
+<!-- ```{=html}
 <iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
-```
+``` -->
