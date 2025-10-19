@@ -31,6 +31,7 @@ library(fontawesome)
 library(knitr)
 library(yaml)
 library(rmarkdown)
+library(here)
 
 out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
 ```
@@ -205,6 +206,9 @@ Data is cheap but time is expensive.
 My harmoniation template organisation is based on the R pacakge `rcompendium` but there are others as well.
 
 ```{r}
+#| label: hexsession
+#| include: false
+#| echo: false
 
 hexsession::make_tile(
   local_images = c(
@@ -221,3 +225,6 @@ hexsession::make_tile(
 
 ```
 
+```{=html}
+<iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
+```
