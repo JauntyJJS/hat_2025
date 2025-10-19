@@ -207,7 +207,6 @@ My harmoniation template organisation is based on the R pacakge `rcompendium` bu
 
 ```{r}
 #| label: hexsession
-#| include: false
 
 hexsession::make_tile(
   local_images = c(
