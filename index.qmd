@@ -4,10 +4,11 @@ author: Jeremy Selva [`r fontawesome::fa(name = "linkedin", fill = "#0077ac")`](
 date: 2025-11-14
 date-format: "D[<sup style='font-size:65%;font-style:italic;'>th</sup>] MMMM YYYY"
 lightbox: true
+from: markdown+emoji
 format:
   revealjs:
     theme: [custom.scss]
-    mainfont: "Onest"
+    mainfont: "Newsreader"
     code-line-numbers: true
     code-annotations: false
     code-overflow: scroll
@@ -227,4 +228,72 @@ hexsession::make_tile(
 <iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
 ``` -->
 
-## Personal R Administration
+## R Session
+
+Before R starts up in a given project, it will perform the following steps
+
+1. Set up Environment Variables.
+2. Run startup script.
+3. Set up the R session.
+
+We can customise Step 1 and 2 using these two main text files.
+
+-  `.Renviron` (Contains environment variables to be set in R sessions.)
+-  `.Rprofile` (Contains R code to be run in each session.)
+
+![](images/start_up_enviromental_files.png){fig-alt="Figure showing the .Renviron and .Rprofile file in an R project template." fig-align="center" width="75%"}
+
+## what goes in `.Renviron`
+
+:white_check_mark: R-specific [environment variables](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html){target="_blank"}.\
+:white_check_mark: API keys or other secrets\
+:x: R code
+
+``` bash
+APPDATA="D:/Jeremy/PortableR/RAppData/Roaming"
+LOCALAPPDATA="D:/Jeremy/PortableR/RAppData/Local"
+TEMP="D:/Jeremy/PortableR/RPortableWorkDirectory/temp"
+TMP="D:/Jeremy/PortableR/RPortableWorkDirectory/temp"
+_R_CHECK_SYSTEM_CLOCK_=0
+RENV_CONFIG_PAK_ENABLED=TRUE
+CONNECT_API_KEY=DaYK2hBUriSBYUEGIAiyXsRJHSjTYJN3
+DB_USER=elephant
+DB_PASS=p0stgr3s
+```
+::: columns
+::: {.column width="40%"}
+### user
+
+`~/.Renviron`
+:::
+
+::: {.column width="60%"}
+### project
+
+`path/to/your/project/.Renviron`
+:::
+:::
+
+## what goes in `.Rprofile`
+
+:white_check_mark: set a default CRAN mirror.\
+:white_check_mark: customize [R prompt](https://github.com/gaborcsardi/prompt/){target="_blank"}.\
+
+```r
+source("renv/activate.R")
+options(
+  repos = c(
+    P3M_20250306 = "https://packagemanager.posit.co/cran/2025-10-13",
+    ropensci = "https://ropensci.r-universe.dev",
+    janmarvin = "https://janmarvin.r-universe.dev",
+    CRAN = 'https://cloud.r-project.org'
+  )
+)
+if (interactive()) prompt::set_prompt(prompt::prompt_fancy)
+```
+
+Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_blank"}
+
+{{< fa brands github >}} [csgillespie/rprofile](https://github.com/csgillespie/rprofile){target="_blank"}.\
+{{< fa brands youtube >}} [Me, Myself and my Rprofile](https://www.youtube.com/watch?v=2rWi2KVcyjg){target="_blank"}.\
+{{< fa blog >}} [Customising your Rprofile](https://www.jumpingrivers.com/blog/customising-your-rprofile/){target="_blank"}.

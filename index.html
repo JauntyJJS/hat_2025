@@ -7,6 +7,8 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7e9717d9caa9b4d114d189eaeb260ada.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
+<link href="index_files/libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script src="index_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="index_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
@@ -31,8 +33,74 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-e66286d81cbfcbf74b242a80621bdd7f.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-51fb17f81fc4ab10ac5546a3699d8241.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -896,8 +964,67 @@ text-decoration: underline;
 <iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
 ``` -->
 </section>
-<section id="personal-r-administration" class="slide level2">
-<h2>Personal R Administration</h2>
+<section id="r-session" class="slide level2 scrollable">
+<h2>R Session</h2>
+<p>Before R starts up in a given project, it will perform the following steps</p>
+<ol type="1">
+<li>Set up Environment Variables.</li>
+<li>Run startup script.</li>
+<li>Set up the R session.</li>
+</ol>
+<p>We can customise Step 1 and 2 using these two main text files.</p>
+<ul>
+<li><code>.Renviron</code> (Contains environment variables to be set in R sessions.)</li>
+<li><code>.Rprofile</code> (Contains R code to be run in each session.)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/start_up_enviromental_files.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img data-src="images/start_up_enviromental_files.png" class="quarto-figure quarto-figure-center" style="width:75.0%" alt="Figure showing the .Renviron and .Rprofile file in an R project template."></a></p>
+</figure>
+</div>
+</section>
+<section id="what-goes-in-.renviron" class="slide level2">
+<h2>what goes in <code>.Renviron</code></h2>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> R-specific <a href="https://cran.r-project.org/doc/manuals/r-devel/R-ints.html" target="_blank">environment variables</a>.<br>
+<span class="emoji" data-emoji="white_check_mark">✅</span> API keys or other secrets<br>
+<span class="emoji" data-emoji="x">❌</span> R code</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="va">APPDATA</span><span class="op">=</span><span class="st">"D:/Jeremy/PortableR/RAppData/Roaming"</span></span>
+<span id="cb1-2"><a href=""></a><span class="va">LOCALAPPDATA</span><span class="op">=</span><span class="st">"D:/Jeremy/PortableR/RAppData/Local"</span></span>
+<span id="cb1-3"><a href=""></a><span class="va">TEMP</span><span class="op">=</span><span class="st">"D:/Jeremy/PortableR/RPortableWorkDirectory/temp"</span></span>
+<span id="cb1-4"><a href=""></a><span class="va">TMP</span><span class="op">=</span><span class="st">"D:/Jeremy/PortableR/RPortableWorkDirectory/temp"</span></span>
+<span id="cb1-5"><a href=""></a><span class="va">_R_CHECK_SYSTEM_CLOCK_</span><span class="op">=</span>0</span>
+<span id="cb1-6"><a href=""></a><span class="va">RENV_CONFIG_PAK_ENABLED</span><span class="op">=</span>TRUE</span>
+<span id="cb1-7"><a href=""></a><span class="va">CONNECT_API_KEY</span><span class="op">=</span>DaYK2hBUriSBYUEGIAiyXsRJHSjTYJN3</span>
+<span id="cb1-8"><a href=""></a><span class="va">DB_USER</span><span class="op">=</span>elephant</span>
+<span id="cb1-9"><a href=""></a><span class="va">DB_PASS</span><span class="op">=</span>p0stgr3s</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="user">user</h3>
+<p><code>~/.Renviron</code></p>
+</div><div class="column" style="width:60%;">
+<h3 id="project">project</h3>
+<p><code>path/to/your/project/.Renviron</code></p>
+</div></div>
+</section>
+<section id="what-goes-in-.rprofile" class="slide level2">
+<h2>what goes in <code>.Rprofile</code></h2>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> set a default CRAN mirror.<br>
+<span class="emoji" data-emoji="white_check_mark">✅</span> customize <a href="https://github.com/gaborcsardi/prompt/" target="_blank">R prompt</a>.<br>
+</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">source</span>(<span class="st">"renv/activate.R"</span>)</span>
+<span id="cb2-2"><a href=""></a><span class="fu">options</span>(</span>
+<span id="cb2-3"><a href=""></a>  <span class="at">repos =</span> <span class="fu">c</span>(</span>
+<span id="cb2-4"><a href=""></a>    <span class="at">P3M_20250306 =</span> <span class="st">"https://packagemanager.posit.co/cran/2025-10-13"</span>,</span>
+<span id="cb2-5"><a href=""></a>    <span class="at">ropensci =</span> <span class="st">"https://ropensci.r-universe.dev"</span>,</span>
+<span id="cb2-6"><a href=""></a>    <span class="at">janmarvin =</span> <span class="st">"https://janmarvin.r-universe.dev"</span>,</span>
+<span id="cb2-7"><a href=""></a>    <span class="at">CRAN =</span> <span class="st">'https://cloud.r-project.org'</span></span>
+<span id="cb2-8"><a href=""></a>  )</span>
+<span id="cb2-9"><a href=""></a>)</span>
+<span id="cb2-10"><a href=""></a><span class="cf">if</span> (<span class="fu">interactive</span>()) prompt<span class="sc">::</span><span class="fu">set_prompt</span>(prompt<span class="sc">::</span>prompt_fancy)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Examples: <a href="https://github.com/search?q=.Rprofile&amp;type=repositories" target="_blank">https://github.com/search?q=.Rprofile&amp;type=repositories</a></p>
+<p><i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/csgillespie/rprofile" target="_blank">csgillespie/rprofile</a>.<br>
+<i class="fa-brands fa-youtube" aria-label="youtube"></i> <a href="https://www.youtube.com/watch?v=2rWi2KVcyjg" target="_blank">Me, Myself and my Rprofile</a>.<br>
+<i class="fa-solid fa-blog" aria-label="blog"></i> <a href="https://www.jumpingrivers.com/blog/customising-your-rprofile/" target="_blank">Customising your Rprofile</a>.</p>
 
 </section>
     </div>
