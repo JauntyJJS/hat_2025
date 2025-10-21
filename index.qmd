@@ -203,7 +203,7 @@ Data is cheap but time is expensive.
 
 ## Project Organisation
 
-My harmoniation template organisation is based on the R pacakge `rcompendium` but there are others as well.
+My harmoniation template organisation is based on the R package `rcompendium` but there are others as well.
 
 ```{r}
 #| label: hexsession
@@ -226,3 +226,5 @@ hexsession::make_tile(
 <!-- ```{=html}
 <iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
 ``` -->
+
+## Personal R Administration
