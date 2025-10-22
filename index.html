@@ -100,7 +100,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-51fb17f81fc4ab10ac5546a3699d8241.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-d6f6cdf4038918aa572ecdba1f41ba7f.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -193,6 +193,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -224,24 +227,14 @@ Jeremy Selva <a href="https://www.linkedin.com/in/jeremy-selva-085b9112a/" targe
 <section id="about-data-harmonisation" class="slide level2">
 <h2>About Data Harmonisation</h2>
 <p>Data harmonisation is part of data wrangling process where</p>
-<div class="fragment">
 <ul>
-<li><span style="font-size: 80%;">Similar variables from different datasets are identified.</span></li>
+<li>Similar variables from different datasets are identified.</li>
+<li>Grouped based on a generalised concept they represent.</li>
+<li>Transformed into unified harmonised variables for analysis.</li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span style="font-size: 80%;">Grouped based on a generalised concept they represent.</span></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><span style="font-size: 80%;">Transformed into unified harmonised variables for analysis.</span></li>
-</ul>
-</div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/data_harmonisation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/data_harmonisation.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="The data harmonization process: Study data variables collected from different sources need to be mapped to one another, classified into the generalized concepts they represent, and transformed into unified harmonized variables for analysis"></a></p>
+<p><a href="images/data_harmonisation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/data_harmonisation.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="The data harmonization process: Study data variables collected from different sources need to be mapped to one another, classified into the generalized concepts they represent, and transformed into unified harmonized variables for analysis"></a></p>
 </figure>
 </div>
 <p><span style="font-size: 60%;">Image from Mallya et al.&nbsp;Circ Cardiovasc Qual Outcomes. 2023 Nov; 16(11):e009938 doi: <a href="https://doi.org/10.1161/CIRCOUTCOMES.123.009938" target="_blank">10.1161/CIRCOUTCOMES.123.009938</a></span>.</p>
@@ -1025,8 +1018,186 @@ text-decoration: underline;
 <p><i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/csgillespie/rprofile" target="_blank">csgillespie/rprofile</a>.<br>
 <i class="fa-brands fa-youtube" aria-label="youtube"></i> <a href="https://www.youtube.com/watch?v=2rWi2KVcyjg" target="_blank">Me, Myself and my Rprofile</a>.<br>
 <i class="fa-solid fa-blog" aria-label="blog"></i> <a href="https://www.jumpingrivers.com/blog/customising-your-rprofile/" target="_blank">Customising your Rprofile</a>.</p>
-
 </section>
+<section id="states-of-r-packages" class="slide level2">
+<h2>States of R packages</h2>
+<p>R Packages – <a href="https://r-pkgs.org/Structure.html" target="_blank">Structure</a></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+subgraph dev
+direction LR
+Source -- "devtools::build()" --&gt; Bundled
+Bundled -- "devtools::build(binary=TRUE)" --&gt; Binary
+end
+style Source fill: lightgray
+style Bundled fill: lightgray
+style Binary fill: lightgray
+style dev fill: lightyellow
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+subgraph use
+direction LR
+Binary --"install.packages()
+pak::pak()
+renv::install()"--&gt; Installed
+Installed --"library()"--&gt; Loaded
+end
+style Binary fill: lightgray
+style Installed fill: lightgray
+style Loaded fill: lightgray
+style use fill: lightyellow
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="binary-r-packages-installation" class="slide level2">
+<h2>Binary R Packages Installation</h2>
+<p>Go for (<i class="fa-brands fa-windows" aria-label="windows"></i> | <i class="fa-brands fa-apple" aria-label="apple"></i>) binary R packages in CRAN.</p>
+<ul>
+<li>compiled ahead of time -&gt; easiest / fastest to install</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/binary_in_cran.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img data-src="images/binary_in_cran.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Figure showing the Windows and Mac binary files of R package pretestcad."></a></p>
+</figure>
+</div>
+</section>
+<section id="r-universe-and-posit-public-package-manager" class="slide level2">
+<h2>R-universe and Posit Public Package Manager</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Consider installing (<i class="fa-brands fa-windows" aria-label="windows"></i> | <i class="fa-brands fa-apple" aria-label="apple"></i> | <i class="fa-brands fa-linux" aria-label="linux"></i> ) binaries from</p>
+<ul>
+<li><a href="https://r-universe.dev/search" target="_blank">R-universe</a></li>
+<li><a href="https://p3m.dev/client/#/" target="_blank">Posit Public Package Manager</a>.</li>
+</ul>
+<p>Set in your <code>.Rprofile</code> file.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-code-line-numbers="3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">options</span>(</span>
+<span id="cb3-2"><a href=""></a>  <span class="at">repos =</span> <span class="fu">c</span>(</span>
+<span id="cb3-3"><a href=""></a>    <span class="at">P3M_20250306 =</span> <span class="st">"https://packagemanager.posit.co/cran/2025-10-13"</span>,</span>
+<span id="cb3-4"><a href=""></a>    <span class="at">ropensci =</span> <span class="st">"https://ropensci.r-universe.dev"</span>,</span>
+<span id="cb3-5"><a href=""></a>    <span class="at">CRAN =</span> <span class="st">'https://cloud.r-project.org'</span></span>
+<span id="cb3-6"><a href=""></a>  )</span>
+<span id="cb3-7"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/appsilon_R_universe.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img data-src="images/appsilon_R_universe.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Website of Appsilon R-universe."></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/posit_public_package_manager.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img data-src="images/posit_public_package_manager.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Website of Posit Public Package Manager."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="how-do-i-know-i-got-a-binary" class="slide level2">
+<h2>How do I know I got a binary?</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">CRAN <i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li><a href="#tabset-1-2">CRAN <i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li><a href="#tabset-1-3">p3m</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-code-line-numbers="4,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"parallelly"</span>, <span class="at">repos =</span> <span class="st">"https://cran.r-project.org"</span>)</span>
+<span id="cb4-2"><a href=""></a>Installing package into ‘C<span class="sc">:</span><span class="er">/</span>Users<span class="sc">/</span>edavi<span class="sc">/</span>Documents<span class="sc">/</span>R<span class="sc">/</span>win<span class="sc">-</span>library<span class="sc">/</span><span class="fl">4.1</span>’</span>
+<span id="cb4-3"><a href=""></a>(as ‘lib’ is unspecified)</span>
+<span id="cb4-4"><a href=""></a>trying URL <span class="st">'https://cran.r-project.org/bin/windows/contrib/4.1/parallelly_1.32.1.zip'</span></span>
+<span id="cb4-5"><a href=""></a>Content type <span class="st">'application/zip'</span> length <span class="dv">306137</span> <span class="fu">bytes</span> (<span class="dv">298</span> KB)</span>
+<span id="cb4-6"><a href=""></a>downloaded <span class="dv">298</span> KB</span>
+<span id="cb4-7"><a href=""></a></span>
+<span id="cb4-8"><a href=""></a>package ‘parallelly’ successfully unpacked and MD5 sums checked</span>
+<span id="cb4-9"><a href=""></a></span>
+<span id="cb4-10"><a href=""></a>The downloaded binary packages are <span class="cf">in</span></span>
+<span id="cb4-11"><a href=""></a>    C<span class="sc">:</span>\Users\edavi\AppData\Local\Temp\Rtmpa2s3e8\downloaded_packages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-code-line-numbers="4,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"renv"</span>, <span class="at">repos=</span><span class="st">"https://cran.r-project.org"</span>)</span>
+<span id="cb5-2"><a href=""></a>Installing package into ‘<span class="sc">/</span>Users<span class="sc">/</span>edavidaja<span class="sc">/</span>Library<span class="sc">/</span>R<span class="sc">/</span>x86_64<span class="sc">/</span><span class="fl">4.1</span><span class="sc">/</span>library’</span>
+<span id="cb5-3"><a href=""></a>(as ‘lib’ is unspecified)</span>
+<span id="cb5-4"><a href=""></a>trying URL <span class="st">'https://cran.r-project.org/bin/macosx/contrib/4.1/renv_0.15.5.tgz'</span></span>
+<span id="cb5-5"><a href=""></a>Content type <span class="st">'application/x-gzip'</span> length <span class="dv">1866760</span> <span class="fu">bytes</span> (<span class="fl">1.8</span> MB)</span>
+<span id="cb5-6"><a href=""></a><span class="sc">==</span><span class="er">================================================</span></span>
+<span id="cb5-7"><a href=""></a>downloaded <span class="fl">1.8</span> MB</span>
+<span id="cb5-8"><a href=""></a></span>
+<span id="cb5-9"><a href=""></a></span>
+<span id="cb5-10"><a href=""></a>The downloaded binary packages are <span class="cf">in</span></span>
+<span id="cb5-11"><a href=""></a> <span class="sc">/</span>var<span class="sc">/</span>folders<span class="sc">/</span>b5<span class="sc">/</span>fl4ff68d23s148tg1_1gnflc0000gn<span class="sc">/</span>T<span class="sc">/</span><span class="er">/</span>RtmpMk69B0<span class="sc">/</span>downloaded_packages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-1-3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-code-line-numbers="4,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="sc">&gt;</span> <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb6-2"><a href=""></a>Installing package into ‘C<span class="sc">:</span><span class="er">/</span>Users<span class="sc">/</span>WDAGUtilityAccount<span class="sc">/</span>AppData<span class="sc">/</span>Local<span class="sc">/</span>R<span class="sc">/</span>win<span class="sc">-</span>library<span class="sc">/</span><span class="fl">4.2</span>’</span>
+<span id="cb6-3"><a href=""></a>(as ‘lib’ is unspecified)</span>
+<span id="cb6-4"><a href=""></a>trying URL <span class="st">'https://p3m.dev/cran/latest/bin/windows/contrib/4.2/remotes_2.4.2.zip'</span></span>
+<span id="cb6-5"><a href=""></a>Content type <span class="st">'binary/octet-stream'</span> length <span class="dv">399930</span> <span class="fu">bytes</span> (<span class="dv">390</span> KB)</span>
+<span id="cb6-6"><a href=""></a>downloaded <span class="dv">390</span> KB</span>
+<span id="cb6-7"><a href=""></a></span>
+<span id="cb6-8"><a href=""></a>package ‘remotes’ successfully unpacked and MD5 sums checked</span>
+<span id="cb6-9"><a href=""></a></span>
+<span id="cb6-10"><a href=""></a>The downloaded binary packages are <span class="cf">in</span></span>
+<span id="cb6-11"><a href=""></a>  C<span class="sc">:</span>\Users\WDAGUtilityAccount\AppData\Local\Temp\RtmpA1edRi\downloaded_packages</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
+</div></aside></section>
+<section id="source-r-packages-installation" class="slide level2">
+<h2>Source R Packages Installation</h2>
+<p>Go for source R packages if you need the latest version urgently.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/binary_not_latest.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img data-src="images/binary_not_latest.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Figure showing the Windows binary files are not the latest version for R package parallelly."></a></p>
+</figure>
+</div>
+<p><i class="fa-brands fa-linux" aria-label="linux"></i> only have source R packages in CRAN.</p>
+</section>
+<section id="source-r-packages-installation-1" class="slide level2">
+<h2>Source R Packages Installation</h2>
+<p>You will need additional tools and dependencies.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">windows <i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li><a href="#tabset-2-2">macOS <i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li><a href="#tabset-2-3">linux <i class="fa-brands fa-linux" aria-label="linux"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>Install <a href="https://cran.r-project.org/bin/windows/Rtools/" target="_blank">Rtools</a></p>
+</div>
+<div id="tabset-2-2">
+<p>Install <a href="https://apps.apple.com/us/app/xcode/id497799835?mt=12" target="_blank">XCode</a> <span class="emoji" data-emoji="warning">⚠️</span> take some time to install</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">xcode-select</span> <span class="at">--install</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-2-3">
+<p>install tools via package manager, e.g.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">apt</span> install make</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Run <code>devtools::has_devel()</code> in console.</p>
+<blockquote>
+<p><code>## Your system is ready to build packages!</code></p>
+</blockquote>
+
+
+<aside><div>
+<p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
+</div></aside></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

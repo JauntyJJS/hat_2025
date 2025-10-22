@@ -41,7 +41,7 @@ $code-block-bg: #1f2430;
 // Reduce spacing between bullet points
 .reveal li {
   margin-bottom: 0; // Reduce the spacing between individual list items
-  line-height: 0.75em; // Adjust line height if necessary for tighter text
+  line-height: 1em; // Adjust line height if necessary for tighter text
 }
 
 .reveal .slide-menu-button .fa-bars::before {

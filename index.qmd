@@ -49,17 +49,11 @@ Research Officer from [National Heart Centre Singapore](https://www.nhcs.com.sg/
 
 Data harmonisation is part of data wrangling process where
 
-::: {.fragment}
--  [Similar variables from different datasets are identified.]{style="font-size: 80%;"}
-:::
-::: {.fragment}
--  [Grouped based on a generalised concept they represent.]{style="font-size: 80%;"}
-:::
-::: {.fragment}
--  [Transformed into unified harmonised variables for analysis.]{style="font-size: 80%;"}
-:::
+-  Similar variables from different datasets are identified.
+-  Grouped based on a generalised concept they represent.
+-  Transformed into unified harmonised variables for analysis.
 
-![](images/data_harmonisation.png){fig-alt="The data harmonization process: Study data variables collected from different sources need to be mapped to one another, classified into the generalized concepts they represent, and transformed into unified harmonized variables for analysis" fig-align="center" width="100%"}
+![](images/data_harmonisation.png){fig-alt="The data harmonization process: Study data variables collected from different sources need to be mapped to one another, classified into the generalized concepts they represent, and transformed into unified harmonized variables for analysis" fig-align="center" width="90%"}
 
 [Image from Mallya et al. Circ Cardiovasc Qual Outcomes. 2023 Nov; 16(11):e009938 doi: [10.1161/CIRCOUTCOMES.123.009938](https://doi.org/10.1161/CIRCOUTCOMES.123.009938){target="_blank"}]{style="font-size: 60%;"}.
 
@@ -297,3 +291,182 @@ Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_bla
 {{< fa brands github >}} [csgillespie/rprofile](https://github.com/csgillespie/rprofile){target="_blank"}.\
 {{< fa brands youtube >}} [Me, Myself and my Rprofile](https://www.youtube.com/watch?v=2rWi2KVcyjg){target="_blank"}.\
 {{< fa blog >}} [Customising your Rprofile](https://www.jumpingrivers.com/blog/customising-your-rprofile/){target="_blank"}.
+
+## States of R packages
+
+R Packages -- [Structure](https://r-pkgs.org/Structure.html){target="_blank"}
+
+```{mermaid}
+flowchart TD
+subgraph dev
+direction LR
+Source -- "devtools::build()" --> Bundled
+Bundled -- "devtools::build(binary=TRUE)" --> Binary
+end
+style Source fill: lightgray
+style Bundled fill: lightgray
+style Binary fill: lightgray
+style dev fill: lightyellow
+```
+
+```{mermaid}
+flowchart TD
+subgraph use
+direction LR
+Binary --"install.packages()
+pak::pak()
+renv::install()"--> Installed
+Installed --"library()"--> Loaded
+end
+style Binary fill: lightgray
+style Installed fill: lightgray
+style Loaded fill: lightgray
+style use fill: lightyellow
+```
+
+## Binary R Packages Installation
+
+Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary R packages in CRAN.
+
+-   compiled ahead of time -> easiest / fastest to install
+
+![](images/binary_in_cran.png){fig-alt="Figure showing the Windows and Mac binary files of R package pretestcad." fig-align="center" width="80%"}
+
+## R-universe and Posit Public Package Manager
+
+::: columns
+
+::: {.column width="40%"}
+
+Consider installing ({{< fa brands windows >}} | {{< fa brands apple >}} | {{< fa brands linux >}} ) binaries from 
+
+-  [R-universe](https://r-universe.dev/search){target="_blank"} 
+-  [Posit Public Package Manager](https://p3m.dev/client/#/){target="_blank"}.
+
+Set in your `.Rprofile` file.
+
+```{.r code-line-numbers="3-4"}
+options(
+  repos = c(
+    P3M_20250306 = "https://packagemanager.posit.co/cran/2025-10-13",
+    ropensci = "https://ropensci.r-universe.dev",
+    CRAN = 'https://cloud.r-project.org'
+  )
+)
+```
+
+:::
+
+::: {.column width="60%"}
+
+![](images/appsilon_R_universe.png){fig-alt="Website of Appsilon R-universe." fig-align="center" width="90%"}
+
+![](images/posit_public_package_manager.png){fig-alt="Website of Posit Public Package Manager." fig-align="center" width="90%"}
+
+:::
+
+:::
+
+## How do I know I got a binary?
+
+::: panel-tabset
+
+### CRAN {{< fa brands windows >}}
+
+``` {.r code-line-numbers="4,10"}
+> install.packages("parallelly", repos = "https://cran.r-project.org")
+Installing package into ‘C:/Users/edavi/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.r-project.org/bin/windows/contrib/4.1/parallelly_1.32.1.zip'
+Content type 'application/zip' length 306137 bytes (298 KB)
+downloaded 298 KB
+
+package ‘parallelly’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\edavi\AppData\Local\Temp\Rtmpa2s3e8\downloaded_packages
+```
+
+### CRAN {{< fa brands apple >}}
+
+``` {.r code-line-numbers="4,10"}
+> install.packages("renv", repos="https://cran.r-project.org")
+Installing package into ‘/Users/edavidaja/Library/R/x86_64/4.1/library’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.r-project.org/bin/macosx/contrib/4.1/renv_0.15.5.tgz'
+Content type 'application/x-gzip' length 1866760 bytes (1.8 MB)
+==================================================
+downloaded 1.8 MB
+
+
+The downloaded binary packages are in
+ /var/folders/b5/fl4ff68d23s148tg1_1gnflc0000gn/T//RtmpMk69B0/downloaded_packages
+```
+
+### p3m
+
+``` {.r code-line-numbers="4,10"}
+> install.packages("remotes")
+Installing package into ‘C:/Users/WDAGUtilityAccount/AppData/Local/R/win-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://p3m.dev/cran/latest/bin/windows/contrib/4.2/remotes_2.4.2.zip'
+Content type 'binary/octet-stream' length 399930 bytes (390 KB)
+downloaded 390 KB
+
+package ‘remotes’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+  C:\Users\WDAGUtilityAccount\AppData\Local\Temp\RtmpA1edRi\downloaded_packages
+```
+
+:::
+
+::: aside
+Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
+:::
+
+## Source R Packages Installation
+
+Go for source R packages if you need the latest version urgently.
+
+![](images/binary_not_latest.png){fig-alt="Figure showing the Windows binary files are not the latest version for R package parallelly." fig-align="center" width="70%"}
+
+ {{< fa brands linux >}} only have source R packages in CRAN.
+
+## Source R Packages Installation
+
+You will need additional tools and dependencies. 
+
+::: panel-tabset
+
+### windows {{< fa brands windows >}}
+
+Install [Rtools](https://cran.r-project.org/bin/windows/Rtools/){target="_blank"}
+
+### macOS {{< fa brands apple >}}
+
+Install [XCode](https://apps.apple.com/us/app/xcode/id497799835?mt=12){target="_blank"} :warning: take some time to install
+
+``` {.bash code-line-numbers="false"}
+xcode-select --install
+```
+
+### linux {{< fa brands linux >}}
+
+install tools via package manager, e.g.
+
+``` bash
+apt install make
+```
+
+:::
+
+<br>
+
+Run `devtools::has_devel()` in console.
+
+> `## Your system is ready to build packages!`
+
+::: aside
+Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
+:::
