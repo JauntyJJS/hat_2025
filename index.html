@@ -100,7 +100,7 @@
     code span.vs { color: #abe338; } /* VerbatimString */
     code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-d6f6cdf4038918aa572ecdba1f41ba7f.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-83e8fcc475af3fc4c8be5f8c5bc0ce4f.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -311,7 +311,7 @@ Jeremy Selva <a href="https://www.linkedin.com/in/jeremy-selva-085b9112a/" targe
 <h2>Issues</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>While there are R packages to facilitate data harmonisation,</p>
+<p>While there are <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 to facilitate data harmonisation,</p>
 <ul>
 <li><p><a href="https://github.com/rOpenGov/retroharmonize/" target="_blank"><code>retroharmonize</code></a> for survey data.</p></li>
 <li><p><a href="https://maelstrom-research.github.io/Rmonize-documentation/index.html" target="_blank"><code>Rmonize</code></a> for epidemiological data.</p></li>
@@ -346,7 +346,7 @@ Jeremy Selva <a href="https://www.linkedin.com/in/jeremy-selva-085b9112a/" targe
 <h2></h2>
 <p><br></p>
 <div class="center-x r-fit-text">
-<p>What <span class="important"><em>Did</em></span> We Forget <br> to Teach You about R ?</p>
+<p>What <span class="important"><em>Did</em></span> We Forget <br> to Teach You about <i class="fa-brands fa-r-project" aria-label="r-project"></i> ?</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -387,7 +387,7 @@ Jeremy Selva <a href="https://www.linkedin.com/in/jeremy-selva-085b9112a/" targe
 </section>
 <section id="project-organisation-1" class="slide level2">
 <h2>Project Organisation</h2>
-<p>My harmoniation template organisation is based on the R package <code>rcompendium</code> but there are others as well.</p>
+<p>My harmoniation template organisation is based on the <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 <a href="https://frbcesab.github.io/rcompendium/" target="_blank"><code>rcompendium</code></a> but there are others as well.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="hexsession-container">
@@ -957,28 +957,28 @@ text-decoration: underline;
 <iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
 ``` -->
 </section>
-<section id="r-session" class="slide level2 scrollable">
-<h2>R Session</h2>
-<p>Before R starts up in a given project, it will perform the following steps</p>
+<section id="session" class="slide level2 scrollable">
+<h2><i class="fa-brands fa-r-project" aria-label="r-project"></i> Session</h2>
+<p>Before <i class="fa-brands fa-r-project" aria-label="r-project"></i> starts up in a given project, it will perform the following steps</p>
 <ol type="1">
 <li>Set up Environment Variables.</li>
 <li>Run startup script.</li>
-<li>Set up the R session.</li>
+<li>Set up the <i class="fa-brands fa-r-project" aria-label="r-project"></i> session.</li>
 </ol>
 <p>We can customise Step 1 and 2 using these two main text files.</p>
 <ul>
-<li><code>.Renviron</code> (Contains environment variables to be set in R sessions.)</li>
-<li><code>.Rprofile</code> (Contains R code to be run in each session.)</li>
+<li><code>.Renviron</code> (Contains environment variables to be set in <i class="fa-brands fa-r-project" aria-label="r-project"></i> sessions.)</li>
+<li><code>.Rprofile</code> (Contains <i class="fa-brands fa-r-project" aria-label="r-project"></i> code to be run in each session.)</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/start_up_enviromental_files.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img data-src="images/start_up_enviromental_files.png" class="quarto-figure quarto-figure-center" style="width:75.0%" alt="Figure showing the .Renviron and .Rprofile file in an R project template."></a></p>
+<p><a href="images/start_up_enviromental_files.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img data-src="images/start_up_enviromental_files.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Figure showing the .Renviron and .Rprofile file in an R project template."></a></p>
 </figure>
 </div>
 </section>
 <section id="what-goes-in-.renviron" class="slide level2">
 <h2>what goes in <code>.Renviron</code></h2>
-<p><span class="emoji" data-emoji="white_check_mark">✅</span> R-specific <a href="https://cran.r-project.org/doc/manuals/r-devel/R-ints.html" target="_blank">environment variables</a>.<br>
+<p><span class="emoji" data-emoji="white_check_mark">✅</span> <i class="fa-brands fa-r-project" aria-label="r-project"></i>-specific <a href="https://cran.r-project.org/doc/manuals/r-devel/R-ints.html" target="_blank">environment variables</a>.<br>
 <span class="emoji" data-emoji="white_check_mark">✅</span> API keys or other secrets<br>
 <span class="emoji" data-emoji="x">❌</span> R code</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="va">APPDATA</span><span class="op">=</span><span class="st">"D:/Jeremy/PortableR/RAppData/Roaming"</span></span>
@@ -998,7 +998,10 @@ text-decoration: underline;
 <h3 id="project">project</h3>
 <p><code>path/to/your/project/.Renviron</code></p>
 </div></div>
-</section>
+
+<aside><div>
+<p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
+</div></aside></section>
 <section id="what-goes-in-.rprofile" class="slide level2">
 <h2>what goes in <code>.Rprofile</code></h2>
 <p><span class="emoji" data-emoji="white_check_mark">✅</span> set a default CRAN mirror.<br>
@@ -1018,10 +1021,13 @@ text-decoration: underline;
 <p><i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/csgillespie/rprofile" target="_blank">csgillespie/rprofile</a>.<br>
 <i class="fa-brands fa-youtube" aria-label="youtube"></i> <a href="https://www.youtube.com/watch?v=2rWi2KVcyjg" target="_blank">Me, Myself and my Rprofile</a>.<br>
 <i class="fa-solid fa-blog" aria-label="blog"></i> <a href="https://www.jumpingrivers.com/blog/customising-your-rprofile/" target="_blank">Customising your Rprofile</a>.</p>
-</section>
-<section id="states-of-r-packages" class="slide level2">
-<h2>States of R packages</h2>
-<p>R Packages – <a href="https://r-pkgs.org/Structure.html" target="_blank">Structure</a></p>
+
+<aside><div>
+<p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
+</div></aside></section>
+<section id="states-of" class="slide level2">
+<h2>States of <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦</h2>
+<p><i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 – <a href="https://r-pkgs.org/Structure.html" target="_blank">Structure</a></p>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -1066,10 +1072,13 @@ style use fill: lightyellow
 </div>
 </div>
 </div>
-</section>
-<section id="binary-r-packages-installation" class="slide level2">
-<h2>Binary R Packages Installation</h2>
-<p>Go for (<i class="fa-brands fa-windows" aria-label="windows"></i> | <i class="fa-brands fa-apple" aria-label="apple"></i>) binary R packages in CRAN.</p>
+
+<aside><div>
+<p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
+</div></aside></section>
+<section id="binary-installation" class="slide level2">
+<h2>Binary <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 Installation</h2>
+<p>Go for (<i class="fa-brands fa-windows" aria-label="windows"></i> | <i class="fa-brands fa-apple" aria-label="apple"></i>) binary <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 in CRAN.</p>
 <ul>
 <li>compiled ahead of time -&gt; easiest / fastest to install</li>
 </ul>
@@ -1159,18 +1168,18 @@ style use fill: lightyellow
 <aside><div>
 <p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
 </div></aside></section>
-<section id="source-r-packages-installation" class="slide level2">
-<h2>Source R Packages Installation</h2>
-<p>Go for source R packages if you need the latest version urgently.</p>
+<section id="source-installation" class="slide level2">
+<h2>Source <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 Installation</h2>
+<p>Go for source <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 if you need the latest version urgently.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><a href="images/binary_not_latest.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img data-src="images/binary_not_latest.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Figure showing the Windows binary files are not the latest version for R package parallelly."></a></p>
 </figure>
 </div>
-<p><i class="fa-brands fa-linux" aria-label="linux"></i> only have source R packages in CRAN.</p>
+<p><i class="fa-brands fa-linux" aria-label="linux"></i> only have source <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 in CRAN.</p>
 </section>
-<section id="source-r-packages-installation-1" class="slide level2">
-<h2>Source R Packages Installation</h2>
+<section id="source-installation-1" class="slide level2">
+<h2>Source <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 Installation</h2>
 <p>You will need additional tools and dependencies.</p>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">windows <i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li><a href="#tabset-2-2">macOS <i class="fa-brands fa-apple" aria-label="apple"></i></a></li><li><a href="#tabset-2-3">linux <i class="fa-brands fa-linux" aria-label="linux"></i></a></li></ul>
@@ -1194,10 +1203,43 @@ style use fill: lightyellow
 <p><code>## Your system is ready to build packages!</code></p>
 </blockquote>
 
-
 <aside><div>
 <p>Adapted from <a href="https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary" target="_blank">Personal R Administration</a></p>
 </div></aside></section>
+<section id="install-using-pak" class="slide level2">
+<h2>Install using <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 <a href="https://pak.r-lib.org/index.html" target="_blank"><code>pak</code></a></h2>
+<p>Consider using <a href="https://pak.r-lib.org/reference/pkg_install.html" target="_blank"><code>pak::pkg_install</code></a> instead of <code>install.packages()</code></p>
+<iframe width="1000" height="500" src="https://r-in-production.org/packages.html" title="R in Production Chapter 6 Package installation"></iframe>
+</section>
+<section id="isolated-project-environment-using-renv" class="slide level2">
+<h2>Isolated project environment using <a href="https://rstudio.github.io/renv/index.html" target="_blank"><code>renv</code></a></h2>
+<p>Most commonly used <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 to create isolated project environments.</p>
+<ul>
+<li><i class="fa-brands fa-youtube" aria-label="youtube"></i> <a href="https://www.youtube.com/watch?v=GwVx_pf2uz4" target="_blank">You should be using renv</a>.<br>
+</li>
+<li><i class="fa-solid fa-file-powerpoint" aria-label="file-powerpoint"></i> <a href="https://ecohealthalliance.github.io/targets-renv-example/outputs/renv-presentation" target="_blank">Making your R project future-proof with renv</a>.<br>
+</li>
+</ul>
+<iframe width="900" height="450" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile"></iframe>
+</section>
+<section id="virtual-environment-using-renv" class="slide level2">
+<h2><i class="fa-brands fa-r-project" aria-label="r-project"></i> “virtual environment” using <a href="https://rstudio.github.io/renv/index.html" target="_blank"><code>renv</code></a></h2>
+<p>Some advice …</p>
+<ul>
+<li>Set <code>RENV_CONFIG_PAK_ENABLED=TRUE</code> in the <code>.Renviron</code> file for <code>renv::install()</code> uses <code>pak</code> at the backend to install <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦.</li>
+<li>In an existing project, use <code>renv::init(bare = TRUE)</code> to initiate renv with an empty <i class="fa-brands fa-r-project" aria-label="r-project"></i> library and then install <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 manaully.</li>
+<li>Indicate folders/files in the <code>.renvignore</code> file to ignore to speed up the snapshot process (<code>renv::snapshot</code>)</li>
+<li>You can update the repositories specified in the <code>renv.lock</code> file.
+<ul>
+<li><i class="fa-solid fa-blog" aria-label="blog"></i> <a href="https://www.pipinghotdata.com/posts/2024-09-16-ease-renvrestore-by-updating-your-repositories-to-p3m/" target="_blank">Shannon Pileggi’s blog on <code>renv::restore()</code></a>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="new-kid-for-managment-require" class="slide level2">
+<h2>New Kid for <i class="fa-brands fa-r-project" aria-label="r-project"></i> 📦 managment <a href="https://require.predictiveecology.org/" target="_blank"><code>Require</code></a></h2>
+<iframe width="1000" height="500" src="https://require.predictiveecology.org/" title="Homepage of R pacakage Require"></iframe>
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

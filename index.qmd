@@ -113,7 +113,7 @@ Some data fields just cannot be planned in advanced.
 
 ::: {.column width="50%"}
 
-While there are R packages to facilitate data harmonisation,
+While there are {{< fa brands r-project >}} 📦 to facilitate data harmonisation,
 
 *  [`retroharmonize`](https://github.com/rOpenGov/retroharmonize/){target="_blank"} for survey data.
 
@@ -157,7 +157,7 @@ A template to offer a systematic way to report data harmonisation processes.
 <br>
 
 ::: {.center-x .r-fit-text}
-What [*Did*]{.important} We Forget <br> to Teach You about R ?
+What [*Did*]{.important} We Forget <br> to Teach You about {{< fa brands r-project >}} ?
 :::
 
 ![](images/what_is_R_programming.png){fig-alt="Figure showing a Google search on what is the R Programming Language." fig-align="center" width="80%"}
@@ -198,7 +198,7 @@ Data is cheap but time is expensive.
 
 ## Project Organisation
 
-My harmoniation template organisation is based on the R package `rcompendium` but there are others as well.
+My harmoniation template organisation is based on the {{< fa brands r-project >}} 📦 [`rcompendium`](https://frbcesab.github.io/rcompendium/){target="_blank"} but there are others as well.
 
 ```{r}
 #| label: hexsession
@@ -222,24 +222,24 @@ hexsession::make_tile(
 <iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
 ``` -->
 
-## R Session
+## {{< fa brands r-project >}} Session
 
-Before R starts up in a given project, it will perform the following steps
+Before {{< fa brands r-project >}} starts up in a given project, it will perform the following steps
 
 1. Set up Environment Variables.
 2. Run startup script.
-3. Set up the R session.
+3. Set up the {{< fa brands r-project >}} session.
 
 We can customise Step 1 and 2 using these two main text files.
 
--  `.Renviron` (Contains environment variables to be set in R sessions.)
--  `.Rprofile` (Contains R code to be run in each session.)
+-  `.Renviron` (Contains environment variables to be set in {{< fa brands r-project >}} sessions.)
+-  `.Rprofile` (Contains {{< fa brands r-project >}} code to be run in each session.)
 
-![](images/start_up_enviromental_files.png){fig-alt="Figure showing the .Renviron and .Rprofile file in an R project template." fig-align="center" width="75%"}
+![](images/start_up_enviromental_files.png){fig-alt="Figure showing the .Renviron and .Rprofile file in an R project template." fig-align="center" width="60%"}
 
 ## what goes in `.Renviron`
 
-:white_check_mark: R-specific [environment variables](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html){target="_blank"}.\
+:white_check_mark: {{< fa brands r-project >}}-specific [environment variables](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html){target="_blank"}.\
 :white_check_mark: API keys or other secrets\
 :x: R code
 
@@ -268,6 +268,10 @@ DB_PASS=p0stgr3s
 :::
 :::
 
+::: aside
+Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
+:::
+
 ## what goes in `.Rprofile`
 
 :white_check_mark: set a default CRAN mirror.\
@@ -292,9 +296,13 @@ Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_bla
 {{< fa brands youtube >}} [Me, Myself and my Rprofile](https://www.youtube.com/watch?v=2rWi2KVcyjg){target="_blank"}.\
 {{< fa blog >}} [Customising your Rprofile](https://www.jumpingrivers.com/blog/customising-your-rprofile/){target="_blank"}.
 
-## States of R packages
+::: aside
+Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
+:::
 
-R Packages -- [Structure](https://r-pkgs.org/Structure.html){target="_blank"}
+## States of {{< fa brands r-project >}} 📦
+
+{{< fa brands r-project >}} 📦 -- [Structure](https://r-pkgs.org/Structure.html){target="_blank"}
 
 ```{mermaid}
 flowchart TD
@@ -324,9 +332,13 @@ style Loaded fill: lightgray
 style use fill: lightyellow
 ```
 
-## Binary R Packages Installation
+::: aside
+Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
+:::
 
-Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary R packages in CRAN.
+## Binary {{< fa brands r-project >}} 📦 Installation
+
+Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary {{< fa brands r-project >}} 📦 in CRAN.
 
 -   compiled ahead of time -> easiest / fastest to install
 
@@ -425,15 +437,15 @@ The downloaded binary packages are in
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
-## Source R Packages Installation
+## Source {{< fa brands r-project >}} 📦 Installation
 
-Go for source R packages if you need the latest version urgently.
+Go for source {{< fa brands r-project >}} 📦 if you need the latest version urgently.
 
 ![](images/binary_not_latest.png){fig-alt="Figure showing the Windows binary files are not the latest version for R package parallelly." fig-align="center" width="70%"}
 
- {{< fa brands linux >}} only have source R packages in CRAN.
+ {{< fa brands linux >}} only have source {{< fa brands r-project >}} 📦 in CRAN.
 
-## Source R Packages Installation
+## Source {{< fa brands r-project >}} 📦 Installation
 
 You will need additional tools and dependencies. 
 
@@ -470,3 +482,38 @@ Run `devtools::has_devel()` in console.
 ::: aside
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
+
+## Install using {{< fa brands r-project >}} 📦 [`pak`](https://pak.r-lib.org/index.html){target="_blank"}
+
+Consider using [`pak::pkg_install`](https://pak.r-lib.org/reference/pkg_install.html){target="_blank"} instead of `install.packages()`
+
+```{=html}
+<iframe width="1000" height="500" src="https://r-in-production.org/packages.html" title="R in Production Chapter 6 Package installation" ></iframe>
+```
+
+## Isolated project environment using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
+
+Most commonly used {{< fa brands r-project >}} 📦 to create isolated project environments.
+
+-  {{< fa brands youtube >}} [You should be using renv](https://www.youtube.com/watch?v=GwVx_pf2uz4){target="_blank"}.\
+-  {{< fa file-powerpoint >}} [Making your R project future-proof with renv](https://ecohealthalliance.github.io/targets-renv-example/outputs/renv-presentation){target="_blank"}.\
+
+```{=html}
+<iframe width="900" height="450" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile" ></iframe>
+```
+
+## {{< fa brands r-project >}} "virtual environment" using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
+
+Some advice ...
+
+-  Set `RENV_CONFIG_PAK_ENABLED=TRUE` in the `.Renviron` file for `renv::install()` uses `pak` at the backend to install {{< fa brands r-project >}} 📦.
+-  In an existing project, use `renv::init(bare = TRUE)` to initiate renv with an empty {{< fa brands r-project >}} library and then install {{< fa brands r-project >}} 📦 manaully.
+-  Indicate folders/files in the `.renvignore` file to ignore to speed up the snapshot process (`renv::snapshot`)
+-  You can update the repositories specified in the `renv.lock` file.
+   -  {{< fa blog >}} [Shannon Pileggi's blog on `renv::restore()`](https://www.pipinghotdata.com/posts/2024-09-16-ease-renvrestore-by-updating-your-repositories-to-p3m/){target="_blank"}.
+
+## New Kid for {{< fa brands r-project >}} 📦 managment [`Require`](https://require.predictiveecology.org/){target="_blank"}
+
+```{=html}
+<iframe width="1000" height="500" src="https://require.predictiveecology.org/" title="Homepage of R pacakage Require" ></iframe>
+```
