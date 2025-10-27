@@ -499,7 +499,7 @@ Most commonly used {{< fa brands r-project >}} 📦 to create isolated project e
 -  {{< fa file-powerpoint >}} [Making your R project future-proof with renv](https://ecohealthalliance.github.io/targets-renv-example/outputs/renv-presentation){target="_blank"}.\
 
 ```{=html}
-<iframe width="900" height="450" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile" ></iframe>
+<iframe width="800" height="400" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile" ></iframe>
 ```
 
 ## {{< fa brands r-project >}} "virtual environment" using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
@@ -516,4 +516,34 @@ Some advice ...
 
 ```{=html}
 <iframe width="1000" height="500" src="https://require.predictiveecology.org/" title="Homepage of R pacakage Require" ></iframe>
+```
+
+## Quarto
+
+[Quarto](https://quarto.org/){target="_blank"} is an open-source software that weaves narrative and programming code together to produce elegantly formatted output as documents (in HTML, Word, PDF), presentations, books, web pages, and more.
+
+![](images/quarto_allison.png){fig-alt="Picture by Allison Horst about Quarto turning programming code to documents." fig-align="center"}
+[[Artwork](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote){target="_blank"} from ["Hello, Quarto"](https://www.youtube.com/watch?v=p7Hxu4coDl8) keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 80%;"}.
+
+## Quarto Level 1
+
+A Quarto file is a plain text file that has the extension `.qmd` containing three important types of content:
+
+![](images/quarto_format.png){fig-alt="Quarto file has three contents: An optional YAML header surrounded by `---`s, Chunks of R code surrounded by ```s and Text mixed with markdown text formatting." fig-align="center"}
+[Simple Quarto file example from [R for Data Science (2e) Chapter 28 Quarto](https://r4ds.hadley.nz/quarto.html#quarto-basics)]{style="font-size: 80%;"}
+
+## Quarto Level 1
+
+<https://kpuka.ca/resources/quarto_intro.html>{target="_blank"}
+
+```{=html}
+<iframe width="1000" height="550" src="https://kpuka.ca/resources/quarto_intro.html" title="Introduction to Quarto by Klajdi Puka, PhD" ></iframe>
+```
+
+## Quarto (Reference)
+
+<https://quarto.org/>{target="_blank"}
+
+```{=html}
+<iframe width="1000" height="550" src="https://quarto.org/" title="Quarto Homepage" ></iframe>
 ```
