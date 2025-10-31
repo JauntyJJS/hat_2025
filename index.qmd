@@ -37,11 +37,42 @@ library(here)
 out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
 ```
 
+```{r}
+#| label: for harmonisation
+#| include: false
+#| echo: false
+
+library(fs)
+library(quarto)
+library(dplyr)
+library(magrittr)
+library(stringr)
+library(forcats)
+library(purrr)
+library(tibble)
+library(here)
+library(testthat)
+library(readxl)
+library(vroom)
+library(pointblank)
+library(reactable)
+
+# library(ggplot2)
+# library(RVenn)
+# library(ggVennDiagram)
+# library(ComplexUpset)
+
+source("R/factor-reactable.R")
+source("R/integer-check.R")
+source("R/rounding.R")
+
+```
+
 ## whoami
 
 Research Officer from [National Heart Centre Singapore](https://www.nhcs.com.sg/){target="_blank"} who collects, cleans and harmonises clinical data.
 
-![](images/allison_horst2.png){fig-alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster." fig-align="center" width="70%"}
+![](images/allison_horst2.png){fig-alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster." fig-align="center" width="65%"}
 
 [Taming the Data Beast from ["Cleaning Medical Data with R"](https://www.pipinghotdata.com/workshops/2023-06-06-cleaning-medical-data-with-r/){target="_blank"} workshop by Shannon Pileggi, Crystal Lewis and Peter Higgins presented at R/Medicine 2023. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 60%;"}.
 
@@ -550,6 +581,1123 @@ A Quarto file is a plain text file that has the extension `.qmd` containing thre
 <iframe width="1000" height="550" src="https://kpuka.ca/resources/quarto_intro.html" title="Introduction to Quarto by Klajdi Puka, PhD" ></iframe>
 ```
 
+## Workflow with collaborators
+
+Collaborator can send the raw data once and you keep updating the cleaned data for harmonsation.
+
+![](images/collaborator_no_change_raw_data_workflow.png){fig-alt="Picture showing a top workfow to first clean data for harmonisation before doing the actual harmonisation. Bottom workflow to verfiy with the collaborators and update the clean data for harmonisation periodically" fig-align="center" width="80%"}
+
+[[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}.]{style="font-size: 60%;"}
+
+## Workflow with collaborators
+
+![](images/collaborator_request_3.png){fig-alt="Figure showing the collaborator saying that they need the updated raw data in addition to the harmonised data." fig-align="center" width="90%"}
+
+[[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## Workflow with collaborators
+
+![](images/collaborator_request_3_met.png){fig-alt="Figure showing the data analyst providing the updated raw data and harmonised data." fig-align="center" width="90%"}
+
+[[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+## Workflow with collaborators
+
+Collaborator can update the raw data. For example, adding new clinical data, add more patients, correct errors.
+
+![](images/collaborator_change_raw_data_workflow.png){fig-alt="Picture showing a top workfow to first clean data for harmonisation before doing the actual harmonisation. Bottom workflow to verfiy with the collaborators and update the raw data for harmonisation periodically" fig-align="center" width="80%"}
+
+[[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}.]{style="font-size: 60%;"}
+
+## Workflow with collaborators
+
+New version means new bugs or reopen issues to fix. Is there an automated way to catch warnings/issues when reading these updated files ?
+
+![](images/collaborator_change_raw_data_issue.png){fig-alt="Picture showing that new version of raw data sent by collaborator can give new issues to a supposedly fixed problem" fig-align="center" width="80%"}
+
+[[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}. [Anticipate](https://www.monkeyuser.com/2022/anticipate/){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/){target="_blank"}]{style="font-size: 60%;"}
+
+## Automated capture of warnings (csv)
+
+Is there an automated way to catch warnings/issues when reading csv files ?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: read data with warnings csv failed
+#| echo: true
+#| code-line-numbers: "|9"
+#| warning: true
+
+cohort_data_csv <- vroom::vroom(
+  file = here::here("data-raw", "Cohort_csv", 
+    "data_to_harmonise_age_issue.csv"),
+  delim = ",",
+  col_select = 1:2,
+  show_col_types = FALSE,
+  col_types = list(
+    ID = vroom::col_character(), 
+    Age = vroom::col_integer()
+  )
+)
+
+```
+
+```{r}
+#| label: read data with warnings csv
+#| echo: true
+#| code-line-numbers: "|8"
+#| warning: true
+
+head(cohort_data_csv, n = 3)
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/age_issue_csv.jpg){fig-alt="A csv file with text data in the Age column." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## Automated capture of warnings (csv)
+
+If there are issues with the data, the output of [`readr::problems`](https://readr.tidyverse.org/reference/problems.html){target="_blank"} will be a tibble.
+
+```{r}
+#| label: view problem in vroom
+#| echo: true
+#| warning: true
+
+cohort_data_csv |> 
+  vroom::problems()
+
+```
+
+To check for this automatically, we can use [`pointblank::expect_row_count_match`](https://rstudio.github.io/pointblank/reference/row_count_match.html){target="_blank"}.
+
+```{r}
+#| label: safeguard problem with vroom and pointblank
+#| echo: true
+#| error: true
+
+cohort_data_csv |> 
+  vroom::problems() |> 
+  pointblank::expect_row_count_match(count = 0)
+
+```
+
+## Automated capture of warnings (csv)
+
+Here is a case with no issues.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: read data with no issues csv
+#| echo: true
+#| warning: true
+
+cohort_data_csv <- vroom::vroom(
+  file = here::here("data-raw", "Cohort_csv", 
+    "data_to_harmonise_age_issue_fixed.csv"),
+  delim = ",",
+  col_select = 1:2,
+  show_col_types = FALSE,
+  col_types = list(
+    ID = vroom::col_character(), 
+    Age = vroom::col_integer()
+  )
+)
+
+cohort_data_csv |> 
+  vroom::problems()
+
+```
+
+```{r}
+#| label: read data with no issues csv safeguard
+#| echo: true
+#| warning: true
+
+cohort_data_csv |> 
+  vroom::problems() |> 
+  pointblank::expect_row_count_match(count = 0)
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/age_issue_fixed_csv.jpg){fig-alt="A csv file with only integer data in the Age column." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## Automated capture of warnings (Excel)
+
+Is there an automated way to catch warnings/issues when reading Excel files ?
+
+::: {.column width="50%"}
+
+```{r}
+#| label: read data with warnings Excel
+#| echo: true
+#| warning: true
+
+cohort_data_excel <- readxl::read_excel(
+  path = here::here("data-raw", "Cohort_Excel", 
+    "data_to_harmonise_age_issue.xlsx"),
+  sheet = "Sheet1",
+  col_types = c(
+    "text", "numeric"
+    )
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/age_issue_excel.jpg){fig-alt="An Excel file with text data in the Age column." fig-align="center" width="100%"}
+
+:::
+
+## Automated capture of warnings (Excel)
+
+We can read the Excel file with [`testthat::expect_no_condition`](https://testthat.r-lib.org/reference/expect_error.html){target="_blank"}.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: read data with issues using testthat
+#| echo: true
+#| code-line-numbers: "|1,8"
+#| error: true
+
+testthat::expect_no_condition(
+  cohort_data_excel <- readxl::read_excel(
+    path = here::here("data-raw", "Cohort_Excel", 
+      "data_to_harmonise_age_issue.xlsx"),
+    sheet = "Sheet1",
+    col_types = c("text", "numeric")
+  )
+)
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/age_issue_excel.jpg){fig-alt="An Excel file with text data in the Age column." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## Automated capture of warnings (Excel)
+
+However, this method means that you will lose the pipe workflow.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: read data without issues using testthat
+#| echo: true
+
+testthat::expect_no_condition(
+  cohort_data_excel <- readxl::read_excel(
+    path = here::here("data-raw", "Cohort_Excel", 
+      "data_to_harmonise_age_issue_fixed.xlsx"),
+    sheet = "Sheet1",
+    col_types = c("text", "numeric")
+  )
+)
+
+cohort_data_excel <- cohort_data_excel |> 
+  # Check if Serial Number is unique
+  pointblank::rows_distinct(
+    columns = "Serial Number",
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/age_issue_fixed_excel.jpg){fig-alt="An Excel file with numeric data in the Age column." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## Automated capture of warnings (Excel)
+
+We can use the tee pipe operator [`%T>%`](https://magrittr.tidyverse.org/reference/tee.html){target="_blank"} from [magrittr](https://magrittr.tidyverse.org/){target="_blank"}.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::{.center-h}
+[**With Issues**]{style="font-size: 80%;"}
+:::
+
+```{r}
+#| label: read data with issues using testthat and tee pipe
+#| echo: true
+#| code-line-numbers: "|8,9"
+#| error: true
+
+cohort_data_excel <- readxl::read_excel(
+  path = here::here("data-raw", "Cohort_Excel", 
+    "data_to_harmonise_age_issue.xlsx"),
+  sheet = "Sheet1",
+  col_types = c(
+    "text", "numeric"
+    )
+  ) %T>%
+  testthat::expect_no_condition()
+```
+
+:::
+
+::: {.column width="50%"}
+
+:::{.center-h}
+[**No Issues**]{style="font-size: 80%;"}
+:::
+
+```{r}
+#| label: read data without issues using testthat and tee pipe
+#| code-line-numbers: "|6,7"
+#| echo: true
+
+cohort_data_excel_2 <- readxl::read_excel(
+  path = here::here("data-raw", "Cohort_Excel", 
+    "data_to_harmonise_age_issue_fixed.xlsx"),
+  sheet = "Sheet1",
+  col_types = c("text", "numeric")
+) %T>%
+testthat::expect_no_condition() |> 
+# Check if Serial Number is unique
+  pointblank::rows_distinct(
+    columns = "Serial Number",
+)
+
+```
+
+:::
+
+::::
+
+## Variable Mapping
+
+![](images/variable_mapping_workflow.png){fig-alt="Variable Mapping Reporting Workflow. Starting with introducing the mapping procedure, writing code to do mapping ans validation, showing that the code works, clean up data for merging." fig-align="center" width="100%"}
+
+## Variable Mapping
+
+Let take this data set as an example.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: read csv data
+#| echo: true
+
+cohort_csv_data <- vroom::vroom(
+  file = here::here("data-raw",
+                    "Cohort_csv",
+                    "data_to_harmonise.csv"),
+  delim = ",",
+  col_select = 1:8,
+  show_col_types = FALSE,
+  col_types = list(
+    ID = vroom::col_character(),
+    Age = vroom::col_integer(),
+    Sex = vroom::col_character(),
+    Height = vroom::col_double(),
+    Weight = vroom::col_double(),
+    `Smoke History` = vroom::col_character(),
+    `Chest Pain Character` = vroom::col_character(),
+    Dyspnea = vroom::col_character()
+    )
+  ) |>  
+  dplyr::rename(cohort_unique_id = "ID") |>
+  # Remove rows when the ID value is NA
+  dplyr::filter(!is.na(.data[["cohort_unique_id"]])) |>
+  # Remove white spaces in column names
+  dplyr::rename_all(stringr::str_trim) |> 
+  # Check if cohort id is unique
+  pointblank::rows_distinct(
+    columns = "cohort_unique_id",
+  )
+
+cohort_csv_data |> 
+  vroom::problems() |> 
+  pointblank::expect_row_count_match(count = 0)
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: print csv data
+#| echo: false
+ 
+cohort_csv_data |> 
+  dplyr::mutate(
+    Sex = forcats::fct_relevel(.data[["Sex"]], c("Male", "Female")),
+    `Smoke History` = forcats::fct_relevel(
+      .data[["Smoke History"]], 
+      c("non-smoker", "past smoker", "current smoker")
+    ),
+    `Chest Pain Character` = forcats::fct_relevel(
+      .data[["Chest Pain Character"]], 
+      c("no chest pain", "nonanginal", "atypical", "typical")
+    ),
+    `Dyspnea` = forcats::fct_relevel(
+      .data[["Dyspnea"]], 
+      c("no", "yes")
+    ),
+  ) |> 
+  reactable_with_download_csv_button(
+    defaultPageSize = 5,
+    paginationType = "jump",
+    style = list(fontSize = "1rem"),
+  )
+
+```
+
+:::
+
+::::
+
+## Variable Mapping
+
+Let the reader know how the collaborator's data `Smoke History` is going to be mapped.
+
+![](images/mapping_procedure.png){fig-alt="Documentation indicating how the collaborator's data Smoke History is going to be mapped or harmonised in Quarto code and output." fig-align="center" width="90%"}
+
+## Variable Mapping
+
+![](images/code_to_map.png){fig-alt="Code to do mapping." fig-align="center" width="30%"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: smoking data harmonisation
+#| echo: true
+#| code-line-numbers: "|2,3|5-14|15-24"
+
+smoking_data <- cohort_csv_data |>
+  dplyr::select(c("cohort_unique_id", 
+                  "Smoke History")) |>
+  dplyr::mutate(
+    smoke_current = dplyr::case_when(
+      is.na(.data[["Smoke History"]]) ~ "-1",
+      .data[["Smoke History"]] == "non-smoker" ~ "0",
+      .data[["Smoke History"]] == "past smoker" ~ "0",
+      .data[["Smoke History"]] == "current smoker" ~ "1",
+      .default = NA_character_
+    ),
+    smoke_current = forcats::fct_relevel(
+      .data[["smoke_current"]],
+      c("0", "1")), 
+    smoke_past = dplyr::case_when(
+      is.na(.data[["Smoke History"]]) ~ "-1",
+      .data[["Smoke History"]] == "non-smoker" ~ "0",
+      .data[["Smoke History"]] == "past smoker" ~ "1",
+      .data[["Smoke History"]] == "current smoker" ~ "0",
+      .default = NA_character_
+    ),
+    smoke_past = forcats::fct_relevel(
+      .data[["smoke_past"]],
+      c("0", "1")),
+    `Smoke History` = forcats::fct(
+      .data[["Smoke History"]]
+    )
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/smoking_history_documentation.png){fig-alt="Documentation of harmonisation of smoking history." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## Variable Mapping
+
+![](images/code_to_validate.png){fig-alt="Code to do validation." fig-align="center" width="30%"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: smoking data validation
+#| code-line-numbers: "|2-5|6-12"
+#| echo: true
+
+smoking_data <- smoking_data |>
+  pointblank::col_vals_in_set(
+    columns = c("smoke_current", "smoke_past"),
+    set = c("0", "1", "-1")
+  ) |> 
+  pointblank::col_vals_expr(
+    expr = pointblank::expr(
+      (.data[["smoke_current"]] == "1" & .data[["smoke_past"]] == "0") |
+      (.data[["smoke_current"]] == "-1" & .data[["smoke_past"]] == -"1") |
+      (.data[["smoke_current"]] == "0" & .data[["smoke_past"]] %in% c("0", "1"))
+    )
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+![](images/smoking_history_validation.png){fig-alt="Documentation of harmonisation of smoking history." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+[Reference: <https://github.com/rstudio/pointblank/issues/578>{target="_blank"}]{style="font-size: 80%;"}
+
+## Variable Mapping
+
+Make use of Quarto's [parameters](https://quarto.org/docs/computations/parameters.html){target="_blank"}, [conditional content](https://quarto.org/docs/authoring/conditional.html){target="_blank"} and `!expr` [knitr engine](https://quarto.org/docs/tools/rstudio.html#knitr-engine){target="_blank"} syntax to choose what code/items to run/display on your html, pdf or word report.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/example_works.png){fig-alt="Show examples that the code works." fig-align="center" width="100%"}
+
+````{.r filename="your_quarto_script.qmd"}
+---
+params:
+  show_table: TRUE
+---
+
+```{{r}}
+#| label: output type
+#| echo: false
+#| warning: false
+#| message: false
+
+out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
+```
+````
+
+:::
+
+::: {.column width="50%"}
+
+![](images/print_reactable.png){fig-alt="Code to print the reactable in html file." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## Variable Mapping
+
+Parameterized Quarto Reports Improve Understanding of Soil Health - [Posit Conference in 2023](https://www.youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp){target="_blank"} by [Jadey Ryan](https://jadeyryan.com/){target="_blank"}.
+
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/lbE5uOqfT70?si=kvtl0rbJt_jU4oBW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Variable Mapping
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/example_works.png){fig-alt="Show examples that the code works." fig-align="center" width="100%"}
+![](images/print_reactable.png){fig-alt="Code to print the reactable in html file." fig-align="center" width="100%"}
+
+:::
+
+::: {.column width="50%"}
+
+:::{.center-h}
+[**Html Output**]{style="font-size: 80%;"}
+:::
+
+```{r}
+#| label: smoking data html
+
+smoking_data |> 
+  reactable_with_download_csv_button(
+    defaultPageSize = 5,
+    paginationType = "jump",
+    style = list(fontSize = "1rem"),
+  )
+
+```
+
+:::
+
+::::
+
+## Variable Mapping
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/example_works.png){fig-alt="Show examples that the code works." fig-align="center" width="100%"}
+![](images/print_code_pdf.png){fig-alt="Code to print the table in pdf file." fig-align="center" width="100%"}
+
+:::
+
+::: {.column width="50%"}
+
+:::{.center-h}
+[**Pdf Output**]{style="font-size: 80%;"}
+:::
+
+![](images/print_pdf.png){fig-alt="Output code in pdf file." fig-align="center" width="100%"}
+
+![](images/print_pdf_2.png){fig-alt="Output table in pdf file." fig-align="center" width="100%"}
+:::
+
+::::
+
+## Variable Mapping
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/clean_for_merging.png){fig-alt="Clean for merging." fig-align="center" width="50%"}
+```{r}
+#| label: smoking data for merging
+#| echo: true
+
+smoking_data <- smoking_data |>
+  dplyr::select(-c("Smoke History"))
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: smoking data for merging html
+
+smoking_data |> 
+  reactable_with_download_csv_button(
+    defaultPageSize = 5,
+    paginationType = "jump",
+    style = list(fontSize = "1rem"),
+  )
+
+```
+
+:::
+
+::::
+
+## Merging Harmonised Data
+
+Suppose we have completed harmonising a batch of clinical data.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: age gender data
+
+age_gender_data <- cohort_csv_data |>
+  dplyr::select(c("cohort_unique_id", 
+                  "Age", 
+                  "Sex")) |>
+  pointblank::col_vals_expr(
+    expr = ~is_integer_vector(
+      cohort_A_data[["age"]],
+      allow_na = TRUE)
+  ) |>
+  dplyr::mutate(
+    # Convert age to type integer
+    age_years = as.integer(.data[["Age"]]),
+    # Convert categorical columns to factors
+    sex = dplyr::case_when(
+      .data[["Sex"]] == "Female" ~ "0",
+      .data[["Sex"]] == "Male" ~ "1",
+      .default = NA_character_
+    ),
+    `Sex` = forcats::fct_relevel(
+      .data[["Sex"]],
+      c("Female", "Male")
+    ),
+    sex = forcats::fct_relevel(
+      .data[["sex"]],
+      c("0", "1")),
+  ) |>
+  dplyr::relocate(
+    "sex",
+    .before = "Sex"
+  ) |> 
+  dplyr::relocate(
+    "age_years",
+    .after = "Age"
+  ) |>
+  pointblank::col_vals_in_set(
+    columns = "sex",
+    set = c("0", "1")
+  ) |> 
+  pointblank::col_vals_between(
+    columns = "age_years",
+    left = 0,
+    right = 100,
+    inclusive = c(FALSE, TRUE),
+    na_pass = TRUE
+  ) |>
+  dplyr::select(-c("Age", "Sex"))
+
+```
+
+```{r}
+#| label: age gender data for merging html
+#| echo: true
+
+age_gender_data |> 
+  reactable_with_download_csv_button(
+    defaultPageSize = 5,
+    paginationType = "jump",
+    style = list(fontSize = "1rem"),
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: body measurement data
+
+body_measurement_data <- cohort_csv_data |>
+  dplyr::select(c("cohort_unique_id", 
+                  "Height", "Weight")) |>
+  dplyr::mutate(
+    height_cm = .data[["Height"]],
+    weight_kg = .data[["Weight"]],
+    bsa_m2 = sqrt((.data[["height_cm"]] * .data[["weight_kg"]]) / 3600),
+    bsa_m2 = round_to_nearest_digit(.data[["bsa_m2"]], digits = 2),
+    bmi = .data[["weight_kg"]] / ((.data[["height_cm"]] / 100)^2),
+    bmi = round_to_nearest_digit(.data[["bmi"]], digits = 2),
+    height_cm = round_to_nearest_digit(.data[["height_cm"]], digits = 2),
+    weight_kg = round_to_nearest_digit(.data[["weight_kg"]], digits = 2)
+  ) |> 
+  pointblank::col_vals_between(
+    columns = "bmi",
+    left = 10,
+    right = 50,
+    inclusive = c(TRUE, TRUE),
+    na_pass = TRUE
+  ) |>
+  dplyr::select(-c("Height", "Weight"))
+
+```
+
+```{r}
+#| label: body measurement data for merging html
+#| echo: true
+
+body_measurement_data |> 
+  reactable_with_download_csv_button(
+    defaultPageSize = 5,
+    paginationType = "jump",
+    style = list(fontSize = "1rem"),
+  )
+
+```
+
+:::
+
+::::
+
+How can we merge them without issues of missing rows or additional columns ?
+
+## Merging Harmonised Data
+
+`unmatched = "error"` in [`dplyr::inner_join`](https://dplyr.tidyverse.org/reference/mutate-joins.html){target="_blank"} helps to avoid patients with no match.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: demo behave data no match in y
+#| code-line-numbers: "|4|7,11,15"
+#| echo: true
+
+join_specification <- dplyr::join_by("cohort_unique_id")
+
+demo_behave_data <- cohort_csv_data |>
+  dplyr::select(c("cohort_unique_id")) |>
+  dplyr::inner_join(age_gender_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::inner_join(body_measurement_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::inner_join(smoking_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::relocate(c("bsa_m2", "bmi"),
+                  .after = "sex")
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: penguin error no match in y
+#| echo: true
+#| code-line-numbers: "|3-4,11,18"
+#| warning: true
+#| error: true
+
+three_penguins <- tibble::tribble(
+  ~samp_id, ~species,    ~island,
+  1,        "Adelie",    "Torgersen",
+  2,        "Gentoo",    "Biscoe",
+)
+
+weight_extra <- tibble::tribble(
+  ~samp_id,  ~body_mass_g,
+  1,         3220,
+  2,         4730,
+  4,         4725
+)
+
+three_penguins |> 
+  dplyr::inner_join(
+    y = weight_extra,
+    by = dplyr::join_by("samp_id"),
+    unmatched = "error"
+ ) 
+
+```
+
+:::
+
+::::
+
+[Reference: <https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality>]{style="font-size: 80%;"}
+
+## Merging Harmonised Data
+
+`unmatched = "error"` in [`dplyr::inner_join`](https://dplyr.tidyverse.org/reference/mutate-joins.html){target="_blank"} helps to avoid patients with no match.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: demo behave data no match in x
+#| code-line-numbers: "|7,11,15"
+#| echo: true
+
+join_specification <- dplyr::join_by("cohort_unique_id")
+
+demo_behave_data <- cohort_csv_data |>
+  dplyr::select(c("cohort_unique_id")) |>
+  dplyr::inner_join(age_gender_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::inner_join(body_measurement_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::inner_join(smoking_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::relocate(c("bsa_m2", "bmi"),
+                  .after = "sex")
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: penguin error no match in x
+#| echo: true
+#| code-line-numbers: "|4,10,11,18"
+#| warning: true
+#| error: true
+
+three_penguins <- tibble::tribble(
+  ~samp_id, ~species,    ~island,
+  1,        "Adelie",    "Torgersen",
+  2,        "Gentoo",    "Biscoe",
+  3,        "Chinstrap", "Dream"
+)
+
+weight_extra <- tibble::tribble(
+  ~samp_id,  ~body_mass_g,
+  1,         3220,
+  3,         4725
+)
+
+three_penguins |> 
+  dplyr::inner_join(
+    y = weight_extra,
+    by = dplyr::join_by("samp_id"),
+    unmatched = "error"
+ ) 
+
+```
+
+:::
+
+::::
+
+[Reference: <https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality>]{style="font-size: 80%;"}
+
+## Merging Harmonised Data
+
+`relationship = "one-to-one"` in [`dplyr::inner_join`](https://dplyr.tidyverse.org/reference/mutate-joins.html){target="_blank"} helps to avoid patients with multiple match.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: demo behave data 2
+#| code-line-numbers: "|8,12,16"
+#| echo: true
+
+join_specification <- dplyr::join_by("cohort_unique_id")
+
+demo_behave_data <- cohort_csv_data |>
+  dplyr::select(c("cohort_unique_id")) |>
+  dplyr::inner_join(age_gender_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::inner_join(body_measurement_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::inner_join(smoking_data,
+                   by = join_specification,
+                   unmatched = "error",
+                   relationship = "one-to-one") |>
+  dplyr::relocate(c("bsa_m2", "bmi"),
+                  .after = "sex")
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: penguin error 2
+#| echo: true
+#| code-line-numbers: "|4,11,12,20"
+#| warning: true
+#| error: true
+
+three_penguins <- tibble::tribble(
+  ~samp_id, ~species,    ~island,
+  1,        "Adelie",    "Torgersen",
+  2,        "Gentoo",    "Biscoe",
+  3,        "Chinstrap", "Dream"
+)
+
+weight_extra <- tibble::tribble(
+  ~samp_id,  ~body_mass_g,
+  1,         3220,
+  2,         4730,
+  2,         4725,
+  3,         4000
+)
+
+three_penguins |> 
+  dplyr::inner_join(
+    y = weight_extra,
+    by = dplyr::join_by("samp_id"),
+    relationship = "one-to-one"
+ ) 
+
+```
+
+:::
+
+::::
+
+[Reference: <https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality>]{style="font-size: 80%;"}
+
+## Merging Harmonised Data 
+
+Use [`pointblank::has_columns`](https://rstudio.github.io/pointblank/reference/has_columns.html){target="_blank"} to ensure we only have harmonised variables.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: demo behave data validation
+#| echo: true
+
+testthat::expect_false(
+  pointblank::has_columns(
+    demo_behave_data,
+    columns = c(
+      dplyr::ends_with(".x"), 
+      dplyr::ends_with(".y")
+    )
+  )
+)
+
+testthat::expect_equal(
+  ncol(demo_behave_data), 9
+)
+
+testthat::expect_true(
+  pointblank::has_columns(
+    demo_behave_data,
+    columns = c(
+      "age_years", "sex",
+      "height_cm", "weight_kg", "bsa_m2", "bmi",
+      "smoke_current", "smoke_past"
+    )
+  )
+) 
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: penguin error 3
+#| echo: true
+#| code-line-numbers: "|2,9|24-29"
+#| warning: true
+#| error: true
+
+three_penguins <- tibble::tribble(
+  ~samp_id, ~species,    ~island,
+  1,        "Adelie",    "Torgersen",
+  2,        "Gentoo",    "Biscoe",
+  3,        "Chinstrap", "Dream"
+)
+
+weight_extra <- tibble::tribble(
+  ~samp_id,  ~island,
+  1,         "Torgersen",
+  2,         "Biscoe",
+  3,         "Dream"
+)
+
+three_penguins <- three_penguins |> 
+  dplyr::inner_join(
+    y = weight_extra,
+    by = dplyr::join_by("samp_id"),
+    unmatched = "error",
+    relationship = "one-to-one"
+ )
+
+three_penguins |> 
+  pointblank::has_columns(
+    columns = c(
+      dplyr::ends_with(".x"), 
+      dplyr::ends_with(".y")
+      )
+  )
+
+colnames(three_penguins)
+
+```
+
+:::
+
+::::
+
+## Tehcncal Report Challenge
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::{.fragment}
+
+One variable mapping report takes at least one page.
+
+:::
+
+:::{.fragment}
+
+On average, a clinical trial will have a few hundred variables.
+
+* [One hundred columns for clinical and demographics.]{style="font-size: 80%;"}
+* [Two hundred columns for medication.]{style="font-size: 80%;"}
+
+:::
+
+:::{.fragment}
+
+Harmonisation report can have at least a few hundreds pages for each cohort.
+
+There is a need to automate the creation of these reports.
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+![](images/overload.jpg){fig-alt="Businessman in pile of documents asking for help." fig-align="center" width="87%"}
+
+[Businessman in pile of documents asking for help by [Amonrat Rungreangfangsai](https://www.vecteezy.com/vector-art/464741-businessman-in-pile-of-documents-asking-for-help-over-workload){target="_blank"}]{style="font-size: 60%;"}
+
+:::
+
+::::
+
 ## Quarto Books/Websites
 
 ```{=html}
@@ -885,10 +2033,149 @@ harmonisation/                            # Root of the project template.
 <iframe width="1000" height="550" src="https://quarto.org/" title="Quarto Homepage" ></iframe>
 ```
 
-## Workflow with collaborators
+## Harmonisation Report Types
 
-Collaborator can send the raw data once and you keep updating the cleaned data for harmonsation.
+Collaborator wants different ways to report how data harmonisation is done.
 
-![](images/collaborator_no_change_raw_data_workflow.png){fig-alt="Picture showing a top workfow to first clean data for harmonisation before doing the actual harmonisation. Bottom workflow to verfiy with the collaborators and update the clean data for harmonisation periodically" fig-align="center" width="80%"}
+![](images/documentation_types.png){fig-alt="Four major documentation type." fig-align="center" width="70%"}
 
-[[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}.]{style="font-size: 60%;"}
+[The documentation system by [Divio](https://docs.divio.com/documentation-system/){target="_blank"}]{style="font-size: 60%;"}
+
+
+## Harmonisation Report Types
+
+Collaborator wants different ways to report how data harmonisation is done.
+
+![](images/documentation_types_for_harmonisation.png){fig-alt="Four major documentation type in terms of data harmonisation" fig-align="center" width="70%"}
+
+
+## Automated Technical Report (Reference)
+
+[We create a `_quarto.yml` file and relevant Quarto files for each cohort.]{style="font-size: 80%;"}
+
+![](images/report_for_cohort_A.png){fig-alt="A preview of the _quarto.yml and relevant Quarto files for Cohort A." fig-align="center" width="60%"}
+
+## Automated Technical Report (Reference)
+
+[We create an `index.qmd` file for each kind of report.]{style="font-size: 80%;"}
+
+![](images/index_report_qmd.png){fig-alt="A preview of the index qmd file for technical reporting." fig-align="center" width="50%"}
+
+## Automated Technical Report (Reference)
+
+Create a script to generate technical reports in pdf, word and html for each cohort.
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+```{r}
+#| label: copy index report qmd
+#| echo: true
+#| eval: false
+
+# Copy the right index.qmd 
+# file
+
+index_qmd_file <- paste0(
+  "_index_",
+  "report",
+  ".qmd"
+)
+
+fs::file_copy(
+  path = here::here(
+    "templates",
+    "index-qmd",
+    index_qmd_file),
+  new_path = here::here(
+    "index.qmd"
+  ),
+  overwrite = TRUE
+)
+
+```
+
+:::
+
+::: {.column width="70%"}
+
+![](images/index_qmd_copy.png){fig-alt="index_report.qmd file copied and changed to index.qmd" fig-align="center" width="100%"}
+:::
+
+::::
+
+## Automated Technical Report (Reference)
+
+Create a script to generate technical reports in pdf, word and html for each cohort.
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+```{r}
+#| label: automated report
+#| echo: true
+#| eval: false
+#| code-line-numbers: "|5-21|23-26|29-37"
+
+
+copy_and_render <- function(
+    cohort
+) {
+
+  # Copy quarto.yml file
+  # for each cohort
+  
+  quarto_yml_file <- paste0(
+    "_quarto_",
+    cohort,
+    ".yml"
+  )
+
+  fs::file_copy(
+    path = here::here(
+      "templates",
+      "quarto-yaml",
+      quarto_yml_file),
+    new_path = here::here("_quarto.yml"),
+    overwrite = TRUE
+  )
+  
+  # Render each cohort
+  quarto::quarto_render(
+    as_job = FALSE
+  )
+}
+
+cohort_name <- c("Cohort_A", 
+                 "Cohort_B")
+
+purrr::walk(
+  .x = cohort_name,
+  .f = ~copy_and_render(
+    cohort = .x
+  )
+)
+
+```
+
+:::
+
+::: {.column width="70%"}
+
+![](images/quarto_yml_copy.png){fig-alt="_quarto_Cohort_A.yml file copied and changed to _quarto.qmd" fig-align="center" width="100%"}
+:::
+
+::::
+
+## Automated Technical Report (Reference)
+
+![](images/technical_report.png){fig-alt="Output of technical report." fig-align="center" width="80%"}
+
+
+## Automated Summary Report (How-to-Guide)
+
+[A similar method is done to create a summary report in word using [`flextable`](https://davidgohel.github.io/flextable/).]{style="font-size: 80%;"}
+
+![](images/summary_report.png){fig-alt="Preview of summary report." fig-align="center" width="80%"}

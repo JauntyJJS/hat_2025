@@ -196,6 +196,22 @@
   <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
   <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
   <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="index_files/libs/core-js-2.5.3/shim.min.js"></script>
+
+  <script src="index_files/libs/react-18.2.0/react.min.js"></script>
+
+  <script src="index_files/libs/react-18.2.0/react-dom.min.js"></script>
+
+  <script src="index_files/libs/reactwidget-2.0.0/react-tools.js"></script>
+
+  <link href="index_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+  <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <link href="index_files/libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+
+  <script src="index_files/libs/reactable-binding-0.4.4/reactable.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -219,7 +235,7 @@ Jeremy Selva <a href="https://www.linkedin.com/in/jeremy-selva-085b9112a/" targe
 <p>Research Officer from <a href="https://www.nhcs.com.sg/" target="_blank">National Heart Centre Singapore</a> who collects, cleans and harmonises clinical data.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/allison_horst2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/allison_horst2.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster."></a></p>
+<p><a href="images/allison_horst2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/allison_horst2.png" class="quarto-figure quarto-figure-center" style="width:65.0%" alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster."></a></p>
 </figure>
 </div>
 <p><span style="font-size: 60%;">Taming the Data Beast from <a href="https://www.pipinghotdata.com/workshops/2023-06-06-cleaning-medical-data-with-r/" target="_blank">“Cleaning Medical Data with R”</a> workshop by Shannon Pileggi, Crystal Lewis and Peter Higgins presented at R/Medicine 2023. Illustrated by <a href="https://allisonhorst.com/" target="_blank">Allison Horst</a></span>.</p>
@@ -1271,6 +1287,856 @@ style use fill: lightyellow
 <p><a href="https://kpuka.ca/resources/quarto_intro.html" target="_blank">https://kpuka.ca/resources/quarto_intro.html</a></p>
 <iframe width="1000" height="550" src="https://kpuka.ca/resources/quarto_intro.html" title="Introduction to Quarto by Klajdi Puka, PhD"></iframe>
 </section>
+<section id="workflow-with-collaborators" class="slide level2">
+<h2>Workflow with collaborators</h2>
+<p>Collaborator can send the raw data once and you keep updating the cleaned data for harmonsation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/collaborator_no_change_raw_data_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img data-src="images/collaborator_no_change_raw_data_workflow.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Picture showing a top workfow to first clean data for harmonisation before doing the actual harmonisation. Bottom workflow to verfiy with the collaborators and update the clean data for harmonisation periodically"></a></p>
+</figure>
+</div>
+<p><span style="font-size: 60%;"><a href="https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration" target="_blank">Dataset vectors</a> by <a href="https://www.vecteezy.com/members/vectoroartworks" target="_blank">Vectora Artworks</a> from <a href="https://www.vecteezy.com/" target="_blank">Vecteezy</a>.</span></p>
+</section>
+<section id="workflow-with-collaborators-1" class="slide level2">
+<h2>Workflow with collaborators</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/collaborator_request_3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img data-src="images/collaborator_request_3.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Figure showing the collaborator saying that they need the updated raw data in addition to the harmonised data."></a></p>
+</figure>
+</div>
+<p><span style="font-size: 60%;"><a href="https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background" target="_blank">Cheerful Businessman</a> designed by <a href="https://www.vecteezy.com/members/iftikharalam" target="_blank">Iftikhar Alam</a> from <a href="http://www.vecteezy.com" target="_blank">Vecteezy</a> and <a href="https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man" target="_blank">Medical Doctor Man</a> from <a href="https://creazilla.com/" target="_blank">Creazilla</a></span>.</p>
+</section>
+<section id="workflow-with-collaborators-2" class="slide level2">
+<h2>Workflow with collaborators</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/collaborator_request_3_met.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img data-src="images/collaborator_request_3_met.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Figure showing the data analyst providing the updated raw data and harmonised data."></a></p>
+</figure>
+</div>
+<p><span style="font-size: 60%;"><a href="https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background" target="_blank">Cheerful Businessman</a> designed by <a href="https://www.vecteezy.com/members/iftikharalam" target="_blank">Iftikhar Alam</a> from <a href="http://www.vecteezy.com" target="_blank">Vecteezy</a> and <a href="https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man" target="_blank">Medical Doctor Man</a> from <a href="https://creazilla.com/" target="_blank">Creazilla</a></span>.</p>
+</section>
+<section id="workflow-with-collaborators-3" class="slide level2">
+<h2>Workflow with collaborators</h2>
+<p>Collaborator can update the raw data. For example, adding new clinical data, add more patients, correct errors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/collaborator_change_raw_data_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img data-src="images/collaborator_change_raw_data_workflow.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Picture showing a top workfow to first clean data for harmonisation before doing the actual harmonisation. Bottom workflow to verfiy with the collaborators and update the raw data for harmonisation periodically"></a></p>
+</figure>
+</div>
+<p><span style="font-size: 60%;"><a href="https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration" target="_blank">Dataset vectors</a> by <a href="https://www.vecteezy.com/members/vectoroartworks" target="_blank">Vectora Artworks</a> from <a href="https://www.vecteezy.com/" target="_blank">Vecteezy</a>.</span></p>
+</section>
+<section id="workflow-with-collaborators-4" class="slide level2">
+<h2>Workflow with collaborators</h2>
+<p>New version means new bugs or reopen issues to fix. Is there an automated way to catch warnings/issues when reading these updated files ?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/collaborator_change_raw_data_issue.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img data-src="images/collaborator_change_raw_data_issue.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Picture showing that new version of raw data sent by collaborator can give new issues to a supposedly fixed problem"></a></p>
+</figure>
+</div>
+<p><span style="font-size: 60%;"><a href="https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration" target="_blank">Dataset vectors</a> by <a href="https://www.vecteezy.com/members/vectoroartworks" target="_blank">Vectora Artworks</a> from <a href="https://www.vecteezy.com/" target="_blank">Vecteezy</a>. <a href="https://www.monkeyuser.com/2022/anticipate/" target="_blank">Anticipate</a> from <a href="https://www.monkeyuser.com/" target="_blank">MonkeyUser.com</a></span></p>
+</section>
+<section id="automated-capture-of-warnings-csv" class="slide level2">
+<h2>Automated capture of warnings (csv)</h2>
+<p>Is there an automated way to catch warnings/issues when reading csv files ?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-code-line-numbers="|9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>cohort_data_csv <span class="ot">&lt;-</span> vroom<span class="sc">::</span><span class="fu">vroom</span>(</span>
+<span id="cb9-2"><a href=""></a>  <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_csv"</span>, </span>
+<span id="cb9-3"><a href=""></a>    <span class="st">"data_to_harmonise_age_issue.csv"</span>),</span>
+<span id="cb9-4"><a href=""></a>  <span class="at">delim =</span> <span class="st">","</span>,</span>
+<span id="cb9-5"><a href=""></a>  <span class="at">col_select =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb9-6"><a href=""></a>  <span class="at">show_col_types =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-7"><a href=""></a>  <span class="at">col_types =</span> <span class="fu">list</span>(</span>
+<span id="cb9-8"><a href=""></a>    <span class="at">ID =</span> vroom<span class="sc">::</span><span class="fu">col_character</span>(), </span>
+<span id="cb9-9"><a href=""></a>    <span class="at">Age =</span> vroom<span class="sc">::</span><span class="fu">col_integer</span>()</span>
+<span id="cb9-10"><a href=""></a>  )</span>
+<span id="cb9-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="|8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="fu">head</span>(cohort_data_csv, <span class="at">n =</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  ID      Age
+  &lt;chr&gt; &lt;int&gt;
+1 B001     32
+2 B002     52
+3 B003     NA</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/age_issue_csv.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img data-src="images/age_issue_csv.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="A csv file with text data in the Age column."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="automated-capture-of-warnings-csv-1" class="slide level2">
+<h2>Automated capture of warnings (csv)</h2>
+<p>If there are issues with the data, the output of <a href="https://readr.tidyverse.org/reference/problems.html" target="_blank"><code>readr::problems</code></a> will be a tibble.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a>cohort_data_csv <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href=""></a>  vroom<span class="sc">::</span><span class="fu">problems</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 5
+    row   col expected   actual  file                                           
+  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;                                          
+1     2     2 an integer missing D:/Jeremy/PortableR/RPortableWorkDirectory/hat…
+2     4     2 an integer missing D:/Jeremy/PortableR/RPortableWorkDirectory/hat…
+3    10     2 an integer missing D:/Jeremy/PortableR/RPortableWorkDirectory/hat…
+4    17     2 an integer missing D:/Jeremy/PortableR/RPortableWorkDirectory/hat…</code></pre>
+</div>
+</div>
+<p>To check for this automatically, we can use <a href="https://rstudio.github.io/pointblank/reference/row_count_match.html" target="_blank"><code>pointblank::expect_row_count_match</code></a>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a>cohort_data_csv <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href=""></a>  vroom<span class="sc">::</span><span class="fu">problems</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">expect_row_count_match</span>(<span class="at">count =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: Row counts for the two tables did not match.
+The `expect_row_count_match()` validation failed beyond the absolute threshold level (1).
+* failure level (1) &gt;= failure threshold (1)</code></pre>
+</div>
+</div>
+</section>
+<section id="automated-capture-of-warnings-csv-2" class="slide level2">
+<h2>Automated capture of warnings (csv)</h2>
+<p>Here is a case with no issues.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a>cohort_data_csv <span class="ot">&lt;-</span> vroom<span class="sc">::</span><span class="fu">vroom</span>(</span>
+<span id="cb18-2"><a href=""></a>  <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_csv"</span>, </span>
+<span id="cb18-3"><a href=""></a>    <span class="st">"data_to_harmonise_age_issue_fixed.csv"</span>),</span>
+<span id="cb18-4"><a href=""></a>  <span class="at">delim =</span> <span class="st">","</span>,</span>
+<span id="cb18-5"><a href=""></a>  <span class="at">col_select =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb18-6"><a href=""></a>  <span class="at">show_col_types =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb18-7"><a href=""></a>  <span class="at">col_types =</span> <span class="fu">list</span>(</span>
+<span id="cb18-8"><a href=""></a>    <span class="at">ID =</span> vroom<span class="sc">::</span><span class="fu">col_character</span>(), </span>
+<span id="cb18-9"><a href=""></a>    <span class="at">Age =</span> vroom<span class="sc">::</span><span class="fu">col_integer</span>()</span>
+<span id="cb18-10"><a href=""></a>  )</span>
+<span id="cb18-11"><a href=""></a>)</span>
+<span id="cb18-12"><a href=""></a></span>
+<span id="cb18-13"><a href=""></a>cohort_data_csv <span class="sc">|&gt;</span> </span>
+<span id="cb18-14"><a href=""></a>  vroom<span class="sc">::</span><span class="fu">problems</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 0 × 5
+# ℹ 5 variables: row &lt;int&gt;, col &lt;int&gt;, expected &lt;chr&gt;, actual &lt;chr&gt;, file &lt;chr&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>cohort_data_csv <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href=""></a>  vroom<span class="sc">::</span><span class="fu">problems</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">expect_row_count_match</span>(<span class="at">count =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/age_issue_fixed_csv.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img data-src="images/age_issue_fixed_csv.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="A csv file with only integer data in the Age column."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="automated-capture-of-warnings-excel" class="slide level2">
+<h2>Automated capture of warnings (Excel)</h2>
+<p>Is there an automated way to catch warnings/issues when reading Excel files ?</p>
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>cohort_data_excel <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(</span>
+<span id="cb21-2"><a href=""></a>  <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_Excel"</span>, </span>
+<span id="cb21-3"><a href=""></a>    <span class="st">"data_to_harmonise_age_issue.xlsx"</span>),</span>
+<span id="cb21-4"><a href=""></a>  <span class="at">sheet =</span> <span class="st">"Sheet1"</span>,</span>
+<span id="cb21-5"><a href=""></a>  <span class="at">col_types =</span> <span class="fu">c</span>(</span>
+<span id="cb21-6"><a href=""></a>    <span class="st">"text"</span>, <span class="st">"numeric"</span></span>
+<span id="cb21-7"><a href=""></a>    )</span>
+<span id="cb21-8"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expecting numeric in B7 / R7C2: got 'missing'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Expecting numeric in B14 / R14C2: got 'missing'</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/age_issue_excel.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img data-src="images/age_issue_excel.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="An Excel file with text data in the Age column."></a></p>
+</figure>
+</div>
+</div></section>
+<section id="automated-capture-of-warnings-excel-1" class="slide level2">
+<h2>Automated capture of warnings (Excel)</h2>
+<p>We can read the Excel file with <a href="https://testthat.r-lib.org/reference/expect_error.html" target="_blank"><code>testthat::expect_no_condition</code></a>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" data-code-line-numbers="|1,8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href=""></a>testthat<span class="sc">::</span><span class="fu">expect_no_condition</span>(</span>
+<span id="cb24-2"><a href=""></a>  cohort_data_excel <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(</span>
+<span id="cb24-3"><a href=""></a>    <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_Excel"</span>, </span>
+<span id="cb24-4"><a href=""></a>      <span class="st">"data_to_harmonise_age_issue.xlsx"</span>),</span>
+<span id="cb24-5"><a href=""></a>    <span class="at">sheet =</span> <span class="st">"Sheet1"</span>,</span>
+<span id="cb24-6"><a href=""></a>    <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"text"</span>, <span class="st">"numeric"</span>)</span>
+<span id="cb24-7"><a href=""></a>  )</span>
+<span id="cb24-8"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: Expected `... &lt;- NULL` to run without any conditions.
+ℹ Actually got a &lt;simpleWarning&gt; with text:
+  Expecting numeric in B7 / R7C2: got 'missing'</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/age_issue_excel.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img data-src="images/age_issue_excel.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="An Excel file with text data in the Age column."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="automated-capture-of-warnings-excel-2" class="slide level2">
+<h2>Automated capture of warnings (Excel)</h2>
+<p>However, this method means that you will lose the pipe workflow.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href=""></a>testthat<span class="sc">::</span><span class="fu">expect_no_condition</span>(</span>
+<span id="cb26-2"><a href=""></a>  cohort_data_excel <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(</span>
+<span id="cb26-3"><a href=""></a>    <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_Excel"</span>, </span>
+<span id="cb26-4"><a href=""></a>      <span class="st">"data_to_harmonise_age_issue_fixed.xlsx"</span>),</span>
+<span id="cb26-5"><a href=""></a>    <span class="at">sheet =</span> <span class="st">"Sheet1"</span>,</span>
+<span id="cb26-6"><a href=""></a>    <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"text"</span>, <span class="st">"numeric"</span>)</span>
+<span id="cb26-7"><a href=""></a>  )</span>
+<span id="cb26-8"><a href=""></a>)</span>
+<span id="cb26-9"><a href=""></a></span>
+<span id="cb26-10"><a href=""></a>cohort_data_excel <span class="ot">&lt;-</span> cohort_data_excel <span class="sc">|&gt;</span> </span>
+<span id="cb26-11"><a href=""></a>  <span class="co"># Check if Serial Number is unique</span></span>
+<span id="cb26-12"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">rows_distinct</span>(</span>
+<span id="cb26-13"><a href=""></a>    <span class="at">columns =</span> <span class="st">"Serial Number"</span>,</span>
+<span id="cb26-14"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/age_issue_fixed_excel.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-32"><img data-src="images/age_issue_fixed_excel.jpg" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="An Excel file with numeric data in the Age column."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="automated-capture-of-warnings-excel-3" class="slide level2">
+<h2>Automated capture of warnings (Excel)</h2>
+<p>We can use the tee pipe operator <a href="https://magrittr.tidyverse.org/reference/tee.html" target="_blank"><code>%T&gt;%</code></a> from <a href="https://magrittr.tidyverse.org/" target="_blank">magrittr</a>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="center-h">
+<p><span style="font-size: 80%;"><strong>With Issues</strong></span></p>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" data-code-line-numbers="|8,9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href=""></a>cohort_data_excel <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(</span>
+<span id="cb27-2"><a href=""></a>  <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_Excel"</span>, </span>
+<span id="cb27-3"><a href=""></a>    <span class="st">"data_to_harmonise_age_issue.xlsx"</span>),</span>
+<span id="cb27-4"><a href=""></a>  <span class="at">sheet =</span> <span class="st">"Sheet1"</span>,</span>
+<span id="cb27-5"><a href=""></a>  <span class="at">col_types =</span> <span class="fu">c</span>(</span>
+<span id="cb27-6"><a href=""></a>    <span class="st">"text"</span>, <span class="st">"numeric"</span></span>
+<span id="cb27-7"><a href=""></a>    )</span>
+<span id="cb27-8"><a href=""></a>  ) <span class="sc">%T&gt;%</span></span>
+<span id="cb27-9"><a href=""></a>  testthat<span class="sc">::</span><span class="fu">expect_no_condition</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: Expected `.` to run without any conditions.
+ℹ Actually got a &lt;simpleWarning&gt; with text:
+  Expecting numeric in B7 / R7C2: got 'missing'</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="center-h">
+<p><span style="font-size: 80%;"><strong>No Issues</strong></span></p>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29" data-code-line-numbers="|6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>cohort_data_excel_2 <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(</span>
+<span id="cb29-2"><a href=""></a>  <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>, <span class="st">"Cohort_Excel"</span>, </span>
+<span id="cb29-3"><a href=""></a>    <span class="st">"data_to_harmonise_age_issue_fixed.xlsx"</span>),</span>
+<span id="cb29-4"><a href=""></a>  <span class="at">sheet =</span> <span class="st">"Sheet1"</span>,</span>
+<span id="cb29-5"><a href=""></a>  <span class="at">col_types =</span> <span class="fu">c</span>(<span class="st">"text"</span>, <span class="st">"numeric"</span>)</span>
+<span id="cb29-6"><a href=""></a>) <span class="sc">%T&gt;%</span></span>
+<span id="cb29-7"><a href=""></a>testthat<span class="sc">::</span><span class="fu">expect_no_condition</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb29-8"><a href=""></a><span class="co"># Check if Serial Number is unique</span></span>
+<span id="cb29-9"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">rows_distinct</span>(</span>
+<span id="cb29-10"><a href=""></a>    <span class="at">columns =</span> <span class="st">"Serial Number"</span>,</span>
+<span id="cb29-11"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div></div>
+</section>
+<section id="variable-mapping" class="slide level2">
+<h2>Variable Mapping</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/variable_mapping_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img data-src="images/variable_mapping_workflow.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Variable Mapping Reporting Workflow. Starting with introducing the mapping procedure, writing code to do mapping ans validation, showing that the code works, clean up data for merging."></a></p>
+</figure>
+</div>
+</section>
+<section id="variable-mapping-1" class="slide level2">
+<h2>Variable Mapping</h2>
+<p>Let take this data set as an example.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href=""></a>cohort_csv_data <span class="ot">&lt;-</span> vroom<span class="sc">::</span><span class="fu">vroom</span>(</span>
+<span id="cb30-2"><a href=""></a>  <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data-raw"</span>,</span>
+<span id="cb30-3"><a href=""></a>                    <span class="st">"Cohort_csv"</span>,</span>
+<span id="cb30-4"><a href=""></a>                    <span class="st">"data_to_harmonise.csv"</span>),</span>
+<span id="cb30-5"><a href=""></a>  <span class="at">delim =</span> <span class="st">","</span>,</span>
+<span id="cb30-6"><a href=""></a>  <span class="at">col_select =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>,</span>
+<span id="cb30-7"><a href=""></a>  <span class="at">show_col_types =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb30-8"><a href=""></a>  <span class="at">col_types =</span> <span class="fu">list</span>(</span>
+<span id="cb30-9"><a href=""></a>    <span class="at">ID =</span> vroom<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb30-10"><a href=""></a>    <span class="at">Age =</span> vroom<span class="sc">::</span><span class="fu">col_integer</span>(),</span>
+<span id="cb30-11"><a href=""></a>    <span class="at">Sex =</span> vroom<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb30-12"><a href=""></a>    <span class="at">Height =</span> vroom<span class="sc">::</span><span class="fu">col_double</span>(),</span>
+<span id="cb30-13"><a href=""></a>    <span class="at">Weight =</span> vroom<span class="sc">::</span><span class="fu">col_double</span>(),</span>
+<span id="cb30-14"><a href=""></a>    <span class="st">`</span><span class="at">Smoke History</span><span class="st">`</span> <span class="ot">=</span> vroom<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb30-15"><a href=""></a>    <span class="st">`</span><span class="at">Chest Pain Character</span><span class="st">`</span> <span class="ot">=</span> vroom<span class="sc">::</span><span class="fu">col_character</span>(),</span>
+<span id="cb30-16"><a href=""></a>    <span class="at">Dyspnea =</span> vroom<span class="sc">::</span><span class="fu">col_character</span>()</span>
+<span id="cb30-17"><a href=""></a>    )</span>
+<span id="cb30-18"><a href=""></a>  ) <span class="sc">|&gt;</span>  </span>
+<span id="cb30-19"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">cohort_unique_id =</span> <span class="st">"ID"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb30-20"><a href=""></a>  <span class="co"># Remove rows when the ID value is NA</span></span>
+<span id="cb30-21"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(.data[[<span class="st">"cohort_unique_id"</span>]])) <span class="sc">|&gt;</span></span>
+<span id="cb30-22"><a href=""></a>  <span class="co"># Remove white spaces in column names</span></span>
+<span id="cb30-23"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">rename_all</span>(stringr<span class="sc">::</span>str_trim) <span class="sc">|&gt;</span> </span>
+<span id="cb30-24"><a href=""></a>  <span class="co"># Check if cohort id is unique</span></span>
+<span id="cb30-25"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">rows_distinct</span>(</span>
+<span id="cb30-26"><a href=""></a>    <span class="at">columns =</span> <span class="st">"cohort_unique_id"</span>,</span>
+<span id="cb30-27"><a href=""></a>  )</span>
+<span id="cb30-28"><a href=""></a></span>
+<span id="cb30-29"><a href=""></a>cohort_csv_data <span class="sc">|&gt;</span> </span>
+<span id="cb30-30"><a href=""></a>  vroom<span class="sc">::</span><span class="fu">problems</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb30-31"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">expect_row_count_match</span>(<span class="at">count =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="reactable-51f417895a01" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="reactable-51f417895a01">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"cohort_unique_id":["B001","B002","B003","B004","B005","B006","B007","B008","B009","B010","B011","B012","B013","B014","B015","B016","B017","B018","B019","B020"],"Age":[32,52,80,70,70,53,86,28,34,66,47,29,51,23,75,41,42,56,45,50],"Sex":["Female","Female","Male","Male","Female","Female","Male","Female","Female","Female","Male","Female","Male","Female","Male","Male","Female","Male","Female","Female"],"Height":[170,167,184,160,155,168,171,153,174,182,180,166,188,160,173,175,169,167,178,174],"Weight":[63,71,77,83,61,59,82,80,69,74,73,64,80,55,70,85,69,70,93,72],"Smoke History":["non-smoker","current smoker","non-smoker","past smoker","current smoker","non-smoker","non-smoker","past smoker","non-smoker","current smoker","past smoker","non-smoker","current smoker","non-smoker","past smoker","non-smoker","","past smoker","non-smoker","current smoker"],"Chest Pain Character":["atypical","no chest pain","atypical","no chest pain","typical","nonanginal","no chest pain","no chest pain","nonanginal","no chest pain","atypical","nonanginal","nonanginal","no chest pain","typical","nonanginal","typical","no chest pain","no chest pain","no chest pain"],"Dyspnea":["no","yes","yes","yes","no","yes","no","no","yes","no","no","yes","no","no","yes","no","no","no","no","yes"]},"columns":[{"id":"cohort_unique_id","name":"cohort_unique_id","type":"character"},{"id":"Age","name":"Age","type":"numeric"},{"id":"Sex","name":"Sex","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter Sex","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f417895a01', 'Sex', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["Male"]},{"name":"option","attribs":{},"children":["Female"]}]}},{"id":"Height","name":"Height","type":"numeric"},{"id":"Weight","name":"Weight","type":"numeric"},{"id":"Smoke History","name":"Smoke History","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter Smoke History","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f417895a01', 'Smoke History', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["non-smoker"]},{"name":"option","attribs":{},"children":["past smoker"]},{"name":"option","attribs":{},"children":["current smoker"]},{"name":"option","attribs":{},"children":[""]}]}},{"id":"Chest Pain Character","name":"Chest Pain Character","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter Chest Pain Character","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f417895a01', 'Chest Pain Character', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["no chest pain"]},{"name":"option","attribs":{},"children":["nonanginal"]},{"name":"option","attribs":{},"children":["atypical"]},{"name":"option","attribs":{},"children":["typical"]}]}},{"id":"Dyspnea","name":"Dyspnea","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter Dyspnea","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f417895a01', 'Dyspnea', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["no"]},{"name":"option","attribs":{},"children":["yes"]}]}}],"filterable":true,"defaultPageSize":5,"paginationType":"jump","style":{"fontSize":"1rem"},"elementId":"reactable-51f417895a01","dataKey":"1bb378952ee6fd0d93be0a06aa08a9f8"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.2.filterMethod","tag.attribs.columns.2.filterInput.attribs.onChange","tag.attribs.columns.5.filterMethod","tag.attribs.columns.5.filterInput.attribs.onChange","tag.attribs.columns.6.filterMethod","tag.attribs.columns.6.filterInput.attribs.onChange","tag.attribs.columns.7.filterMethod","tag.attribs.columns.7.filterInput.attribs.onChange"],"jsHooks":[]}</script>
+<button onclick="Reactable.downloadDataCSV('reactable-51f417895a01', 'download.csv')">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
+Download as CSV
+</button>
+</div>
+</div>
+</div></div>
+</section>
+<section id="variable-mapping-2" class="slide level2">
+<h2>Variable Mapping</h2>
+<p>Let the reader know how the collaborator’s data <code>Smoke History</code> is going to be mapped.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/mapping_procedure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img data-src="images/mapping_procedure.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Documentation indicating how the collaborator's data Smoke History is going to be mapped or harmonised in Quarto code and output."></a></p>
+</figure>
+</div>
+</section>
+<section id="variable-mapping-3" class="slide level2">
+<h2>Variable Mapping</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/code_to_map.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img data-src="images/code_to_map.png" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="Code to do mapping."></a></p>
+</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" data-code-line-numbers="|2,3|5-14|15-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>smoking_data <span class="ot">&lt;-</span> cohort_csv_data <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"cohort_unique_id"</span>, </span>
+<span id="cb31-3"><a href=""></a>                  <span class="st">"Smoke History"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb31-4"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb31-5"><a href=""></a>    <span class="at">smoke_current =</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb31-6"><a href=""></a>      <span class="fu">is.na</span>(.data[[<span class="st">"Smoke History"</span>]]) <span class="sc">~</span> <span class="st">"-1"</span>,</span>
+<span id="cb31-7"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]] <span class="sc">==</span> <span class="st">"non-smoker"</span> <span class="sc">~</span> <span class="st">"0"</span>,</span>
+<span id="cb31-8"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]] <span class="sc">==</span> <span class="st">"past smoker"</span> <span class="sc">~</span> <span class="st">"0"</span>,</span>
+<span id="cb31-9"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]] <span class="sc">==</span> <span class="st">"current smoker"</span> <span class="sc">~</span> <span class="st">"1"</span>,</span>
+<span id="cb31-10"><a href=""></a>      <span class="at">.default =</span> <span class="cn">NA_character_</span></span>
+<span id="cb31-11"><a href=""></a>    ),</span>
+<span id="cb31-12"><a href=""></a>    <span class="at">smoke_current =</span> forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(</span>
+<span id="cb31-13"><a href=""></a>      .data[[<span class="st">"smoke_current"</span>]],</span>
+<span id="cb31-14"><a href=""></a>      <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>)), </span>
+<span id="cb31-15"><a href=""></a>    <span class="at">smoke_past =</span> dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb31-16"><a href=""></a>      <span class="fu">is.na</span>(.data[[<span class="st">"Smoke History"</span>]]) <span class="sc">~</span> <span class="st">"-1"</span>,</span>
+<span id="cb31-17"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]] <span class="sc">==</span> <span class="st">"non-smoker"</span> <span class="sc">~</span> <span class="st">"0"</span>,</span>
+<span id="cb31-18"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]] <span class="sc">==</span> <span class="st">"past smoker"</span> <span class="sc">~</span> <span class="st">"1"</span>,</span>
+<span id="cb31-19"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]] <span class="sc">==</span> <span class="st">"current smoker"</span> <span class="sc">~</span> <span class="st">"0"</span>,</span>
+<span id="cb31-20"><a href=""></a>      <span class="at">.default =</span> <span class="cn">NA_character_</span></span>
+<span id="cb31-21"><a href=""></a>    ),</span>
+<span id="cb31-22"><a href=""></a>    <span class="at">smoke_past =</span> forcats<span class="sc">::</span><span class="fu">fct_relevel</span>(</span>
+<span id="cb31-23"><a href=""></a>      .data[[<span class="st">"smoke_past"</span>]],</span>
+<span id="cb31-24"><a href=""></a>      <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>)),</span>
+<span id="cb31-25"><a href=""></a>    <span class="st">`</span><span class="at">Smoke History</span><span class="st">`</span> <span class="ot">=</span> forcats<span class="sc">::</span><span class="fu">fct</span>(</span>
+<span id="cb31-26"><a href=""></a>      .data[[<span class="st">"Smoke History"</span>]]</span>
+<span id="cb31-27"><a href=""></a>    )</span>
+<span id="cb31-28"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/smoking_history_documentation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img data-src="images/smoking_history_documentation.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Documentation of harmonisation of smoking history."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="variable-mapping-4" class="slide level2">
+<h2>Variable Mapping</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/code_to_validate.png" class="lightbox" data-gallery="quarto-lightbox-gallery-37"><img data-src="images/code_to_validate.png" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="Code to do validation."></a></p>
+</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" data-code-line-numbers="|2-5|6-12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href=""></a>smoking_data <span class="ot">&lt;-</span> smoking_data <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">col_vals_in_set</span>(</span>
+<span id="cb32-3"><a href=""></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"smoke_current"</span>, <span class="st">"smoke_past"</span>),</span>
+<span id="cb32-4"><a href=""></a>    <span class="at">set =</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>, <span class="st">"-1"</span>)</span>
+<span id="cb32-5"><a href=""></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb32-6"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">col_vals_expr</span>(</span>
+<span id="cb32-7"><a href=""></a>    <span class="at">expr =</span> pointblank<span class="sc">::</span><span class="fu">expr</span>(</span>
+<span id="cb32-8"><a href=""></a>      (.data[[<span class="st">"smoke_current"</span>]] <span class="sc">==</span> <span class="st">"1"</span> <span class="sc">&amp;</span> .data[[<span class="st">"smoke_past"</span>]] <span class="sc">==</span> <span class="st">"0"</span>) <span class="sc">|</span></span>
+<span id="cb32-9"><a href=""></a>      (.data[[<span class="st">"smoke_current"</span>]] <span class="sc">==</span> <span class="st">"-1"</span> <span class="sc">&amp;</span> .data[[<span class="st">"smoke_past"</span>]] <span class="sc">==</span> <span class="sc">-</span><span class="st">"1"</span>) <span class="sc">|</span></span>
+<span id="cb32-10"><a href=""></a>      (.data[[<span class="st">"smoke_current"</span>]] <span class="sc">==</span> <span class="st">"0"</span> <span class="sc">&amp;</span> .data[[<span class="st">"smoke_past"</span>]] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"0"</span>, <span class="st">"1"</span>))</span>
+<span id="cb32-11"><a href=""></a>    )</span>
+<span id="cb32-12"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/smoking_history_validation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-38"><img data-src="images/smoking_history_validation.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Documentation of harmonisation of smoking history."></a></p>
+</figure>
+</div>
+</div></div>
+<p><span style="font-size: 80%;">Reference: <a href="https://github.com/rstudio/pointblank/issues/578" target="_blank">https://github.com/rstudio/pointblank/issues/578</a></span></p>
+</section>
+<section id="variable-mapping-5" class="slide level2">
+<h2>Variable Mapping</h2>
+<p>Make use of Quarto’s <a href="https://quarto.org/docs/computations/parameters.html" target="_blank">parameters</a>, <a href="https://quarto.org/docs/authoring/conditional.html" target="_blank">conditional content</a> and <code>!expr</code> <a href="https://quarto.org/docs/tools/rstudio.html#knitr-engine" target="_blank">knitr engine</a> syntax to choose what code/items to run/display on your html, pdf or word report.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/example_works.png" class="lightbox" data-gallery="quarto-lightbox-gallery-39"><img data-src="images/example_works.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Show examples that the code works."></a></p>
+</figure>
+</div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>your_quarto_script.qmd</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33" data-filename="your_quarto_script.qmd"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb33-2"><a href=""></a>params<span class="sc">:</span></span>
+<span id="cb33-3"><a href=""></a>  show_table<span class="sc">:</span> <span class="cn">TRUE</span></span>
+<span id="cb33-4"><a href=""></a><span class="sc">---</span></span>
+<span id="cb33-5"><a href=""></a></span>
+<span id="cb33-6"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="cb33-7"><a href=""></a><span class="at">#| label: output type</span></span>
+<span id="cb33-8"><a href=""></a><span class="at">#| echo: false</span></span>
+<span id="cb33-9"><a href=""></a><span class="at">#| warning: false</span></span>
+<span id="cb33-10"><a href=""></a><span class="at">#| message: false</span></span>
+<span id="cb33-11"><a href=""></a></span>
+<span id="cb33-12"><a href=""></a><span class="at">out_type &lt;- knitr::opts_chunk$get("rmarkdown.pandoc.to")</span></span>
+<span id="cb33-13"><a href=""></a><span class="st">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/print_reactable.png" class="lightbox" data-gallery="quarto-lightbox-gallery-40"><img data-src="images/print_reactable.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Code to print the reactable in html file."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="variable-mapping-6" class="slide level2">
+<h2>Variable Mapping</h2>
+<p>Parameterized Quarto Reports Improve Understanding of Soil Health - <a href="https://www.youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp" target="_blank">Posit Conference in 2023</a> by <a href="https://jadeyryan.com/" target="_blank">Jadey Ryan</a>.</p>
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/lbE5uOqfT70?si=kvtl0rbJt_jU4oBW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+</section>
+<section id="variable-mapping-7" class="slide level2">
+<h2>Variable Mapping</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/example_works.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Show examples that the code works."> <img data-src="images/print_reactable.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Code to print the reactable in html file."></p>
+</div><div class="column" style="width:50%;">
+<div class="center-h">
+<p><span style="font-size: 80%;"><strong>Html Output</strong></span></p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="reactable-51f423d74e76" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="reactable-51f423d74e76">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"cohort_unique_id":["B001","B002","B003","B004","B005","B006","B007","B008","B009","B010","B011","B012","B013","B014","B015","B016","B017","B018","B019","B020"],"Smoke History":["non-smoker","current smoker","non-smoker","past smoker","current smoker","non-smoker","non-smoker","past smoker","non-smoker","current smoker","past smoker","non-smoker","current smoker","non-smoker","past smoker","non-smoker","","past smoker","non-smoker","current smoker"],"smoke_current":["0","1","0","0","1","0","0","0","0","1","0","0","1","0","0","0","-1","0","0","1"],"smoke_past":["0","0","0","1","0","0","0","1","0","0","1","0","0","0","1","0","-1","1","0","0"]},"columns":[{"id":"cohort_unique_id","name":"cohort_unique_id","type":"character"},{"id":"Smoke History","name":"Smoke History","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter Smoke History","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f423d74e76', 'Smoke History', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["non-smoker"]},{"name":"option","attribs":{},"children":["current smoker"]},{"name":"option","attribs":{},"children":["past smoker"]},{"name":"option","attribs":{},"children":[""]}]}},{"id":"smoke_current","name":"smoke_current","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter smoke_current","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f423d74e76', 'smoke_current', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["0"]},{"name":"option","attribs":{},"children":["1"]},{"name":"option","attribs":{},"children":["-1"]}]}},{"id":"smoke_past","name":"smoke_past","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter smoke_past","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f423d74e76', 'smoke_past', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["0"]},{"name":"option","attribs":{},"children":["1"]},{"name":"option","attribs":{},"children":["-1"]}]}}],"filterable":true,"defaultPageSize":5,"paginationType":"jump","style":{"fontSize":"1rem"},"elementId":"reactable-51f423d74e76","dataKey":"00a432c68181b40127257a47afd4a9a2"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.1.filterMethod","tag.attribs.columns.1.filterInput.attribs.onChange","tag.attribs.columns.2.filterMethod","tag.attribs.columns.2.filterInput.attribs.onChange","tag.attribs.columns.3.filterMethod","tag.attribs.columns.3.filterInput.attribs.onChange"],"jsHooks":[]}</script>
+<button onclick="Reactable.downloadDataCSV('reactable-51f423d74e76', 'download.csv')">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
+Download as CSV
+</button>
+</div>
+</div>
+</div></div>
+</section>
+<section id="variable-mapping-8" class="slide level2">
+<h2>Variable Mapping</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/example_works.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Show examples that the code works."> <img data-src="images/print_code_pdf.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Code to print the table in pdf file."></p>
+</div><div class="column" style="width:50%;">
+<div class="center-h">
+<p><span style="font-size: 80%;"><strong>Pdf Output</strong></span></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/print_pdf.png" class="lightbox" data-gallery="quarto-lightbox-gallery-41"><img data-src="images/print_pdf.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Output code in pdf file."></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/print_pdf_2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-42"><img data-src="images/print_pdf_2.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="Output table in pdf file."></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="variable-mapping-9" class="slide level2">
+<h2>Variable Mapping</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/clean_for_merging.png" class="lightbox" data-gallery="quarto-lightbox-gallery-43"><img data-src="images/clean_for_merging.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="Clean for merging."></a></p>
+</figure>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href=""></a>smoking_data <span class="ot">&lt;-</span> smoking_data <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">"Smoke History"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="reactable-51f43f961531" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="reactable-51f43f961531">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"cohort_unique_id":["B001","B002","B003","B004","B005","B006","B007","B008","B009","B010","B011","B012","B013","B014","B015","B016","B017","B018","B019","B020"],"smoke_current":["0","1","0","0","1","0","0","0","0","1","0","0","1","0","0","0","-1","0","0","1"],"smoke_past":["0","0","0","1","0","0","0","1","0","0","1","0","0","0","1","0","-1","1","0","0"]},"columns":[{"id":"cohort_unique_id","name":"cohort_unique_id","type":"character"},{"id":"smoke_current","name":"smoke_current","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter smoke_current","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f43f961531', 'smoke_current', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["0"]},{"name":"option","attribs":{},"children":["1"]},{"name":"option","attribs":{},"children":["-1"]}]}},{"id":"smoke_past","name":"smoke_past","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter smoke_past","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f43f961531', 'smoke_past', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["0"]},{"name":"option","attribs":{},"children":["1"]},{"name":"option","attribs":{},"children":["-1"]}]}}],"filterable":true,"defaultPageSize":5,"paginationType":"jump","style":{"fontSize":"1rem"},"elementId":"reactable-51f43f961531","dataKey":"a222737ea1ed9b8bc382fe2f531f6364"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.1.filterMethod","tag.attribs.columns.1.filterInput.attribs.onChange","tag.attribs.columns.2.filterMethod","tag.attribs.columns.2.filterInput.attribs.onChange"],"jsHooks":[]}</script>
+<button onclick="Reactable.downloadDataCSV('reactable-51f43f961531', 'download.csv')">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
+Download as CSV
+</button>
+</div>
+</div>
+</div></div>
+</section>
+<section id="merging-harmonised-data" class="slide level2">
+<h2>Merging Harmonised Data</h2>
+<p>Suppose we have completed harmonising a batch of clinical data.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href=""></a>age_gender_data <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a href=""></a>  <span class="fu">reactable_with_download_csv_button</span>(</span>
+<span id="cb35-3"><a href=""></a>    <span class="at">defaultPageSize =</span> <span class="dv">5</span>,</span>
+<span id="cb35-4"><a href=""></a>    <span class="at">paginationType =</span> <span class="st">"jump"</span>,</span>
+<span id="cb35-5"><a href=""></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="at">fontSize =</span> <span class="st">"1rem"</span>),</span>
+<span id="cb35-6"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="reactable-51f43c81329d" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="reactable-51f43c81329d">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"cohort_unique_id":["B001","B002","B003","B004","B005","B006","B007","B008","B009","B010","B011","B012","B013","B014","B015","B016","B017","B018","B019","B020"],"age_years":[32,52,80,70,70,53,86,28,34,66,47,29,51,23,75,41,42,56,45,50],"sex":["0","0","1","1","0","0","1","0","0","0","1","0","1","0","1","1","0","1","0","0"]},"columns":[{"id":"cohort_unique_id","name":"cohort_unique_id","type":"character"},{"id":"age_years","name":"age_years","type":"numeric"},{"id":"sex","name":"sex","type":"factor","filterMethod":"(rows, columnId, filterValue) => {\n        return rows.filter(row => row.values[columnId] === filterValue)\n      }","filterInput":{"name":"select","attribs":{"aria-label":"Filter sex","style":{"width":"100%","height":"100%"},"onChange":"function(_e){(function(event){\n          const value = event.target.value\n          Reactable.setFilter('reactable-51f43c81329d', 'sex', value === '__ALL__' ? undefined : value)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":"__ALL__"},"children":["All"]},{"name":"option","attribs":{},"children":["0"]},{"name":"option","attribs":{},"children":["1"]}]}}],"filterable":true,"defaultPageSize":5,"paginationType":"jump","style":{"fontSize":"1rem"},"elementId":"reactable-51f43c81329d","dataKey":"49f5d4ff3a8bba1632a3c75b0bb317cd"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.2.filterMethod","tag.attribs.columns.2.filterInput.attribs.onChange"],"jsHooks":[]}</script>
+<button onclick="Reactable.downloadDataCSV('reactable-51f43c81329d', 'download.csv')">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
+Download as CSV
+</button>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href=""></a>body_measurement_data <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a href=""></a>  <span class="fu">reactable_with_download_csv_button</span>(</span>
+<span id="cb36-3"><a href=""></a>    <span class="at">defaultPageSize =</span> <span class="dv">5</span>,</span>
+<span id="cb36-4"><a href=""></a>    <span class="at">paginationType =</span> <span class="st">"jump"</span>,</span>
+<span id="cb36-5"><a href=""></a>    <span class="at">style =</span> <span class="fu">list</span>(<span class="at">fontSize =</span> <span class="st">"1rem"</span>),</span>
+<span id="cb36-6"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="reactable-51f4cb844ce" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="reactable-51f4cb844ce">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"cohort_unique_id":["B001","B002","B003","B004","B005","B006","B007","B008","B009","B010","B011","B012","B013","B014","B015","B016","B017","B018","B019","B020"],"height_cm":[170,167,184,160,155,168,171,153,174,182,180,166,188,160,173,175,169,167,178,174],"weight_kg":[63,71,77,83,61,59,82,80,69,74,73,64,80,55,70,85,69,70,93,72],"bsa_m2":[1.72,1.81,1.98,1.92,1.62,1.66,1.97,1.84,1.83,1.93,1.91,1.72,2.04,1.56,1.83,2.03,1.8,1.8,2.14,1.87],"bmi":[21.8,25.46,22.74,32.42,25.39,20.9,28.04,34.17,22.79,22.34,22.53,23.23,22.63,21.48,23.39,27.76,24.16,25.1,29.35,23.78]},"columns":[{"id":"cohort_unique_id","name":"cohort_unique_id","type":"character"},{"id":"height_cm","name":"height_cm","type":"numeric"},{"id":"weight_kg","name":"weight_kg","type":"numeric"},{"id":"bsa_m2","name":"bsa_m2","type":"numeric"},{"id":"bmi","name":"bmi","type":"numeric"}],"filterable":true,"defaultPageSize":5,"paginationType":"jump","style":{"fontSize":"1rem"},"elementId":"reactable-51f4cb844ce","dataKey":"8aff10a449167f4d61dcb8648f0937e9"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<button onclick="Reactable.downloadDataCSV('reactable-51f4cb844ce', 'download.csv')">
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg>
+Download as CSV
+</button>
+</div>
+</div>
+</div></div>
+<p>How can we merge them without issues of missing rows or additional columns ?</p>
+</section>
+<section id="merging-harmonised-data-1" class="slide level2">
+<h2>Merging Harmonised Data</h2>
+<p><code>unmatched = "error"</code> in <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" target="_blank"><code>dplyr::inner_join</code></a> helps to avoid patients with no match.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" data-code-line-numbers="|4|7,11,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href=""></a>join_specification <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"cohort_unique_id"</span>)</span>
+<span id="cb37-2"><a href=""></a></span>
+<span id="cb37-3"><a href=""></a>demo_behave_data <span class="ot">&lt;-</span> cohort_csv_data <span class="sc">|&gt;</span></span>
+<span id="cb37-4"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"cohort_unique_id"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb37-5"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(age_gender_data,</span>
+<span id="cb37-6"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb37-7"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb37-8"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-9"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(body_measurement_data,</span>
+<span id="cb37-10"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb37-11"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb37-12"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-13"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(smoking_data,</span>
+<span id="cb37-14"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb37-15"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb37-16"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-17"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(<span class="fu">c</span>(<span class="st">"bsa_m2"</span>, <span class="st">"bmi"</span>),</span>
+<span id="cb37-18"><a href=""></a>                  <span class="at">.after =</span> <span class="st">"sex"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38" data-code-line-numbers="|3-4,11,18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href=""></a>three_penguins <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb38-2"><a href=""></a>  <span class="sc">~</span>samp_id, <span class="sc">~</span>species,    <span class="sc">~</span>island,</span>
+<span id="cb38-3"><a href=""></a>  <span class="dv">1</span>,        <span class="st">"Adelie"</span>,    <span class="st">"Torgersen"</span>,</span>
+<span id="cb38-4"><a href=""></a>  <span class="dv">2</span>,        <span class="st">"Gentoo"</span>,    <span class="st">"Biscoe"</span>,</span>
+<span id="cb38-5"><a href=""></a>)</span>
+<span id="cb38-6"><a href=""></a></span>
+<span id="cb38-7"><a href=""></a>weight_extra <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb38-8"><a href=""></a>  <span class="sc">~</span>samp_id,  <span class="sc">~</span>body_mass_g,</span>
+<span id="cb38-9"><a href=""></a>  <span class="dv">1</span>,         <span class="dv">3220</span>,</span>
+<span id="cb38-10"><a href=""></a>  <span class="dv">2</span>,         <span class="dv">4730</span>,</span>
+<span id="cb38-11"><a href=""></a>  <span class="dv">4</span>,         <span class="dv">4725</span></span>
+<span id="cb38-12"><a href=""></a>)</span>
+<span id="cb38-13"><a href=""></a></span>
+<span id="cb38-14"><a href=""></a>three_penguins <span class="sc">|&gt;</span> </span>
+<span id="cb38-15"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(</span>
+<span id="cb38-16"><a href=""></a>    <span class="at">y =</span> weight_extra,</span>
+<span id="cb38-17"><a href=""></a>    <span class="at">by =</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"samp_id"</span>),</span>
+<span id="cb38-18"><a href=""></a>    <span class="at">unmatched =</span> <span class="st">"error"</span></span>
+<span id="cb38-19"><a href=""></a> ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `dplyr::inner_join()`:
+! Each row of `y` must be matched by `x`.
+ℹ Row 3 of `y` was not matched.</code></pre>
+</div>
+</div>
+</div></div>
+<p><span style="font-size: 80%;">Reference: <a href="https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality" class="uri">https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality</a></span></p>
+</section>
+<section id="merging-harmonised-data-2" class="slide level2">
+<h2>Merging Harmonised Data</h2>
+<p><code>unmatched = "error"</code> in <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" target="_blank"><code>dplyr::inner_join</code></a> helps to avoid patients with no match.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" data-code-line-numbers="|7,11,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href=""></a>join_specification <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"cohort_unique_id"</span>)</span>
+<span id="cb40-2"><a href=""></a></span>
+<span id="cb40-3"><a href=""></a>demo_behave_data <span class="ot">&lt;-</span> cohort_csv_data <span class="sc">|&gt;</span></span>
+<span id="cb40-4"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"cohort_unique_id"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb40-5"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(age_gender_data,</span>
+<span id="cb40-6"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb40-7"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb40-8"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb40-9"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(body_measurement_data,</span>
+<span id="cb40-10"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb40-11"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb40-12"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb40-13"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(smoking_data,</span>
+<span id="cb40-14"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb40-15"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb40-16"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb40-17"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(<span class="fu">c</span>(<span class="st">"bsa_m2"</span>, <span class="st">"bmi"</span>),</span>
+<span id="cb40-18"><a href=""></a>                  <span class="at">.after =</span> <span class="st">"sex"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41" data-code-line-numbers="|4,10,11,18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href=""></a>three_penguins <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb41-2"><a href=""></a>  <span class="sc">~</span>samp_id, <span class="sc">~</span>species,    <span class="sc">~</span>island,</span>
+<span id="cb41-3"><a href=""></a>  <span class="dv">1</span>,        <span class="st">"Adelie"</span>,    <span class="st">"Torgersen"</span>,</span>
+<span id="cb41-4"><a href=""></a>  <span class="dv">2</span>,        <span class="st">"Gentoo"</span>,    <span class="st">"Biscoe"</span>,</span>
+<span id="cb41-5"><a href=""></a>  <span class="dv">3</span>,        <span class="st">"Chinstrap"</span>, <span class="st">"Dream"</span></span>
+<span id="cb41-6"><a href=""></a>)</span>
+<span id="cb41-7"><a href=""></a></span>
+<span id="cb41-8"><a href=""></a>weight_extra <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb41-9"><a href=""></a>  <span class="sc">~</span>samp_id,  <span class="sc">~</span>body_mass_g,</span>
+<span id="cb41-10"><a href=""></a>  <span class="dv">1</span>,         <span class="dv">3220</span>,</span>
+<span id="cb41-11"><a href=""></a>  <span class="dv">3</span>,         <span class="dv">4725</span></span>
+<span id="cb41-12"><a href=""></a>)</span>
+<span id="cb41-13"><a href=""></a></span>
+<span id="cb41-14"><a href=""></a>three_penguins <span class="sc">|&gt;</span> </span>
+<span id="cb41-15"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(</span>
+<span id="cb41-16"><a href=""></a>    <span class="at">y =</span> weight_extra,</span>
+<span id="cb41-17"><a href=""></a>    <span class="at">by =</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"samp_id"</span>),</span>
+<span id="cb41-18"><a href=""></a>    <span class="at">unmatched =</span> <span class="st">"error"</span></span>
+<span id="cb41-19"><a href=""></a> ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `dplyr::inner_join()`:
+! Each row of `x` must have a match in `y`.
+ℹ Row 2 of `x` does not have a match.</code></pre>
+</div>
+</div>
+</div></div>
+<p><span style="font-size: 80%;">Reference: <a href="https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality" class="uri">https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality</a></span></p>
+</section>
+<section id="merging-harmonised-data-3" class="slide level2">
+<h2>Merging Harmonised Data</h2>
+<p><code>relationship = "one-to-one"</code> in <a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" target="_blank"><code>dplyr::inner_join</code></a> helps to avoid patients with multiple match.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43" data-code-line-numbers="|8,12,16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href=""></a>join_specification <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"cohort_unique_id"</span>)</span>
+<span id="cb43-2"><a href=""></a></span>
+<span id="cb43-3"><a href=""></a>demo_behave_data <span class="ot">&lt;-</span> cohort_csv_data <span class="sc">|&gt;</span></span>
+<span id="cb43-4"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"cohort_unique_id"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb43-5"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(age_gender_data,</span>
+<span id="cb43-6"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb43-7"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb43-8"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb43-9"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(body_measurement_data,</span>
+<span id="cb43-10"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb43-11"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb43-12"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb43-13"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(smoking_data,</span>
+<span id="cb43-14"><a href=""></a>                   <span class="at">by =</span> join_specification,</span>
+<span id="cb43-15"><a href=""></a>                   <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb43-16"><a href=""></a>                   <span class="at">relationship =</span> <span class="st">"one-to-one"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb43-17"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">relocate</span>(<span class="fu">c</span>(<span class="st">"bsa_m2"</span>, <span class="st">"bmi"</span>),</span>
+<span id="cb43-18"><a href=""></a>                  <span class="at">.after =</span> <span class="st">"sex"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" data-code-line-numbers="|4,11,12,20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a>three_penguins <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb44-2"><a href=""></a>  <span class="sc">~</span>samp_id, <span class="sc">~</span>species,    <span class="sc">~</span>island,</span>
+<span id="cb44-3"><a href=""></a>  <span class="dv">1</span>,        <span class="st">"Adelie"</span>,    <span class="st">"Torgersen"</span>,</span>
+<span id="cb44-4"><a href=""></a>  <span class="dv">2</span>,        <span class="st">"Gentoo"</span>,    <span class="st">"Biscoe"</span>,</span>
+<span id="cb44-5"><a href=""></a>  <span class="dv">3</span>,        <span class="st">"Chinstrap"</span>, <span class="st">"Dream"</span></span>
+<span id="cb44-6"><a href=""></a>)</span>
+<span id="cb44-7"><a href=""></a></span>
+<span id="cb44-8"><a href=""></a>weight_extra <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb44-9"><a href=""></a>  <span class="sc">~</span>samp_id,  <span class="sc">~</span>body_mass_g,</span>
+<span id="cb44-10"><a href=""></a>  <span class="dv">1</span>,         <span class="dv">3220</span>,</span>
+<span id="cb44-11"><a href=""></a>  <span class="dv">2</span>,         <span class="dv">4730</span>,</span>
+<span id="cb44-12"><a href=""></a>  <span class="dv">2</span>,         <span class="dv">4725</span>,</span>
+<span id="cb44-13"><a href=""></a>  <span class="dv">3</span>,         <span class="dv">4000</span></span>
+<span id="cb44-14"><a href=""></a>)</span>
+<span id="cb44-15"><a href=""></a></span>
+<span id="cb44-16"><a href=""></a>three_penguins <span class="sc">|&gt;</span> </span>
+<span id="cb44-17"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(</span>
+<span id="cb44-18"><a href=""></a>    <span class="at">y =</span> weight_extra,</span>
+<span id="cb44-19"><a href=""></a>    <span class="at">by =</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"samp_id"</span>),</span>
+<span id="cb44-20"><a href=""></a>    <span class="at">relationship =</span> <span class="st">"one-to-one"</span></span>
+<span id="cb44-21"><a href=""></a> ) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `dplyr::inner_join()`:
+! Each row in `x` must match at most 1 row in `y`.
+ℹ Row 2 of `x` matches multiple rows in `y`.</code></pre>
+</div>
+</div>
+</div></div>
+<p><span style="font-size: 80%;">Reference: <a href="https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality" class="uri">https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality</a></span></p>
+</section>
+<section id="merging-harmonised-data-4" class="slide level2">
+<h2>Merging Harmonised Data</h2>
+<p>Use <a href="https://rstudio.github.io/pointblank/reference/has_columns.html" target="_blank"><code>pointblank::has_columns</code></a> to ensure we only have harmonised variables.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a>testthat<span class="sc">::</span><span class="fu">expect_false</span>(</span>
+<span id="cb46-2"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">has_columns</span>(</span>
+<span id="cb46-3"><a href=""></a>    demo_behave_data,</span>
+<span id="cb46-4"><a href=""></a>    <span class="at">columns =</span> <span class="fu">c</span>(</span>
+<span id="cb46-5"><a href=""></a>      dplyr<span class="sc">::</span><span class="fu">ends_with</span>(<span class="st">".x"</span>), </span>
+<span id="cb46-6"><a href=""></a>      dplyr<span class="sc">::</span><span class="fu">ends_with</span>(<span class="st">".y"</span>)</span>
+<span id="cb46-7"><a href=""></a>    )</span>
+<span id="cb46-8"><a href=""></a>  )</span>
+<span id="cb46-9"><a href=""></a>)</span>
+<span id="cb46-10"><a href=""></a></span>
+<span id="cb46-11"><a href=""></a>testthat<span class="sc">::</span><span class="fu">expect_equal</span>(</span>
+<span id="cb46-12"><a href=""></a>  <span class="fu">ncol</span>(demo_behave_data), <span class="dv">9</span></span>
+<span id="cb46-13"><a href=""></a>)</span>
+<span id="cb46-14"><a href=""></a></span>
+<span id="cb46-15"><a href=""></a>testthat<span class="sc">::</span><span class="fu">expect_true</span>(</span>
+<span id="cb46-16"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">has_columns</span>(</span>
+<span id="cb46-17"><a href=""></a>    demo_behave_data,</span>
+<span id="cb46-18"><a href=""></a>    <span class="at">columns =</span> <span class="fu">c</span>(</span>
+<span id="cb46-19"><a href=""></a>      <span class="st">"age_years"</span>, <span class="st">"sex"</span>,</span>
+<span id="cb46-20"><a href=""></a>      <span class="st">"height_cm"</span>, <span class="st">"weight_kg"</span>, <span class="st">"bsa_m2"</span>, <span class="st">"bmi"</span>,</span>
+<span id="cb46-21"><a href=""></a>      <span class="st">"smoke_current"</span>, <span class="st">"smoke_past"</span></span>
+<span id="cb46-22"><a href=""></a>    )</span>
+<span id="cb46-23"><a href=""></a>  )</span>
+<span id="cb46-24"><a href=""></a>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" data-code-line-numbers="|2,9|24-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>three_penguins <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb47-2"><a href=""></a>  <span class="sc">~</span>samp_id, <span class="sc">~</span>species,    <span class="sc">~</span>island,</span>
+<span id="cb47-3"><a href=""></a>  <span class="dv">1</span>,        <span class="st">"Adelie"</span>,    <span class="st">"Torgersen"</span>,</span>
+<span id="cb47-4"><a href=""></a>  <span class="dv">2</span>,        <span class="st">"Gentoo"</span>,    <span class="st">"Biscoe"</span>,</span>
+<span id="cb47-5"><a href=""></a>  <span class="dv">3</span>,        <span class="st">"Chinstrap"</span>, <span class="st">"Dream"</span></span>
+<span id="cb47-6"><a href=""></a>)</span>
+<span id="cb47-7"><a href=""></a></span>
+<span id="cb47-8"><a href=""></a>weight_extra <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
+<span id="cb47-9"><a href=""></a>  <span class="sc">~</span>samp_id,  <span class="sc">~</span>island,</span>
+<span id="cb47-10"><a href=""></a>  <span class="dv">1</span>,         <span class="st">"Torgersen"</span>,</span>
+<span id="cb47-11"><a href=""></a>  <span class="dv">2</span>,         <span class="st">"Biscoe"</span>,</span>
+<span id="cb47-12"><a href=""></a>  <span class="dv">3</span>,         <span class="st">"Dream"</span></span>
+<span id="cb47-13"><a href=""></a>)</span>
+<span id="cb47-14"><a href=""></a></span>
+<span id="cb47-15"><a href=""></a>three_penguins <span class="ot">&lt;-</span> three_penguins <span class="sc">|&gt;</span> </span>
+<span id="cb47-16"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">inner_join</span>(</span>
+<span id="cb47-17"><a href=""></a>    <span class="at">y =</span> weight_extra,</span>
+<span id="cb47-18"><a href=""></a>    <span class="at">by =</span> dplyr<span class="sc">::</span><span class="fu">join_by</span>(<span class="st">"samp_id"</span>),</span>
+<span id="cb47-19"><a href=""></a>    <span class="at">unmatched =</span> <span class="st">"error"</span>,</span>
+<span id="cb47-20"><a href=""></a>    <span class="at">relationship =</span> <span class="st">"one-to-one"</span></span>
+<span id="cb47-21"><a href=""></a> )</span>
+<span id="cb47-22"><a href=""></a></span>
+<span id="cb47-23"><a href=""></a>three_penguins <span class="sc">|&gt;</span> </span>
+<span id="cb47-24"><a href=""></a>  pointblank<span class="sc">::</span><span class="fu">has_columns</span>(</span>
+<span id="cb47-25"><a href=""></a>    <span class="at">columns =</span> <span class="fu">c</span>(</span>
+<span id="cb47-26"><a href=""></a>      dplyr<span class="sc">::</span><span class="fu">ends_with</span>(<span class="st">".x"</span>), </span>
+<span id="cb47-27"><a href=""></a>      dplyr<span class="sc">::</span><span class="fu">ends_with</span>(<span class="st">".y"</span>)</span>
+<span id="cb47-28"><a href=""></a>      )</span>
+<span id="cb47-29"><a href=""></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49" data-code-line-numbers="|2,9|24-29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a><span class="fu">colnames</span>(three_penguins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "samp_id"  "species"  "island.x" "island.y"</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="tehcncal-report-challenge" class="slide level2">
+<h2>Tehcncal Report Challenge</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<p>One variable mapping report takes at least one page.</p>
+</div>
+<div class="fragment">
+<p>On average, a clinical trial will have a few hundred variables.</p>
+<ul>
+<li><span style="font-size: 80%;">One hundred columns for clinical and demographics.</span></li>
+<li><span style="font-size: 80%;">Two hundred columns for medication.</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Harmonisation report can have at least a few hundreds pages for each cohort.</p>
+<p>There is a need to automate the creation of these reports.</p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/overload.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-44"><img data-src="images/overload.jpg" class="quarto-figure quarto-figure-center" style="width:87.0%" alt="Businessman in pile of documents asking for help."></a></p>
+</figure>
+</div>
+<p><span style="font-size: 60%;">Businessman in pile of documents asking for help by <a href="https://www.vecteezy.com/vector-art/464741-businessman-in-pile-of-documents-asking-for-help-over-workload" target="_blank">Amonrat Rungreangfangsai</a></span></p>
+</div></div>
+</section>
 <section id="quarto-bookswebsites" class="slide level2">
 <h2>Quarto Books/Websites</h2>
 <iframe width="1000" height="550" src="https://jauntyjjs-harmonisation-cohort-b.netlify.app/" title="Cohort_B Harmonisation Report in html"></iframe>
@@ -1282,13 +2148,13 @@ style use fill: lightyellow
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/quarto_yml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img data-src="images/quarto_yml.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="A preview of the _quarto.yml file."></a></p>
+<p><a href="images/quarto_yml.png" class="lightbox" data-gallery="quarto-lightbox-gallery-45"><img data-src="images/quarto_yml.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="A preview of the _quarto.yml file."></a></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/index_qmd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img data-src="images/index_qmd.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="A preview of the index.qmd file."></a></p>
+<p><a href="images/index_qmd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-46"><img data-src="images/index_qmd.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="A preview of the index.qmd file."></a></p>
 </figure>
 </div>
 </div></div>
@@ -1300,93 +2166,93 @@ style use fill: lightyellow
 <div class="code-with-filename-file">
 <pre><strong>_quarto.yml</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-filename="_quarto.yml"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href=""></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href=""></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
-<span id="cb9-4"><a href=""></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> reports/Cohort_B</span></span>
-<span id="cb9-5"><a href=""></a></span>
-<span id="cb9-6"><a href=""></a><span class="fu">book</span><span class="kw">:</span></span>
-<span id="cb9-7"><a href=""></a><span class="at">  </span><span class="fu">downloads</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">pdf</span><span class="kw">,</span><span class="at"> docx</span><span class="kw">]</span></span>
-<span id="cb9-8"><a href=""></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Harmonisation Template for Cohort B"</span></span>
-<span id="cb9-9"><a href=""></a><span class="at">  </span><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Name"</span></span>
-<span id="cb9-10"><a href=""></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb9-11"><a href=""></a><span class="at">    </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-12"><a href=""></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
-<span id="cb9-13"><a href=""></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
-<span id="cb9-14"><a href=""></a></span>
-<span id="cb9-15"><a href=""></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span></span>
-<span id="cb9-16"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
-<span id="cb9-17"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> Cohort B Cleaning</span></span>
-<span id="cb9-18"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
-<span id="cb9-19"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/00_R_Package_And_Environment.qmd</span></span>
-<span id="cb9-20"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/01_Read_Cohort_B_Data.qmd</span></span>
-<span id="cb9-21"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/02_Extract_Demographic.qmd</span></span>
-<span id="cb9-22"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/03_Export_To_Excel.qmd</span></span>
-<span id="cb9-23"><a href=""></a></span>
-<span id="cb9-24"><a href=""></a><span class="fu">crossref</span><span class="kw">:</span></span>
-<span id="cb9-25"><a href=""></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb9-26"><a href=""></a><span class="at">  </span><span class="fu">fig-title</span><span class="kw">:</span><span class="at"> Figure</span><span class="co">     # (default is "Figure")</span></span>
-<span id="cb9-27"><a href=""></a><span class="at">  </span><span class="fu">tbl-title</span><span class="kw">:</span><span class="at"> Table</span><span class="co">      # (default is "Table")</span></span>
-<span id="cb9-28"><a href=""></a><span class="at">  </span><span class="fu">fig-prefix</span><span class="kw">:</span><span class="at"> Figure</span><span class="co">    # (default is "Figure")</span></span>
-<span id="cb9-29"><a href=""></a><span class="at">  </span><span class="fu">tbl-prefix</span><span class="kw">:</span><span class="at"> Table</span><span class="co">     # (default is "Table")</span></span>
-<span id="cb9-30"><a href=""></a><span class="at">  </span><span class="fu">ref-hyperlink</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">   # (default is true)</span></span>
-<span id="cb9-31"><a href=""></a><span class="at">  </span><span class="fu">title-delim</span><span class="kw">:</span><span class="at"> </span><span class="st">":"</span><span class="co">      # (default is ":")</span></span>
-<span id="cb9-32"><a href=""></a></span>
-<span id="cb9-33"><a href=""></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
-<span id="cb9-34"><a href=""></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> csl_file.csl</span></span>
-<span id="cb9-35"><a href=""></a></span>
-<span id="cb9-36"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb9-37"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb9-38"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-39"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
-<span id="cb9-40"><a href=""></a><span class="at">    </span><span class="fu">toc-location</span><span class="kw">:</span><span class="at"> right</span></span>
-<span id="cb9-41"><a href=""></a><span class="at">    </span><span class="fu">toc-expand</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-42"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-43"><a href=""></a><span class="at">    </span><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
-<span id="cb9-44"><a href=""></a><span class="at">    </span><span class="fu">smooth-scroll</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-45"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb9-46"><a href=""></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span></span>
-<span id="cb9-47"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> flatly</span></span>
-<span id="cb9-48"><a href=""></a><span class="co">        #- custom.scss</span></span>
-<span id="cb9-49"><a href=""></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span></span>
-<span id="cb9-50"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> solar</span></span>
-<span id="cb9-51"><a href=""></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
-<span id="cb9-52"><a href=""></a><span class="at">    </span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> custom-reference.docx</span></span>
-<span id="cb9-53"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-54"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
-<span id="cb9-55"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-56"><a href=""></a><span class="at">    </span><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
-<span id="cb9-57"><a href=""></a><span class="at">    </span><span class="fu">prefer-html</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-58"><a href=""></a><span class="at">    </span><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> github</span></span>
-<span id="cb9-59"><a href=""></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb9-60"><a href=""></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> xelatex</span></span>
-<span id="cb9-61"><a href=""></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> scrreprt</span></span>
-<span id="cb9-62"><a href=""></a><span class="at">    </span><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
-<span id="cb9-63"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
-<span id="cb9-64"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-65"><a href=""></a><span class="at">    </span><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
-<span id="cb9-66"><a href=""></a><span class="at">    </span><span class="fu">keep-tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb9-67"><a href=""></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
-<span id="cb9-68"><a href=""></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb9-69"><a href=""></a>        \usepackage{fvextra}</span>
-<span id="cb9-70"><a href=""></a>        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}</span>
-<span id="cb9-71"><a href=""></a>        \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}</span>
-<span id="cb9-72"><a href=""></a><span class="at">    </span><span class="fu">include-before-body</span><span class="kw">:</span></span>
-<span id="cb9-73"><a href=""></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb9-74"><a href=""></a>        \begin{flushleft}</span>
-<span id="cb9-75"><a href=""></a>        \begin{sloppypar}</span>
-<span id="cb9-76"><a href=""></a>        \RecustomVerbatimEnvironment{verbatim}{Verbatim}{</span>
-<span id="cb9-77"><a href=""></a>          showspaces = false,</span>
-<span id="cb9-78"><a href=""></a>          showtabs = false,</span>
-<span id="cb9-79"><a href=""></a>          breaksymbolleft={}, % Need pacakge fvextra</span>
-<span id="cb9-80"><a href=""></a>          breaklines</span>
-<span id="cb9-81"><a href=""></a>          % Note: setting commandchars=\\\{\} here will cause an error</span>
-<span id="cb9-82"><a href=""></a>        }</span>
-<span id="cb9-83"><a href=""></a><span class="at">    </span><span class="fu">include-after-body</span><span class="kw">:</span></span>
-<span id="cb9-84"><a href=""></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb9-85"><a href=""></a>        \end{sloppypar}</span>
-<span id="cb9-86"><a href=""></a>        \end{flushleft}</span>
-<span id="cb9-87"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51" data-filename="_quarto.yml"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb51-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb51-2"><a href=""></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb51-3"><a href=""></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb51-4"><a href=""></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> reports/Cohort_B</span></span>
+<span id="cb51-5"><a href=""></a></span>
+<span id="cb51-6"><a href=""></a><span class="fu">book</span><span class="kw">:</span></span>
+<span id="cb51-7"><a href=""></a><span class="at">  </span><span class="fu">downloads</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">pdf</span><span class="kw">,</span><span class="at"> docx</span><span class="kw">]</span></span>
+<span id="cb51-8"><a href=""></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Harmonisation Template for Cohort B"</span></span>
+<span id="cb51-9"><a href=""></a><span class="at">  </span><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Name"</span></span>
+<span id="cb51-10"><a href=""></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb51-11"><a href=""></a><span class="at">    </span><span class="fu">search</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-12"><a href=""></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span></span>
+<span id="cb51-13"><a href=""></a><span class="at">    </span><span class="fu">collapse-level</span><span class="kw">:</span><span class="at"> </span><span class="dv">1</span></span>
+<span id="cb51-14"><a href=""></a></span>
+<span id="cb51-15"><a href=""></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb51-16"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> index.qmd</span></span>
+<span id="cb51-17"><a href=""></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">part</span><span class="kw">:</span><span class="at"> Cohort B Cleaning</span></span>
+<span id="cb51-18"><a href=""></a><span class="at">      </span><span class="fu">chapters</span><span class="kw">:</span></span>
+<span id="cb51-19"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/00_R_Package_And_Environment.qmd</span></span>
+<span id="cb51-20"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/01_Read_Cohort_B_Data.qmd</span></span>
+<span id="cb51-21"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/02_Extract_Demographic.qmd</span></span>
+<span id="cb51-22"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> codes/Cohort_B/03_Export_To_Excel.qmd</span></span>
+<span id="cb51-23"><a href=""></a></span>
+<span id="cb51-24"><a href=""></a><span class="fu">crossref</span><span class="kw">:</span></span>
+<span id="cb51-25"><a href=""></a><span class="at">  </span><span class="fu">chapters</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb51-26"><a href=""></a><span class="at">  </span><span class="fu">fig-title</span><span class="kw">:</span><span class="at"> Figure</span><span class="co">     # (default is "Figure")</span></span>
+<span id="cb51-27"><a href=""></a><span class="at">  </span><span class="fu">tbl-title</span><span class="kw">:</span><span class="at"> Table</span><span class="co">      # (default is "Table")</span></span>
+<span id="cb51-28"><a href=""></a><span class="at">  </span><span class="fu">fig-prefix</span><span class="kw">:</span><span class="at"> Figure</span><span class="co">    # (default is "Figure")</span></span>
+<span id="cb51-29"><a href=""></a><span class="at">  </span><span class="fu">tbl-prefix</span><span class="kw">:</span><span class="at"> Table</span><span class="co">     # (default is "Table")</span></span>
+<span id="cb51-30"><a href=""></a><span class="at">  </span><span class="fu">ref-hyperlink</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">   # (default is true)</span></span>
+<span id="cb51-31"><a href=""></a><span class="at">  </span><span class="fu">title-delim</span><span class="kw">:</span><span class="at"> </span><span class="st">":"</span><span class="co">      # (default is ":")</span></span>
+<span id="cb51-32"><a href=""></a></span>
+<span id="cb51-33"><a href=""></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> references.bib</span></span>
+<span id="cb51-34"><a href=""></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> csl_file.csl</span></span>
+<span id="cb51-35"><a href=""></a></span>
+<span id="cb51-36"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb51-37"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb51-38"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-39"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb51-40"><a href=""></a><span class="at">    </span><span class="fu">toc-location</span><span class="kw">:</span><span class="at"> right</span></span>
+<span id="cb51-41"><a href=""></a><span class="at">    </span><span class="fu">toc-expand</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-42"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-43"><a href=""></a><span class="at">    </span><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb51-44"><a href=""></a><span class="at">    </span><span class="fu">smooth-scroll</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-45"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb51-46"><a href=""></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span></span>
+<span id="cb51-47"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> flatly</span></span>
+<span id="cb51-48"><a href=""></a><span class="co">        #- custom.scss</span></span>
+<span id="cb51-49"><a href=""></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span></span>
+<span id="cb51-50"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> solar</span></span>
+<span id="cb51-51"><a href=""></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="cb51-52"><a href=""></a><span class="at">    </span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> custom-reference.docx</span></span>
+<span id="cb51-53"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-54"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb51-55"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-56"><a href=""></a><span class="at">    </span><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb51-57"><a href=""></a><span class="at">    </span><span class="fu">prefer-html</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-58"><a href=""></a><span class="at">    </span><span class="fu">highlight-style</span><span class="kw">:</span><span class="at"> github</span></span>
+<span id="cb51-59"><a href=""></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb51-60"><a href=""></a><span class="at">    </span><span class="fu">pdf-engine</span><span class="kw">:</span><span class="at"> xelatex</span></span>
+<span id="cb51-61"><a href=""></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> scrreprt</span></span>
+<span id="cb51-62"><a href=""></a><span class="at">    </span><span class="fu">papersize</span><span class="kw">:</span><span class="at"> a4</span></span>
+<span id="cb51-63"><a href=""></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb51-64"><a href=""></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb51-65"><a href=""></a><span class="at">    </span><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb51-66"><a href=""></a><span class="at">    </span><span class="fu">keep-tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb51-67"><a href=""></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb51-68"><a href=""></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb51-69"><a href=""></a>        \usepackage{fvextra}</span>
+<span id="cb51-70"><a href=""></a>        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}</span>
+<span id="cb51-71"><a href=""></a>        \DefineVerbatimEnvironment{OutputCode}{Verbatim}{breaklines,commandchars=\\\{\}}</span>
+<span id="cb51-72"><a href=""></a><span class="at">    </span><span class="fu">include-before-body</span><span class="kw">:</span></span>
+<span id="cb51-73"><a href=""></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb51-74"><a href=""></a>        \begin{flushleft}</span>
+<span id="cb51-75"><a href=""></a>        \begin{sloppypar}</span>
+<span id="cb51-76"><a href=""></a>        \RecustomVerbatimEnvironment{verbatim}{Verbatim}{</span>
+<span id="cb51-77"><a href=""></a>          showspaces = false,</span>
+<span id="cb51-78"><a href=""></a>          showtabs = false,</span>
+<span id="cb51-79"><a href=""></a>          breaksymbolleft={}, % Need pacakge fvextra</span>
+<span id="cb51-80"><a href=""></a>          breaklines</span>
+<span id="cb51-81"><a href=""></a>          % Note: setting commandchars=\\\{\} here will cause an error</span>
+<span id="cb51-82"><a href=""></a>        }</span>
+<span id="cb51-83"><a href=""></a><span class="at">    </span><span class="fu">include-after-body</span><span class="kw">:</span></span>
+<span id="cb51-84"><a href=""></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb51-85"><a href=""></a>        \end{sloppypar}</span>
+<span id="cb51-86"><a href=""></a>        \end{flushleft}</span>
+<span id="cb51-87"><a href=""></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="quarto-level-2-2" class="slide level2">
@@ -1396,206 +2262,206 @@ style use fill: lightyellow
 <div class="code-with-filename-file">
 <pre><strong>index.qmd</strong></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" data-filename="index.qmd"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb10-2"><a href=""></a>date<span class="sc">:</span> <span class="st">"2025-03-10"</span></span>
-<span id="cb10-3"><a href=""></a>format<span class="sc">:</span></span>
-<span id="cb10-4"><a href=""></a>  html<span class="sc">:</span></span>
-<span id="cb10-5"><a href=""></a>    code<span class="sc">-</span>fold<span class="sc">:</span> true</span>
-<span id="cb10-6"><a href=""></a>    freeze<span class="sc">:</span> false</span>
-<span id="cb10-7"><a href=""></a>params<span class="sc">:</span></span>
-<span id="cb10-8"><a href=""></a>  show_table<span class="sc">:</span> <span class="cn">TRUE</span></span>
-<span id="cb10-9"><a href=""></a><span class="sc">---</span></span>
-<span id="cb10-10"><a href=""></a></span>
-<span id="cb10-11"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
-<span id="cb10-12"><a href=""></a><span class="at">#| label: output type</span></span>
-<span id="cb10-13"><a href=""></a><span class="at">#| echo: false</span></span>
-<span id="cb10-14"><a href=""></a><span class="at">#| warning: false</span></span>
-<span id="cb10-15"><a href=""></a><span class="at">#| message: false</span></span>
-<span id="cb10-16"><a href=""></a></span>
-<span id="cb10-17"><a href=""></a><span class="at">out_type &lt;- knitr::opts_chunk$get("rmarkdown.pandoc.to")</span></span>
-<span id="cb10-18"><a href=""></a><span class="st">```</span></span>
-<span id="cb10-19"><a href=""></a></span>
-<span id="cb10-20"><a href=""></a><span class="co"># Preface {.unnumbered .unlisted}</span></span>
-<span id="cb10-21"><a href=""></a></span>
-<span id="cb10-22"><a href=""></a>Here is the documentation of the data harmonisation step generated using [Quarto](https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>). To learn more about Quarto books visit <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>books<span class="sc">&gt;</span>.</span>
-<span id="cb10-23"><a href=""></a></span>
-<span id="cb10-24"><a href=""></a><span class="do">## File Structure</span></span>
-<span id="cb10-25"><a href=""></a></span>
-<span id="cb10-26"><a href=""></a>Here is the file structure of the project used to generate the document.</span>
-<span id="cb10-27"><a href=""></a></span>
-<span id="cb10-28"><a href=""></a><span class="st">```</span></span>
-<span id="cb10-29"><a href=""></a><span class="at">harmonisation/                            # Root of the project template.</span></span>
-<span id="cb10-30"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-31"><a href=""></a><span class="at">├── .quarto/ (not in repository)          # Folder to keep intermediate files/folders </span></span>
-<span id="cb10-32"><a href=""></a><span class="at">|                                         # generated when Quarto renders the files.</span></span>
-<span id="cb10-33"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-34"><a href=""></a><span class="at">├── archive/                              # Folder to keep previous books and harmonised data.</span></span>
-<span id="cb10-35"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-36"><a href=""></a><span class="at">│   ├── reports/                          # Folder to keep previous versions of</span></span>
-<span id="cb10-37"><a href=""></a><span class="at">|   |   |                                 # data harmonisation documentation.</span></span>
-<span id="cb10-38"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-39"><a href=""></a><span class="at">|   |   ├── {some_date}_batch/            # Folder to keep {some_date} version of</span></span>
-<span id="cb10-40"><a href=""></a><span class="at">|   |   |                                 # data harmonisation documentation.</span></span>
-<span id="cb10-41"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-42"><a href=""></a><span class="at">|   |   └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
-<span id="cb10-43"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-44"><a href=""></a><span class="at">|   └── harmonised/                       # Folder to keep previous version of harmonised data.</span></span>
-<span id="cb10-45"><a href=""></a><span class="at">|       |</span></span>
-<span id="cb10-46"><a href=""></a><span class="at">|       ├── {some_date}_batch/            # Folder to keep {some_date} version of</span></span>
-<span id="cb10-47"><a href=""></a><span class="at">|       |                                 # harmonised data.</span></span>
-<span id="cb10-48"><a href=""></a><span class="at">|       |</span></span>
-<span id="cb10-49"><a href=""></a><span class="at">|       └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
-<span id="cb10-50"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-51"><a href=""></a><span class="at">├── codes/                                # Folder to keep R/Quarto scripts </span></span>
-<span id="cb10-52"><a href=""></a><span class="at">|   |                                     # to run data harmonisation.</span></span>
-<span id="cb10-53"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-54"><a href=""></a><span class="at">│   ├── {cohort name}/                    # Folder to keep Quarto scripts to run</span></span>
-<span id="cb10-55"><a href=""></a><span class="at">|   |   |                                 # data cleaning, harmonisation </span></span>
-<span id="cb10-56"><a href=""></a><span class="at">|   |   |                                 # and output them for each cohort.</span></span>
-<span id="cb10-57"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-58"><a href=""></a><span class="at">|   |   └── preprocessed_data/            # Folder to keep preprocessed data.</span></span>
-<span id="cb10-59"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-60"><a href=""></a><span class="at">│   ├── harmonisation_summary/            # Folder to keep Quarto scripts to create</span></span>
-<span id="cb10-61"><a href=""></a><span class="at">|   |                                     # data harmonisation summary report.</span></span>
-<span id="cb10-62"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-63"><a href=""></a><span class="at">│   ├── output/                           # Folder to keep harmonised data.</span></span>
-<span id="cb10-64"><a href=""></a><span class="at">|   |                                     </span></span>
-<span id="cb10-65"><a href=""></a><span class="at">|   ├── cohort_harmonisation_script.R     # R script to render each {cohort name}/ folder. </span></span>
-<span id="cb10-66"><a href=""></a><span class="at">|   |                                     # folder into html, pdf and word document.</span></span>
-<span id="cb10-67"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-68"><a href=""></a><span class="at">|   └── harmonisation_summary_script.R    # R script to render the {harmonisation_summary}/ </span></span>
-<span id="cb10-69"><a href=""></a><span class="at">|                                         # folder into word document.</span></span>
-<span id="cb10-70"><a href=""></a><span class="at">│  </span></span>
-<span id="cb10-71"><a href=""></a><span class="at">├── data-raw/                             # Folder to keep cohort raw data (.csv, .xlsx, etc.)</span></span>
-<span id="cb10-72"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-73"><a href=""></a><span class="at">│   ├── {cohort name}/                    # Folder to keep cohort raw data.</span></span>
-<span id="cb10-74"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-75"><a href=""></a><span class="at">|   |   ├── {data_dictionary}             # Data dictionary file that correspond to the </span></span>
-<span id="cb10-76"><a href=""></a><span class="at">|   |   |                                 # cohort raw data. Can be one from the</span></span>
-<span id="cb10-77"><a href=""></a><span class="at">|   |   |                                 # collaborator provide or provided by us.</span></span>
-<span id="cb10-78"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-79"><a href=""></a><span class="at">|   |   └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
-<span id="cb10-80"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-81"><a href=""></a><span class="at">|   ├── data-dictionary/                  # Folder to keep data dictionary </span></span>
-<span id="cb10-82"><a href=""></a><span class="at">|   |   |                                 # used for harmonising data.</span></span>
-<span id="cb10-83"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-84"><a href=""></a><span class="at">|   |   └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
-<span id="cb10-85"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-86"><a href=""></a><span class="at">|   └── data-input/                       # Folder to keep data input file </span></span>
-<span id="cb10-87"><a href=""></a><span class="at">|       |                                 # for collaborators to fill in.</span></span>
-<span id="cb10-88"><a href=""></a><span class="at">|       |</span></span>
-<span id="cb10-89"><a href=""></a><span class="at">|       └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
-<span id="cb10-90"><a href=""></a><span class="at">|  </span></span>
-<span id="cb10-91"><a href=""></a><span class="at">├── docs/                                 # Folder to keep R functions documentation </span></span>
-<span id="cb10-92"><a href=""></a><span class="at">|                                         # generated using pkgdown:::build_site_external().</span></span>
-<span id="cb10-93"><a href=""></a><span class="at">|  </span></span>
-<span id="cb10-94"><a href=""></a><span class="at">├── inst/                                 # Folder to keep arbitrary additional files </span></span>
-<span id="cb10-95"><a href=""></a><span class="at">|   |                                     # to include in the project.</span></span>
-<span id="cb10-96"><a href=""></a><span class="at">|   |  </span></span>
-<span id="cb10-97"><a href=""></a><span class="at">|   └── WORDLIST                          # File generated by spelling::update_wordlist()</span></span>
-<span id="cb10-98"><a href=""></a><span class="at">|  </span></span>
-<span id="cb10-99"><a href=""></a><span class="at">├── man/                                  # Folder to keep R functions documentation</span></span>
-<span id="cb10-100"><a href=""></a><span class="at">|   |                                     # generated using devtools::document().</span></span>
-<span id="cb10-101"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-102"><a href=""></a><span class="at">│   ├── {fun-demo}.Rd                     # Documentation of the demo R function.</span></span>
-<span id="cb10-103"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-104"><a href=""></a><span class="at">│   └── harmonisation-template.Rd         # High-level documentation.</span></span>
-<span id="cb10-105"><a href=""></a><span class="at">|  </span></span>
-<span id="cb10-106"><a href=""></a><span class="at">├── R/                                    # Folder to keep R functions.</span></span>
-<span id="cb10-107"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-108"><a href=""></a><span class="at">│   ├── {fun-demo}.R                      # Script with R functions.</span></span>
-<span id="cb10-109"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-110"><a href=""></a><span class="at">│   └── harmonisation-package.R           # Dummy R file for high-level documentation.</span></span>
-<span id="cb10-111"><a href=""></a><span class="at">│  </span></span>
-<span id="cb10-112"><a href=""></a><span class="at">├── renv/ (not in repository)             # Folder to keep all packages </span></span>
-<span id="cb10-113"><a href=""></a><span class="at">|                                         # installed in the renv environment.</span></span>
-<span id="cb10-114"><a href=""></a><span class="at">| </span></span>
-<span id="cb10-115"><a href=""></a><span class="at">├── reports/                              # Folder to keep the most recent data harmonisation</span></span>
-<span id="cb10-116"><a href=""></a><span class="at">|                                         # documentation.</span></span>
-<span id="cb10-117"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-118"><a href=""></a><span class="at">├── templates/                            # Folder to keep template files needed to generate</span></span>
-<span id="cb10-119"><a href=""></a><span class="at">|   |                                     # data harmonisation documentation efficiently.</span></span>
-<span id="cb10-120"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-121"><a href=""></a><span class="at">|   ├── quarto-yaml/                      # Folder to keep template files to generate </span></span>
-<span id="cb10-122"><a href=""></a><span class="at">|   |   |                                 # data harmonisation documentation structure </span></span>
-<span id="cb10-123"><a href=""></a><span class="at">|   |   |                                 # in Quarto. </span></span>
-<span id="cb10-124"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-125"><a href=""></a><span class="at">│   |   ├── _quarto_{cohort name}.yml     # Quarto book template data harmonisation documentation </span></span>
-<span id="cb10-126"><a href=""></a><span class="at">|   |   |                                 # for {cohort name}.</span></span>
-<span id="cb10-127"><a href=""></a><span class="at">|   |   |</span></span>
-<span id="cb10-128"><a href=""></a><span class="at">|   |   └── _quarto_summary.yml           # Quarto book template data harmonisation summary.</span></span>
-<span id="cb10-129"><a href=""></a><span class="at">|   |</span></span>
-<span id="cb10-130"><a href=""></a><span class="at">|   └── index-qmd/                        # Folder to keep template files to generate</span></span>
-<span id="cb10-131"><a href=""></a><span class="at">|       |                                 # the preface page of the data harmonisation </span></span>
-<span id="cb10-132"><a href=""></a><span class="at">|       |                                 # documentation.</span></span>
-<span id="cb10-133"><a href=""></a><span class="at">|       |</span></span>
-<span id="cb10-134"><a href=""></a><span class="at">|       ├── _index_report.qmd             # Preface template for each cohort data harmonisation</span></span>
-<span id="cb10-135"><a href=""></a><span class="at">|       |                                 # report. </span></span>
-<span id="cb10-136"><a href=""></a><span class="at">|       |</span></span>
-<span id="cb10-137"><a href=""></a><span class="at">|       └── _index_summary.qmd            # Preface template for data harmonisation </span></span>
-<span id="cb10-138"><a href=""></a><span class="at">|                                         # summary report. </span></span>
-<span id="cb10-139"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-140"><a href=""></a><span class="at">├── tests/                                # Folder to keep test unit files. </span></span>
-<span id="cb10-141"><a href=""></a><span class="at">|                                         # Files will be used by R package testhat.</span></span>
-<span id="cb10-142"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-143"><a href=""></a><span class="at">├── .Rbuildignore                         # List of files/folders to be ignored while </span></span>
-<span id="cb10-144"><a href=""></a><span class="at">│                                         # checking/installing the package.</span></span>
-<span id="cb10-145"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-146"><a href=""></a><span class="at">├── .Renviron (not in repository)         # File to set environment variables.</span></span>
-<span id="cb10-147"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-148"><a href=""></a><span class="at">├── .Rprofile (not in repository)         # R code to be run when R starts up.</span></span>
-<span id="cb10-149"><a href=""></a><span class="at">|                                         # It is run after the .Renviron file is sourced.</span></span>
-<span id="cb10-150"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-151"><a href=""></a><span class="at">├── .Rhistory (not in repository)         # File containing R command history.</span></span>
-<span id="cb10-152"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-153"><a href=""></a><span class="at">├── .gitignore                            # List of files/folders to be ignored while </span></span>
-<span id="cb10-154"><a href=""></a><span class="at">│                                         # using the git workflow.</span></span>
-<span id="cb10-155"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-156"><a href=""></a><span class="at">├── .lintr                                # Configuration for linting</span></span>
-<span id="cb10-157"><a href=""></a><span class="at">|                                         # R projects and packages using linter.</span></span>
-<span id="cb10-158"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-159"><a href=""></a><span class="at">├── .renvignore                           # List of files/folders to be ignored when </span></span>
-<span id="cb10-160"><a href=""></a><span class="at">│                                         # renv is doing its snapshot.</span></span>
-<span id="cb10-161"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-162"><a href=""></a><span class="at">├── DESCRIPTION[*]                        # Overall metadata of the project.</span></span>
-<span id="cb10-163"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-164"><a href=""></a><span class="at">├── LICENSE                               # Content of the MIT license generated via</span></span>
-<span id="cb10-165"><a href=""></a><span class="at">|                                         # usethis::use_mit_license().</span></span>
-<span id="cb10-166"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-167"><a href=""></a><span class="at">├── LICENSE.md                            # Content of the MIT license generated via</span></span>
-<span id="cb10-168"><a href=""></a><span class="at">|                                         # usethis::use_mit_license().</span></span>
-<span id="cb10-169"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-170"><a href=""></a><span class="at">├── NAMESPACE                             # List of functions users can use or imported</span></span>
-<span id="cb10-171"><a href=""></a><span class="at">|                                         # from other R packages. It is generated </span></span>
-<span id="cb10-172"><a href=""></a><span class="at">|                                         # by devtools::document().</span></span>
-<span id="cb10-173"><a href=""></a><span class="at">│        </span></span>
-<span id="cb10-174"><a href=""></a><span class="at">├── README.md                             # GitHub README markdown file generated by Quarto.</span></span>
-<span id="cb10-175"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-176"><a href=""></a><span class="at">├── README.qmd                            # GitHub README quarto file used to generate README.md. </span></span>
-<span id="cb10-177"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-178"><a href=""></a><span class="at">├── _pkgdown.yml                          # Configuration for R package documentation</span></span>
-<span id="cb10-179"><a href=""></a><span class="at">|                                         # using pkgdown:::build_site_external().</span></span>
-<span id="cb10-180"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-181"><a href=""></a><span class="at">├── _quarto.yml                           # Configuration for Quarto book generation.</span></span>
-<span id="cb10-182"><a href=""></a><span class="at">|                                         # It is also the project configuration file.</span></span>
-<span id="cb10-183"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-184"><a href=""></a><span class="at">├── csl_file.csl                          # Citation Style Language (CSL) file to ensure</span></span>
-<span id="cb10-185"><a href=""></a><span class="at">|                                         # citations follows the Lancet journal.</span></span>
-<span id="cb10-186"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-187"><a href=""></a><span class="at">├── custom-reference.docx                 # Microsoft word template for data harmonisation </span></span>
-<span id="cb10-188"><a href=""></a><span class="at">|                                         # documentation to Word.</span></span>
-<span id="cb10-189"><a href=""></a><span class="at">|</span></span>
-<span id="cb10-190"><a href=""></a><span class="at">├── harmonisation_template.Rproj          # RStudio project file.</span></span>
-<span id="cb10-191"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-192"><a href=""></a><span class="at">├── index.qmd                             # Preface page of Quarto book content.</span></span>
-<span id="cb10-193"><a href=""></a><span class="at">|        </span></span>
-<span id="cb10-194"><a href=""></a><span class="at">├── references.bib                        # Bibtex file for Quarto book.</span></span>
-<span id="cb10-195"><a href=""></a><span class="at">|      </span></span>
-<span id="cb10-196"><a href=""></a><span class="at">└── renv.lock                             # Metadata of R packages installed generated</span></span>
-<span id="cb10-197"><a href=""></a><span class="at">                                          # using renv::snapshot().</span></span>
-<span id="cb10-198"><a href=""></a></span>
-<span id="cb10-199"><a href=""></a><span class="at">[*] These files are automatically created but user needs to manually add some information.</span></span>
-<span id="cb10-200"><a href=""></a><span class="st">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52" data-filename="index.qmd"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb52-2"><a href=""></a>date<span class="sc">:</span> <span class="st">"2025-03-10"</span></span>
+<span id="cb52-3"><a href=""></a>format<span class="sc">:</span></span>
+<span id="cb52-4"><a href=""></a>  html<span class="sc">:</span></span>
+<span id="cb52-5"><a href=""></a>    code<span class="sc">-</span>fold<span class="sc">:</span> true</span>
+<span id="cb52-6"><a href=""></a>    freeze<span class="sc">:</span> false</span>
+<span id="cb52-7"><a href=""></a>params<span class="sc">:</span></span>
+<span id="cb52-8"><a href=""></a>  show_table<span class="sc">:</span> <span class="cn">TRUE</span></span>
+<span id="cb52-9"><a href=""></a><span class="sc">---</span></span>
+<span id="cb52-10"><a href=""></a></span>
+<span id="cb52-11"><a href=""></a><span class="st">```</span><span class="at">{r}</span></span>
+<span id="cb52-12"><a href=""></a><span class="at">#| label: output type</span></span>
+<span id="cb52-13"><a href=""></a><span class="at">#| echo: false</span></span>
+<span id="cb52-14"><a href=""></a><span class="at">#| warning: false</span></span>
+<span id="cb52-15"><a href=""></a><span class="at">#| message: false</span></span>
+<span id="cb52-16"><a href=""></a></span>
+<span id="cb52-17"><a href=""></a><span class="at">out_type &lt;- knitr::opts_chunk$get("rmarkdown.pandoc.to")</span></span>
+<span id="cb52-18"><a href=""></a><span class="st">```</span></span>
+<span id="cb52-19"><a href=""></a></span>
+<span id="cb52-20"><a href=""></a><span class="co"># Preface {.unnumbered .unlisted}</span></span>
+<span id="cb52-21"><a href=""></a></span>
+<span id="cb52-22"><a href=""></a>Here is the documentation of the data harmonisation step generated using [Quarto](https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>). To learn more about Quarto books visit <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>books<span class="sc">&gt;</span>.</span>
+<span id="cb52-23"><a href=""></a></span>
+<span id="cb52-24"><a href=""></a><span class="do">## File Structure</span></span>
+<span id="cb52-25"><a href=""></a></span>
+<span id="cb52-26"><a href=""></a>Here is the file structure of the project used to generate the document.</span>
+<span id="cb52-27"><a href=""></a></span>
+<span id="cb52-28"><a href=""></a><span class="st">```</span></span>
+<span id="cb52-29"><a href=""></a><span class="at">harmonisation/                            # Root of the project template.</span></span>
+<span id="cb52-30"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-31"><a href=""></a><span class="at">├── .quarto/ (not in repository)          # Folder to keep intermediate files/folders </span></span>
+<span id="cb52-32"><a href=""></a><span class="at">|                                         # generated when Quarto renders the files.</span></span>
+<span id="cb52-33"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-34"><a href=""></a><span class="at">├── archive/                              # Folder to keep previous books and harmonised data.</span></span>
+<span id="cb52-35"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-36"><a href=""></a><span class="at">│   ├── reports/                          # Folder to keep previous versions of</span></span>
+<span id="cb52-37"><a href=""></a><span class="at">|   |   |                                 # data harmonisation documentation.</span></span>
+<span id="cb52-38"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-39"><a href=""></a><span class="at">|   |   ├── {some_date}_batch/            # Folder to keep {some_date} version of</span></span>
+<span id="cb52-40"><a href=""></a><span class="at">|   |   |                                 # data harmonisation documentation.</span></span>
+<span id="cb52-41"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-42"><a href=""></a><span class="at">|   |   └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
+<span id="cb52-43"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-44"><a href=""></a><span class="at">|   └── harmonised/                       # Folder to keep previous version of harmonised data.</span></span>
+<span id="cb52-45"><a href=""></a><span class="at">|       |</span></span>
+<span id="cb52-46"><a href=""></a><span class="at">|       ├── {some_date}_batch/            # Folder to keep {some_date} version of</span></span>
+<span id="cb52-47"><a href=""></a><span class="at">|       |                                 # harmonised data.</span></span>
+<span id="cb52-48"><a href=""></a><span class="at">|       |</span></span>
+<span id="cb52-49"><a href=""></a><span class="at">|       └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
+<span id="cb52-50"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-51"><a href=""></a><span class="at">├── codes/                                # Folder to keep R/Quarto scripts </span></span>
+<span id="cb52-52"><a href=""></a><span class="at">|   |                                     # to run data harmonisation.</span></span>
+<span id="cb52-53"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-54"><a href=""></a><span class="at">│   ├── {cohort name}/                    # Folder to keep Quarto scripts to run</span></span>
+<span id="cb52-55"><a href=""></a><span class="at">|   |   |                                 # data cleaning, harmonisation </span></span>
+<span id="cb52-56"><a href=""></a><span class="at">|   |   |                                 # and output them for each cohort.</span></span>
+<span id="cb52-57"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-58"><a href=""></a><span class="at">|   |   └── preprocessed_data/            # Folder to keep preprocessed data.</span></span>
+<span id="cb52-59"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-60"><a href=""></a><span class="at">│   ├── harmonisation_summary/            # Folder to keep Quarto scripts to create</span></span>
+<span id="cb52-61"><a href=""></a><span class="at">|   |                                     # data harmonisation summary report.</span></span>
+<span id="cb52-62"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-63"><a href=""></a><span class="at">│   ├── output/                           # Folder to keep harmonised data.</span></span>
+<span id="cb52-64"><a href=""></a><span class="at">|   |                                     </span></span>
+<span id="cb52-65"><a href=""></a><span class="at">|   ├── cohort_harmonisation_script.R     # R script to render each {cohort name}/ folder. </span></span>
+<span id="cb52-66"><a href=""></a><span class="at">|   |                                     # folder into html, pdf and word document.</span></span>
+<span id="cb52-67"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-68"><a href=""></a><span class="at">|   └── harmonisation_summary_script.R    # R script to render the {harmonisation_summary}/ </span></span>
+<span id="cb52-69"><a href=""></a><span class="at">|                                         # folder into word document.</span></span>
+<span id="cb52-70"><a href=""></a><span class="at">│  </span></span>
+<span id="cb52-71"><a href=""></a><span class="at">├── data-raw/                             # Folder to keep cohort raw data (.csv, .xlsx, etc.)</span></span>
+<span id="cb52-72"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-73"><a href=""></a><span class="at">│   ├── {cohort name}/                    # Folder to keep cohort raw data.</span></span>
+<span id="cb52-74"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-75"><a href=""></a><span class="at">|   |   ├── {data_dictionary}             # Data dictionary file that correspond to the </span></span>
+<span id="cb52-76"><a href=""></a><span class="at">|   |   |                                 # cohort raw data. Can be one from the</span></span>
+<span id="cb52-77"><a href=""></a><span class="at">|   |   |                                 # collaborator provide or provided by us.</span></span>
+<span id="cb52-78"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-79"><a href=""></a><span class="at">|   |   └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
+<span id="cb52-80"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-81"><a href=""></a><span class="at">|   ├── data-dictionary/                  # Folder to keep data dictionary </span></span>
+<span id="cb52-82"><a href=""></a><span class="at">|   |   |                                 # used for harmonising data.</span></span>
+<span id="cb52-83"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-84"><a href=""></a><span class="at">|   |   └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
+<span id="cb52-85"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-86"><a href=""></a><span class="at">|   └── data-input/                       # Folder to keep data input file </span></span>
+<span id="cb52-87"><a href=""></a><span class="at">|       |                                 # for collaborators to fill in.</span></span>
+<span id="cb52-88"><a href=""></a><span class="at">|       |</span></span>
+<span id="cb52-89"><a href=""></a><span class="at">|       └── Flowchart.xlsx                # Flowchart sheet to record version control.</span></span>
+<span id="cb52-90"><a href=""></a><span class="at">|  </span></span>
+<span id="cb52-91"><a href=""></a><span class="at">├── docs/                                 # Folder to keep R functions documentation </span></span>
+<span id="cb52-92"><a href=""></a><span class="at">|                                         # generated using pkgdown:::build_site_external().</span></span>
+<span id="cb52-93"><a href=""></a><span class="at">|  </span></span>
+<span id="cb52-94"><a href=""></a><span class="at">├── inst/                                 # Folder to keep arbitrary additional files </span></span>
+<span id="cb52-95"><a href=""></a><span class="at">|   |                                     # to include in the project.</span></span>
+<span id="cb52-96"><a href=""></a><span class="at">|   |  </span></span>
+<span id="cb52-97"><a href=""></a><span class="at">|   └── WORDLIST                          # File generated by spelling::update_wordlist()</span></span>
+<span id="cb52-98"><a href=""></a><span class="at">|  </span></span>
+<span id="cb52-99"><a href=""></a><span class="at">├── man/                                  # Folder to keep R functions documentation</span></span>
+<span id="cb52-100"><a href=""></a><span class="at">|   |                                     # generated using devtools::document().</span></span>
+<span id="cb52-101"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-102"><a href=""></a><span class="at">│   ├── {fun-demo}.Rd                     # Documentation of the demo R function.</span></span>
+<span id="cb52-103"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-104"><a href=""></a><span class="at">│   └── harmonisation-template.Rd         # High-level documentation.</span></span>
+<span id="cb52-105"><a href=""></a><span class="at">|  </span></span>
+<span id="cb52-106"><a href=""></a><span class="at">├── R/                                    # Folder to keep R functions.</span></span>
+<span id="cb52-107"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-108"><a href=""></a><span class="at">│   ├── {fun-demo}.R                      # Script with R functions.</span></span>
+<span id="cb52-109"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-110"><a href=""></a><span class="at">│   └── harmonisation-package.R           # Dummy R file for high-level documentation.</span></span>
+<span id="cb52-111"><a href=""></a><span class="at">│  </span></span>
+<span id="cb52-112"><a href=""></a><span class="at">├── renv/ (not in repository)             # Folder to keep all packages </span></span>
+<span id="cb52-113"><a href=""></a><span class="at">|                                         # installed in the renv environment.</span></span>
+<span id="cb52-114"><a href=""></a><span class="at">| </span></span>
+<span id="cb52-115"><a href=""></a><span class="at">├── reports/                              # Folder to keep the most recent data harmonisation</span></span>
+<span id="cb52-116"><a href=""></a><span class="at">|                                         # documentation.</span></span>
+<span id="cb52-117"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-118"><a href=""></a><span class="at">├── templates/                            # Folder to keep template files needed to generate</span></span>
+<span id="cb52-119"><a href=""></a><span class="at">|   |                                     # data harmonisation documentation efficiently.</span></span>
+<span id="cb52-120"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-121"><a href=""></a><span class="at">|   ├── quarto-yaml/                      # Folder to keep template files to generate </span></span>
+<span id="cb52-122"><a href=""></a><span class="at">|   |   |                                 # data harmonisation documentation structure </span></span>
+<span id="cb52-123"><a href=""></a><span class="at">|   |   |                                 # in Quarto. </span></span>
+<span id="cb52-124"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-125"><a href=""></a><span class="at">│   |   ├── _quarto_{cohort name}.yml     # Quarto book template data harmonisation documentation </span></span>
+<span id="cb52-126"><a href=""></a><span class="at">|   |   |                                 # for {cohort name}.</span></span>
+<span id="cb52-127"><a href=""></a><span class="at">|   |   |</span></span>
+<span id="cb52-128"><a href=""></a><span class="at">|   |   └── _quarto_summary.yml           # Quarto book template data harmonisation summary.</span></span>
+<span id="cb52-129"><a href=""></a><span class="at">|   |</span></span>
+<span id="cb52-130"><a href=""></a><span class="at">|   └── index-qmd/                        # Folder to keep template files to generate</span></span>
+<span id="cb52-131"><a href=""></a><span class="at">|       |                                 # the preface page of the data harmonisation </span></span>
+<span id="cb52-132"><a href=""></a><span class="at">|       |                                 # documentation.</span></span>
+<span id="cb52-133"><a href=""></a><span class="at">|       |</span></span>
+<span id="cb52-134"><a href=""></a><span class="at">|       ├── _index_report.qmd             # Preface template for each cohort data harmonisation</span></span>
+<span id="cb52-135"><a href=""></a><span class="at">|       |                                 # report. </span></span>
+<span id="cb52-136"><a href=""></a><span class="at">|       |</span></span>
+<span id="cb52-137"><a href=""></a><span class="at">|       └── _index_summary.qmd            # Preface template for data harmonisation </span></span>
+<span id="cb52-138"><a href=""></a><span class="at">|                                         # summary report. </span></span>
+<span id="cb52-139"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-140"><a href=""></a><span class="at">├── tests/                                # Folder to keep test unit files. </span></span>
+<span id="cb52-141"><a href=""></a><span class="at">|                                         # Files will be used by R package testhat.</span></span>
+<span id="cb52-142"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-143"><a href=""></a><span class="at">├── .Rbuildignore                         # List of files/folders to be ignored while </span></span>
+<span id="cb52-144"><a href=""></a><span class="at">│                                         # checking/installing the package.</span></span>
+<span id="cb52-145"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-146"><a href=""></a><span class="at">├── .Renviron (not in repository)         # File to set environment variables.</span></span>
+<span id="cb52-147"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-148"><a href=""></a><span class="at">├── .Rprofile (not in repository)         # R code to be run when R starts up.</span></span>
+<span id="cb52-149"><a href=""></a><span class="at">|                                         # It is run after the .Renviron file is sourced.</span></span>
+<span id="cb52-150"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-151"><a href=""></a><span class="at">├── .Rhistory (not in repository)         # File containing R command history.</span></span>
+<span id="cb52-152"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-153"><a href=""></a><span class="at">├── .gitignore                            # List of files/folders to be ignored while </span></span>
+<span id="cb52-154"><a href=""></a><span class="at">│                                         # using the git workflow.</span></span>
+<span id="cb52-155"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-156"><a href=""></a><span class="at">├── .lintr                                # Configuration for linting</span></span>
+<span id="cb52-157"><a href=""></a><span class="at">|                                         # R projects and packages using linter.</span></span>
+<span id="cb52-158"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-159"><a href=""></a><span class="at">├── .renvignore                           # List of files/folders to be ignored when </span></span>
+<span id="cb52-160"><a href=""></a><span class="at">│                                         # renv is doing its snapshot.</span></span>
+<span id="cb52-161"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-162"><a href=""></a><span class="at">├── DESCRIPTION[*]                        # Overall metadata of the project.</span></span>
+<span id="cb52-163"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-164"><a href=""></a><span class="at">├── LICENSE                               # Content of the MIT license generated via</span></span>
+<span id="cb52-165"><a href=""></a><span class="at">|                                         # usethis::use_mit_license().</span></span>
+<span id="cb52-166"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-167"><a href=""></a><span class="at">├── LICENSE.md                            # Content of the MIT license generated via</span></span>
+<span id="cb52-168"><a href=""></a><span class="at">|                                         # usethis::use_mit_license().</span></span>
+<span id="cb52-169"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-170"><a href=""></a><span class="at">├── NAMESPACE                             # List of functions users can use or imported</span></span>
+<span id="cb52-171"><a href=""></a><span class="at">|                                         # from other R packages. It is generated </span></span>
+<span id="cb52-172"><a href=""></a><span class="at">|                                         # by devtools::document().</span></span>
+<span id="cb52-173"><a href=""></a><span class="at">│        </span></span>
+<span id="cb52-174"><a href=""></a><span class="at">├── README.md                             # GitHub README markdown file generated by Quarto.</span></span>
+<span id="cb52-175"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-176"><a href=""></a><span class="at">├── README.qmd                            # GitHub README quarto file used to generate README.md. </span></span>
+<span id="cb52-177"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-178"><a href=""></a><span class="at">├── _pkgdown.yml                          # Configuration for R package documentation</span></span>
+<span id="cb52-179"><a href=""></a><span class="at">|                                         # using pkgdown:::build_site_external().</span></span>
+<span id="cb52-180"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-181"><a href=""></a><span class="at">├── _quarto.yml                           # Configuration for Quarto book generation.</span></span>
+<span id="cb52-182"><a href=""></a><span class="at">|                                         # It is also the project configuration file.</span></span>
+<span id="cb52-183"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-184"><a href=""></a><span class="at">├── csl_file.csl                          # Citation Style Language (CSL) file to ensure</span></span>
+<span id="cb52-185"><a href=""></a><span class="at">|                                         # citations follows the Lancet journal.</span></span>
+<span id="cb52-186"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-187"><a href=""></a><span class="at">├── custom-reference.docx                 # Microsoft word template for data harmonisation </span></span>
+<span id="cb52-188"><a href=""></a><span class="at">|                                         # documentation to Word.</span></span>
+<span id="cb52-189"><a href=""></a><span class="at">|</span></span>
+<span id="cb52-190"><a href=""></a><span class="at">├── harmonisation_template.Rproj          # RStudio project file.</span></span>
+<span id="cb52-191"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-192"><a href=""></a><span class="at">├── index.qmd                             # Preface page of Quarto book content.</span></span>
+<span id="cb52-193"><a href=""></a><span class="at">|        </span></span>
+<span id="cb52-194"><a href=""></a><span class="at">├── references.bib                        # Bibtex file for Quarto book.</span></span>
+<span id="cb52-195"><a href=""></a><span class="at">|      </span></span>
+<span id="cb52-196"><a href=""></a><span class="at">└── renv.lock                             # Metadata of R packages installed generated</span></span>
+<span id="cb52-197"><a href=""></a><span class="at">                                          # using renv::snapshot().</span></span>
+<span id="cb52-198"><a href=""></a></span>
+<span id="cb52-199"><a href=""></a><span class="at">[*] These files are automatically created but user needs to manually add some information.</span></span>
+<span id="cb52-200"><a href=""></a><span class="st">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="quarto-reference" class="slide level2">
@@ -1603,15 +2469,145 @@ style use fill: lightyellow
 <p><a href="https://quarto.org/" target="_blank">https://quarto.org/</a></p>
 <iframe width="1000" height="550" src="https://quarto.org/" title="Quarto Homepage"></iframe>
 </section>
-<section id="workflow-with-collaborators" class="slide level2">
-<h2>Workflow with collaborators</h2>
-<p>Collaborator can send the raw data once and you keep updating the cleaned data for harmonsation.</p>
+<section id="harmonisation-report-types" class="slide level2">
+<h2>Harmonisation Report Types</h2>
+<p>Collaborator wants different ways to report how data harmonisation is done.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="images/collaborator_no_change_raw_data_workflow.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img data-src="images/collaborator_no_change_raw_data_workflow.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Picture showing a top workfow to first clean data for harmonisation before doing the actual harmonisation. Bottom workflow to verfiy with the collaborators and update the clean data for harmonisation periodically"></a></p>
+<p><a href="images/documentation_types.png" class="lightbox" data-gallery="quarto-lightbox-gallery-47"><img data-src="images/documentation_types.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Four major documentation type."></a></p>
 </figure>
 </div>
-<p><span style="font-size: 60%;"><a href="https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration" target="_blank">Dataset vectors</a> by <a href="https://www.vecteezy.com/members/vectoroartworks" target="_blank">Vectora Artworks</a> from <a href="https://www.vecteezy.com/" target="_blank">Vecteezy</a>.</span></p>
+<p><span style="font-size: 60%;">The documentation system by <a href="https://docs.divio.com/documentation-system/" target="_blank">Divio</a></span></p>
+</section>
+<section id="harmonisation-report-types-1" class="slide level2">
+<h2>Harmonisation Report Types</h2>
+<p>Collaborator wants different ways to report how data harmonisation is done.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/documentation_types_for_harmonisation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-48"><img data-src="images/documentation_types_for_harmonisation.png" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Four major documentation type in terms of data harmonisation"></a></p>
+</figure>
+</div>
+</section>
+<section id="automated-technical-report-reference" class="slide level2">
+<h2>Automated Technical Report (Reference)</h2>
+<p><span style="font-size: 80%;">We create a <code>_quarto.yml</code> file and relevant Quarto files for each cohort.</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/report_for_cohort_A.png" class="lightbox" data-gallery="quarto-lightbox-gallery-49"><img data-src="images/report_for_cohort_A.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="A preview of the _quarto.yml and relevant Quarto files for Cohort A."></a></p>
+</figure>
+</div>
+</section>
+<section id="automated-technical-report-reference-1" class="slide level2">
+<h2>Automated Technical Report (Reference)</h2>
+<p><span style="font-size: 80%;">We create an <code>index.qmd</code> file for each kind of report.</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/index_report_qmd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-50"><img data-src="images/index_report_qmd.png" class="quarto-figure quarto-figure-center" style="width:50.0%" alt="A preview of the index qmd file for technical reporting."></a></p>
+</figure>
+</div>
+</section>
+<section id="automated-technical-report-reference-2" class="slide level2">
+<h2>Automated Technical Report (Reference)</h2>
+<p>Create a script to generate technical reports in pdf, word and html for each cohort.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href=""></a><span class="co"># Copy the right index.qmd </span></span>
+<span id="cb53-2"><a href=""></a><span class="co"># file</span></span>
+<span id="cb53-3"><a href=""></a></span>
+<span id="cb53-4"><a href=""></a>index_qmd_file <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb53-5"><a href=""></a>  <span class="st">"_index_"</span>,</span>
+<span id="cb53-6"><a href=""></a>  <span class="st">"report"</span>,</span>
+<span id="cb53-7"><a href=""></a>  <span class="st">".qmd"</span></span>
+<span id="cb53-8"><a href=""></a>)</span>
+<span id="cb53-9"><a href=""></a></span>
+<span id="cb53-10"><a href=""></a>fs<span class="sc">::</span><span class="fu">file_copy</span>(</span>
+<span id="cb53-11"><a href=""></a>  <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(</span>
+<span id="cb53-12"><a href=""></a>    <span class="st">"templates"</span>,</span>
+<span id="cb53-13"><a href=""></a>    <span class="st">"index-qmd"</span>,</span>
+<span id="cb53-14"><a href=""></a>    index_qmd_file),</span>
+<span id="cb53-15"><a href=""></a>  <span class="at">new_path =</span> here<span class="sc">::</span><span class="fu">here</span>(</span>
+<span id="cb53-16"><a href=""></a>    <span class="st">"index.qmd"</span></span>
+<span id="cb53-17"><a href=""></a>  ),</span>
+<span id="cb53-18"><a href=""></a>  <span class="at">overwrite =</span> <span class="cn">TRUE</span></span>
+<span id="cb53-19"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/index_qmd_copy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-51"><img data-src="images/index_qmd_copy.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="index_report.qmd file copied and changed to index.qmd"></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="automated-technical-report-reference-3" class="slide level2">
+<h2>Automated Technical Report (Reference)</h2>
+<p>Create a script to generate technical reports in pdf, word and html for each cohort.</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54" data-code-line-numbers="|5-21|23-26|29-37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href=""></a>copy_and_render <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb54-2"><a href=""></a>    cohort</span>
+<span id="cb54-3"><a href=""></a>) {</span>
+<span id="cb54-4"><a href=""></a></span>
+<span id="cb54-5"><a href=""></a>  <span class="co"># Copy quarto.yml file</span></span>
+<span id="cb54-6"><a href=""></a>  <span class="co"># for each cohort</span></span>
+<span id="cb54-7"><a href=""></a>  </span>
+<span id="cb54-8"><a href=""></a>  quarto_yml_file <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
+<span id="cb54-9"><a href=""></a>    <span class="st">"_quarto_"</span>,</span>
+<span id="cb54-10"><a href=""></a>    cohort,</span>
+<span id="cb54-11"><a href=""></a>    <span class="st">".yml"</span></span>
+<span id="cb54-12"><a href=""></a>  )</span>
+<span id="cb54-13"><a href=""></a></span>
+<span id="cb54-14"><a href=""></a>  fs<span class="sc">::</span><span class="fu">file_copy</span>(</span>
+<span id="cb54-15"><a href=""></a>    <span class="at">path =</span> here<span class="sc">::</span><span class="fu">here</span>(</span>
+<span id="cb54-16"><a href=""></a>      <span class="st">"templates"</span>,</span>
+<span id="cb54-17"><a href=""></a>      <span class="st">"quarto-yaml"</span>,</span>
+<span id="cb54-18"><a href=""></a>      quarto_yml_file),</span>
+<span id="cb54-19"><a href=""></a>    <span class="at">new_path =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"_quarto.yml"</span>),</span>
+<span id="cb54-20"><a href=""></a>    <span class="at">overwrite =</span> <span class="cn">TRUE</span></span>
+<span id="cb54-21"><a href=""></a>  )</span>
+<span id="cb54-22"><a href=""></a>  </span>
+<span id="cb54-23"><a href=""></a>  <span class="co"># Render each cohort</span></span>
+<span id="cb54-24"><a href=""></a>  quarto<span class="sc">::</span><span class="fu">quarto_render</span>(</span>
+<span id="cb54-25"><a href=""></a>    <span class="at">as_job =</span> <span class="cn">FALSE</span></span>
+<span id="cb54-26"><a href=""></a>  )</span>
+<span id="cb54-27"><a href=""></a>}</span>
+<span id="cb54-28"><a href=""></a></span>
+<span id="cb54-29"><a href=""></a>cohort_name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cohort_A"</span>, </span>
+<span id="cb54-30"><a href=""></a>                 <span class="st">"Cohort_B"</span>)</span>
+<span id="cb54-31"><a href=""></a></span>
+<span id="cb54-32"><a href=""></a>purrr<span class="sc">::</span><span class="fu">walk</span>(</span>
+<span id="cb54-33"><a href=""></a>  <span class="at">.x =</span> cohort_name,</span>
+<span id="cb54-34"><a href=""></a>  <span class="at">.f =</span> <span class="sc">~</span><span class="fu">copy_and_render</span>(</span>
+<span id="cb54-35"><a href=""></a>    <span class="at">cohort =</span> .x</span>
+<span id="cb54-36"><a href=""></a>  )</span>
+<span id="cb54-37"><a href=""></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/quarto_yml_copy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-52"><img data-src="images/quarto_yml_copy.png" class="quarto-figure quarto-figure-center" style="width:100.0%" alt="_quarto_Cohort_A.yml file copied and changed to _quarto.qmd"></a></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="automated-technical-report-reference-4" class="slide level2">
+<h2>Automated Technical Report (Reference)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/technical_report.png" class="lightbox" data-gallery="quarto-lightbox-gallery-53"><img data-src="images/technical_report.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Output of technical report."></a></p>
+</figure>
+</div>
+</section>
+<section id="automated-summary-report-how-to-guide" class="slide level2">
+<h2>Automated Summary Report (How-to-Guide)</h2>
+<p><span style="font-size: 80%;">A similar method is done to create a summary report in word using <a href="https://davidgohel.github.io/flextable/"><code>flextable</code></a>.</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="images/summary_report.png" class="lightbox" data-gallery="quarto-lightbox-gallery-54"><img data-src="images/summary_report.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Preview of summary report."></a></p>
+</figure>
+</div>
 
 </section>
     </div>
