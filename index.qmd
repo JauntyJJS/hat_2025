@@ -58,7 +58,6 @@ library(pointblank)
 library(reactable)
 
 # library(ggplot2)
-# library(RVenn)
 # library(ggVennDiagram)
 # library(ComplexUpset)
 
@@ -191,7 +190,7 @@ A template to offer a systematic way to report data harmonisation processes.
 What [*Did*]{.important} We Forget <br> to Teach You about {{< fa brands r-project >}} ?
 :::
 
-![](images/what_is_R_programming.png){fig-alt="Figure showing a Google search on what is the R Programming Language." fig-align="center" width="80%"}
+![](images/what_is_R_programming.png){fig-alt="Figure showing a Google search on what is the R Programming Language." fig-align="center" width="60%"}
 
 ##
 
@@ -330,6 +329,38 @@ Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_bla
 ::: aside
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
+
+## Start {{< fa brands r-project >}} Session in a "blank slate"
+
+::: columns
+
+::: {.column width="50%"}
+
+:x: Avoid `rm(list = ls())`\
+
+![](images/persisted_options.png){fig-alt="Figure showing the options that persisted despite using rm(list = ls())." fig-align="center" width="100%"}
+[Slide from [Project oriented workflows](https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides){target="_blank"}]{style="font-size: 80%;"}.
+
+<br>
+
+:white_check_mark: Use [`usethis::use_blank_slate()`](https://usethis.r-lib.org/reference/use_blank_slate.html){target="_blank"}\
+
+````{.r filename="R console" code-line-numbers="false"}
+usethis::use_blank_slate()
+````
+
+:::
+
+::: {.column width="50%"}
+
+:white_check_mark: Tools -\> Global Options in RStudio.\
+
+![](images/blank_slate.png){fig-alt="Starting R Session in a blank slate." fig-align="center" width="100%"}
+
+:::
+
+:::
+
 
 ## States of {{< fa brands r-project >}} 📦
 
@@ -490,7 +521,7 @@ Install [Rtools](https://cran.r-project.org/bin/windows/Rtools/){target="_blank"
 
 Install [XCode](https://apps.apple.com/us/app/xcode/id497799835?mt=12){target="_blank"} :warning: take some time to install
 
-``` {.bash code-line-numbers="false"}
+``` {.bash filename="terminal" code-line-numbers="false"}
 xcode-select --install
 ```
 
@@ -498,9 +529,9 @@ xcode-select --install
 
 install tools via package manager, e.g.
 
-``` bash
+````{.bash filename="terminal" code-line-numbers="false"}
 apt install make
-```
+````
 
 :::
 
@@ -549,12 +580,18 @@ Some advice ...
 <iframe width="1000" height="500" src="https://require.predictiveecology.org/" title="Homepage of R pacakage Require" ></iframe>
 ```
 
+## Personal R Administration
+
+<https://rstats-wtf.github.io/wtf-personal-radmin-slides>{target="_blank"}
+
+<iframe width="1000" height="500" src="https://rstats-wtf.github.io/wtf-personal-radmin-slides" title="R Personal Administration" ></iframe>
+
 ## Quarto
 
 [Quarto](https://quarto.org/){target="_blank"} is an open-source software that weaves narrative and programming code together to produce elegantly formatted output as documents (in HTML, Word, PDF), presentations, books, web pages, and more.
 
 ![](images/quarto_allison.png){fig-alt="Picture by Allison Horst about Quarto turning programming code to documents." fig-align="center"}
-[[Artwork](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote){target="_blank"} from ["Hello, Quarto"](https://www.youtube.com/watch?v=p7Hxu4coDl8) keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 80%;"}.
+[[Artwork](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote){target="_blank"} from ["Hello, Quarto"](https://www.youtube.com/watch?v=p7Hxu4coDl8){target="_blank"} keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 80%;"}.
 
 ## Open A Quarto Document
 
@@ -580,6 +617,34 @@ A Quarto file is a plain text file that has the extension `.qmd` containing thre
 ```{=html}
 <iframe width="1000" height="550" src="https://kpuka.ca/resources/quarto_intro.html" title="Introduction to Quarto by Klajdi Puka, PhD" ></iframe>
 ```
+
+## Quarto Level 2
+
+````{.bash filename="terminal" code-line-numbers="false"}
+quarto pandoc -o custom-reference-doc.docx --print-default-data-file reference.docx
+````
+
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/8CQiVVgQoH0?si=ByW6sp-mrfCKtzbf" title="How to change document fonts & formats in Quarto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Quarto Level 2
+
+<https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto/>{target="_blank"}
+
+<iframe width="1000" height="550" src="https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto" title="Word templates from Andrew Wheeler" ></iframe>
+
+## Quarto Level 2
+
+````{.bash filename="terminal" code-line-numbers="false"}
+quarto install tinytex
+````
+
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/OUWOx80eJqk?si=ptMrkq1pZWI9EqVn" title="Preparing RStudio to Generate PDF Files with Quarto and tinyTeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Quarto Level 2
+
+<https://christophertkenny.com/quarto.html>{target="_blank"}
+
+<iframe width="1000" height="550" src="https://christophertkenny.com/quarto.html" title="Quarto pdf templates from Christopher Kenny" ></iframe>
 
 ## Workflow with collaborators
 
@@ -1704,7 +1769,7 @@ There is a need to automate the creation of these reports.
 <iframe width="1000" height="550" src="https://jauntyjjs-harmonisation-cohort-b.netlify.app/" title="Cohort_B Harmonisation Report in html" ></iframe>
 ```
 
-## Quarto Level 2
+## Quarto Level 3
 
 To make a Quarto book or website, we need a `_quarto.yml` and `index.qmd` file
 
@@ -1724,7 +1789,7 @@ To make a Quarto book or website, we need a `_quarto.yml` and `index.qmd` file
 
 ::::
 
-## Quarto Level 2
+## Quarto Level 3
 
 `_quarto.yml` is a [configuration file](https://quarto.org/docs/projects/quarto-projects.html){target="_blank"} to tell Quarto to create a book.
 
@@ -1818,7 +1883,7 @@ format:
 ---
 ````
 
-## Quarto Level 2
+## Quarto Level 3
 
 `index.qmd` file gives the preface (homepage) content of the Quarto book (website). It is [compulsory](https://quarto.org/docs/books/book-structure.html){target="_blank"} file needed for the rendering to work.
 
@@ -2176,6 +2241,343 @@ purrr::walk(
 
 ## Automated Summary Report (How-to-Guide)
 
-[A similar method is done to create a summary report in word using [`flextable`](https://davidgohel.github.io/flextable/).]{style="font-size: 80%;"}
+[A similar method is done to create a summary report in word using [`flextable`](https://davidgohel.github.io/flextable/){target="_blank"}.]{ style="font-size: 80%;"}
 
 ![](images/summary_report.png){fig-alt="Preview of summary report." fig-align="center" width="80%"}
+
+## Overview Diagrams
+
+How many variables can each cohort provide ? 
+
+How many variables can be harmonised ?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: Venn Diagram
+#| echo: true
+#| eval: true
+#| output: false
+
+demographic_list <- list(
+  A = c("Age", "Sex",
+        "Hypertension", "Dyslipidemia", "Family Hx CAD", "Diabetes",
+        "Smoke Current", "Smoke Past",
+        "Have Chest Pain", "Chest Pain Character",
+        "Dyspnea",
+        "BMI", "Height", "Weight"),
+  B = c("Age", "Sex",
+        "Hypertension", "Dyslipidemia", "Family Hx CAD", "Diabetes",
+        "Smoke Current", "Smoke Past",
+        "Have Chest Pain", "Chest Pain Character",
+        "Dyspnea",
+        "HDL", "Total Cholesterol", 
+        "Triglyceride", "LDL"),
+  C = c("Age", "Sex",
+        "Hypertension", "Dyslipidemia", "Family Hx CAD", "Diabetes",
+        "Smoke Current", "Smoke Past",
+        "Have Chest Pain", "Chest Pain Character",
+        "Dyspnea",
+        "BMI", "Height", "Weight",
+        "HDL", "Total Cholesterol", 
+        "Triglyceride", "LDL")
+)  
+
+cohort_a_label_name <- "Cohort A\n(n=1000)"
+cohort_b_label_name <- "Cohort B\n(n=2000)"
+cohort_c_label_name <- "Cohort C\n(n=1500)"
+
+demographic_venn_data <- demographic_list |> 
+  ggVennDiagram::Venn() |> 
+  ggVennDiagram::process_data()
+
+demographic_venn_regionedge_data <- demographic_venn_data |> 
+  ggVennDiagram::venn_regionedge() |> 
+  dplyr::mutate(
+    name = stringr::str_replace_all(
+      .data[["name"]],
+      "/",
+      " and "
+    ),
+    name = stringr::str_wrap(.data[["name"]], width = 10),
+    name = forcats::fct_reorder(.data[["name"]],
+                                nchar(.data[["id"]]))
+  ) |> 
+  dplyr::rename(`Cohort` = "name")
+
+demographic_venn_label_data <- demographic_venn_data |>
+  ggVennDiagram::venn_setlabel() |> 
+  dplyr::mutate(
+    name = dplyr::case_match(
+      .data[["name"]],
+      "A" ~ cohort_a_label_name,
+      "B" ~ cohort_b_label_name,
+      "C" ~ cohort_c_label_name
+    )
+  ) |> 
+  dplyr::rename(`Cohort` = "name")
+
+demographic_venn_regionlabel_data <- demographic_venn_data |> 
+  ggVennDiagram::venn_regionlabel() |> 
+  dplyr::mutate(
+    name = stringr::str_replace_all(
+      .data[["name"]],
+      "/",
+      " and "
+    ),
+    name = stringr::str_wrap(.data[["name"]], width = 10),
+    name = forcats::fct_reorder(.data[["name"]],
+                                nchar(.data[["id"]]))
+  ) |> 
+  dplyr::rename(`Cohort` = "name")
+
+demographic_venn_edge_data <- demographic_venn_data |> 
+  ggVennDiagram::venn_setedge()
+
+demographic_venn_diagram <- ggplot2::ggplot() +
+  # 1. region count layer
+  ggplot2::geom_polygon(
+    data = demographic_venn_regionedge_data,
+    mapping = ggplot2::aes(
+      x = .data[["X"]], y = .data[["Y"]],
+      fill = .data[["Cohort"]],
+      group = .data[["id"]])
+  ) +
+  # 2. set edge layer
+  ggplot2::geom_path(
+    data = demographic_venn_edge_data,
+    mapping = ggplot2::aes(
+      x = .data[["X"]], y = .data[["Y"]],
+      colour = "black",
+      group = .data[["id"]]
+    ),    
+    show.legend = FALSE
+  ) +
+  # 3. set label layer
+  ggplot2::geom_text(
+    data = demographic_venn_label_data,
+    mapping = ggplot2::aes(
+      x = .data[["X"]], y = .data[["Y"]],
+      label = .data[["Cohort"]]),
+    size = 5.5
+  ) +
+  # 4. region label layer
+  ggplot2::geom_label(
+    data = demographic_venn_regionlabel_data,
+    mapping = ggplot2::aes(
+      x = .data[["X"]], y = .data[["Y"]],
+      label = .data[["count"]]),
+    size = 7,
+    fill = "white"
+  ) +
+  ggplot2::scale_x_continuous(
+    expand = ggplot2::expansion(mult = 0.2)
+  ) +
+  ggplot2::theme_void() +
+  ggplot2::theme(
+    text = ggplot2::element_text(size = 20)
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: Venn Diagram Show
+#| fig-height: 8
+#| fig-align: center
+#| fig-alt: |
+#|   An venn diagram showing common variables within six cohorts
+
+demographic_venn_diagram 
+
+```
+
+:::
+
+::::
+
+Venn diagram does not work for many (> 10) cohorts.
+
+## Overview Diagrams
+
+Upset plots are too complicated for clinicians.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: Upset Diagram
+#| echo: true
+#| eval: true
+#| output: false
+
+demographic_venn <- tibble::tibble(
+  column_name = c("Age", "Sex",
+                  "Hypertension", "Dyslipidemia", "Family Hx CAD", "Diabetes",
+                  "Smoke Current", "Smoke Past",
+                  "Have Chest Pain", "Chest Pain Character",
+                  "Dyspnea",
+                  "BMI", "Height", "Weight",
+                  "HDL", "Total Cholesterol", 
+                  "Triglyceride", "LDL"),
+  `Cohort A` = c(1, 1,
+                 1, 1, 1, 1,
+                 1, 1,
+                 1, 1,
+                 1,
+                 1, 1, 1,
+                 0, 0, 
+                 0, 0),
+  `Cohort B` = c(1, 1,
+                 1, 1, 1, 1,
+                 1, 1,
+                 1, 1,
+                 1,
+                 0, 0, 0,
+                 1, 1, 
+                 1, 1),
+  `Cohort C` = c(1, 1,
+                 1, 1, 1, 1,
+                 1, 1,
+                 1, 1,
+                 1,
+                 1, 1, 1,
+                 1, 1, 
+                 1, 1),
+  `Cohort D` = c(1, 1,
+                 1, 1, 1, 1,
+                 1, 1,
+                 1, 1,
+                 0,
+                 1, 0, 0,
+                 1, 1, 
+                 1, 1),
+  `Cohort E` = c(1, 1,
+                 1, 1, 1, 1,
+                 1, 1,
+                 1, 1,
+                 0,
+                 1, 1, 1,
+                 1, 1, 
+                 0, 0),
+  `Cohort F` = c(1, 1,
+                 1, 1, 1, 1,
+                 1, 1,
+                 1, 1,
+                 0,
+                 1, 1, 1,
+                 0, 0, 
+                 0, 0),
+)
+
+cohort_a_upset_col_name <- "Cohort A\n(n=1000)"
+cohort_b_upset_col_name <- "Cohort B\n(n=2000)"
+cohort_c_upset_col_name <- "Cohort C\n(n=1500)"
+cohort_d_upset_col_name <- "Cohort D\n(n=500)"
+cohort_e_upset_col_name <- "Cohort E\n(n=1000)"
+cohort_f_upset_col_name <- "Cohort F\n(n=2500)"
+
+
+demographic_upset_data <- demographic_venn |>
+  dplyr::rename(
+    !!cohort_a_upset_col_name := "Cohort A",
+    !!cohort_b_upset_col_name := "Cohort B",
+    !!cohort_c_upset_col_name := "Cohort C",
+    !!cohort_d_upset_col_name := "Cohort D",
+    !!cohort_e_upset_col_name := "Cohort E",
+    !!cohort_f_upset_col_name := "Cohort F"
+  )
+
+upset_plot <- ComplexUpset::upset(
+  demographic_upset_data,
+  c(cohort_a_upset_col_name, 
+    cohort_b_upset_col_name, 
+    cohort_c_upset_col_name,
+    cohort_d_upset_col_name,
+    cohort_e_upset_col_name,
+    cohort_f_upset_col_name),
+  base_annotations = list(
+    `Intersection size` = 
+      ComplexUpset::intersection_size(
+        text = list(size = 9, nudge_y = 0.5),
+        text_colors = c(on_background='black', 
+                        on_bar='white')
+      ) + 
+      ggplot2::annotate(
+        size = 5.5,
+        geom = 'text', 
+        x = Inf, 
+        y = Inf,
+        label = paste('Total:', nrow(demographic_venn)),
+        vjust = 1, 
+        hjust = 1
+      ) + 
+      ggplot2::theme(
+        axis.title.y = ggplot2::element_text(angle = 0, size = 20),
+        axis.title.x = ggplot2::element_text(angle = 0, size = 20), 
+        text = ggplot2::element_text(size = 20)
+      ) +
+      ggplot2::labs(y = "",
+                    title = "Intersection size")
+      ),
+  set_sizes = ( 
+    ComplexUpset::upset_set_size() +
+    ggplot2::geom_text(
+      size = 5.5,
+      mapping = ggplot2::aes(label= ggplot2::after_stat(.data[["count"]])), 
+      hjust = 1.5, 
+      stat = 'count') +
+    ggplot2::expand_limits(y = 30) + 
+    ggplot2::theme(
+        axis.title.y = ggplot2::element_text(angle = 0, size = 15),
+        axis.title.x = ggplot2::element_text(angle = 0, size = 15), 
+        text = ggplot2::element_text(size = 15)
+    ) +
+    ggplot2::labs(y = "Number of variables")
+  ),
+  sort_intersections_by = "degree",
+  sort_sets = FALSE,
+  name = "", 
+  width_ratio = 0.25,
+  themes = ComplexUpset::upset_default_themes(
+    text = ggplot2::element_text(size = 15)
+    )
+  )
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: Upset Diagram Print
+#| fig-height: 8
+#| fig-align: center
+#| fig-alt: |
+#|   An upset plot showing common variables within six cohorts
+
+upset_plot |>
+  print()
+ 
+```
+
+:::
+
+Cannot answer follow-up questions:
+
+[How many cohorts provide patient's blood lipid information and how many patients have them ?]{style="font-size: 80%;"}
+
+::::
+
+## Overview Diagrams
+
+Create a "heatmap"using Microsoft PowerPoint.
+
+![](images/suggested_heatmap.png){fig-alt="A modified heatmap to show command variables." fig-align="center" width="100%"}

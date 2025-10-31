@@ -13,6 +13,7 @@ $presentation-h2-font-size: 2.5rem !default;
 $presentation-h3-font-size: 2rem !default;
 
 $link-color: #263b8c;
+$link-decoration: underline;
 
 // colors
 $body-bg: #fcf3ff !default;
@@ -53,7 +54,7 @@ $code-block-bg: #1f2430;
   bottom: 14px !important;
   right: 30px !important;
   top: unset !important;
-  color: #286ab8;
+  color: #4B006E;
 }
 
 .reveal .slide-logo {
@@ -114,22 +115,22 @@ $code-block-bg: #1f2430;
 
 .reveal .progress {
   background: #B3B3B3;
-  color: #124789;
+  color: #4B006E;
   height: 1.5%;
 }
 
 .reveal .navigate-right .controls-arrow {
   font-size: 10px;
-  color: #3570b6;
+  color: #4B006E;
 }
 
 .reveal .navigate-left .controls-arrow {
   font-size: 10px;
-  color: #3570b6;
+  color: #4B006E;
 }
 
 .reveal .footer > * {
-	color: #3570b6;
+	color: #4B006E;
 }
 
 // title and headings
