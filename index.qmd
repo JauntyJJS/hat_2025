@@ -57,9 +57,10 @@ library(vroom)
 library(pointblank)
 library(reactable)
 
-# library(ggplot2)
-# library(ggVennDiagram)
-# library(ComplexUpset)
+library(ggplot2)
+library(ggVennDiagram)
+library(ComplexUpset)
+library(daff)
 
 source("R/factor-reactable.R")
 source("R/integer-check.R")
@@ -276,9 +277,9 @@ ls -l | grep drw | awk '{print $9}' | sort
 
 -   does not require `library(dplyr)`
 
-::: columns
+:::: {.columns}
 
-::: {.column width="45%"}
+::: {.column width="50%"}
 
 :::{.center-h}
 [**Without Namespace**]{style="font-size: 80%;"}
@@ -297,9 +298,7 @@ select(mtcars, mpg, cyl)
 mtcars |>  
   select(mpg, cyl) 
 ```
-:::
 
-::: {.column width="5%"}
 :::
 
 ::: {.column width="50%"}
@@ -307,7 +306,6 @@ mtcars |>
 :::{.center-h}
 [**With Namespace**]{style="font-size: 80%;"}
 :::
-
 
 ```{r}
 #| label: dplyr with namespace
@@ -322,9 +320,10 @@ dplyr::select(mtcars, mpg, cyl)
 mtcars |>  
   dplyr::select(mpg, cyl) 
 ```
-:::
 
 :::
+
+::::
 
 ::: aside
 Adapted from [Iterating well with purrr](https://rstats-wtf.github.io/wtf-purrr-slides/){target="_blank"}
@@ -362,19 +361,25 @@ CONNECT_API_KEY=DaYK2hBUriSBYUEGIAiyXsRJHSjTYJN3
 DB_USER=elephant
 DB_PASS=p0stgr3s
 ```
-::: columns
+:::: {.columns}
+
 ::: {.column width="40%"}
+
 ### user
 
 `~/.Renviron`
+
 :::
 
 ::: {.column width="60%"}
+
 ### project
 
 `path/to/your/project/.Renviron`
+
 :::
-:::
+
+::::
 
 ::: aside
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
@@ -412,33 +417,7 @@ Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-person
 
 {{< fa brands r-project >}} 📦 -- [Structure](https://r-pkgs.org/Structure.html){target="_blank"}
 
-```{mermaid}
-flowchart TD
-subgraph dev
-direction LR
-Source -- "devtools::build()" --> Bundled
-Bundled -- "devtools::build(binary=TRUE)" --> Binary
-end
-style Source fill: lightgray
-style Bundled fill: lightgray
-style Binary fill: lightgray
-style dev fill: lightyellow
-```
-
-```{mermaid}
-flowchart TD
-subgraph use
-direction LR
-Binary --"install.packages()
-pak::pak()
-renv::install()"--> Installed
-Installed --"library()"--> Loaded
-end
-style Binary fill: lightgray
-style Installed fill: lightgray
-style Loaded fill: lightgray
-style use fill: lightyellow
-```
+![](images/r_package_structure.png){fig-alt="Figure showing the summary of the phases of the R package structure." fig-align="center" width="100%"}
 
 ::: aside
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
@@ -454,7 +433,7 @@ Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary {{< fa brand
 
 ## R-universe and Posit Public Package Manager
 
-::: columns
+:::: {.columns}
 
 ::: {.column width="40%"}
 
@@ -485,7 +464,7 @@ options(
 
 :::
 
-:::
+::::
 
 ## How do I know I got a binary?
 
@@ -699,7 +678,7 @@ Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
 
 {{< fa brands r-project >}} 📦 with file system functions ([`fs`](https://fs.r-lib.org/){target="_blank"} and [`here`](https://here.r-lib.org/index.html){target="_blank"}).
 
-:::: columns
+:::: {.columns}
 
 ::: {.column width="50%"}
 
@@ -781,7 +760,7 @@ Works on my machine, works on yours!
 
 ## Start {{< fa brands r-project >}} Session in a "blank slate"
 
-::: columns
+:::: {.columns}
 
 ::: {.column width="50%"}
 
@@ -808,7 +787,7 @@ usethis::use_blank_slate()
 
 :::
 
-:::
+::::
 
 ## Project Oriented Workflow
 
@@ -1429,7 +1408,7 @@ out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
 
 {{< fa brands youtube >}} [Parameterized Quarto Reports Improve Understanding of Soil Health](https://www.youtube.com/watch?v=lbE5uOqfT70){target="_blank"} by [Jadey Ryan](https://jadeyryan.com/){target="_blank"}.
 
-<iframe width="1000" height="500" src="https://www.youtube.com/embed/lbE5uOqfT70?si=kvtl0rbJt_jU4oBW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/lbE5uOqfT70?si=kvtl0rbJt_jU4oBW" title="Parameterized Quarto Reports Improve Understanding of Soil Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Variable Mapping
 
@@ -1955,6 +1934,180 @@ colnames(three_penguins)
 :::
 
 ::::
+
+## Comapring Datasets
+
+Use {{< fa brands r-project >}} 📦 [`daff`](https://davidgohel.github.io/flextable/){target="_blank"} to compare different version of harmonised datasets.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: daff intro example
+#| echo: true
+
+data1 <- data.frame(
+  Name=c("P1","P2","P3","P4","P5"),
+  col1=c(1,2,3,4,5),
+  col2=c(11,13,14,15,17)
+)
+
+data2 <- data.frame(
+  col1=c(1,3,3,6,9), 
+  Name=c("P1","P2","P6","P4","P5")
+)
+
+compare_results <- daff::diff_data(data1, data2)
+compare_results
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: daff output
+#| echo: true
+#| eval: false
+
+render_diff(compare_results)
+```
+
+![](images/daff_image.png){fig-alt="Interactive results from daff." fig-align="center" width="87%"}
+:::
+
+::::
+
+## Comapring Datasets
+
+Use `summary()` to return a summary list.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: daff different example
+#| echo: true
+
+data1 <- data.frame(
+  Name=c("P1","P2","P3","P4","P5"),
+  col1=c(1,2,3,4,5),
+  col2=c(11,13,14,15,17)
+)
+
+data2 <- data.frame(
+  col1=c(1,3,3,6,9), 
+  Name=c("P1","P2","P6","P4","P5")
+)
+
+compare_different_summary <- daff::diff_data(
+  data1, data2) |> 
+  summary()
+
+compare_different_summary
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: daff same example
+#| echo: true
+
+data1 <- data.frame(
+  Name=c("P1","P2","P3","P4","P5"),
+  col1=c(1,2,3,4,5),
+  col2=c(11,13,14,15,17)
+)
+
+data2 <- data.frame(
+  Name=c("P1","P2","P3","P4","P5"),
+  col1=c(1,2,3,4,5),
+  col2=c(11,13,14,15,17)
+)
+
+compare_same_summary <- daff::diff_data(data1, data2) |> 
+  summary()
+
+compare_same_summary
+```
+
+:::
+
+::::
+
+## Comapring Datasets
+
+Use the summary list and [`pointblank::expect_col_vals_in_set`](https://rstudio.github.io/pointblank/reference/col_vals_in_set.html){target="_blank"} to do the validation automatically.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| label: daff different example with pointblank
+#| echo: true
+#| error: true
+
+tibble::tibble(
+  row_deletes = compare_different_summary$row_deletes,
+  row_inserts = compare_different_summary$row_inserts,
+  row_updates = compare_different_summary$row_updates,
+  row_reorders = compare_different_summary$row_reorders,
+  col_deletes = compare_different_summary$col_deletes,
+  col_inserts = compare_different_summary$col_inserts,
+  col_updates = compare_different_summary$col_updates,
+  col_reorders = compare_different_summary$col_reorders,
+) |>
+  pointblank::expect_col_vals_in_set(
+    columns = c(
+      "row_deletes", "row_inserts", "row_updates", "row_reorders",
+      "col_deletes", "col_inserts", "col_updates", "col_reorders"
+    ),
+    set = c(0)
+  )
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| label: daff same example with pointblank
+#| echo: true
+#| error: true
+
+tibble::tibble(
+  row_deletes = compare_same_summary$row_deletes,
+  row_inserts = compare_same_summary$row_inserts,
+  row_updates = compare_same_summary$row_updates,
+  row_reorders = compare_same_summary$row_reorders,
+  col_deletes = compare_same_summary$col_deletes,
+  col_inserts = compare_same_summary$col_inserts,
+  col_updates = compare_same_summary$col_updates,
+  col_reorders = compare_same_summary$col_reorders,
+) |>
+  pointblank::expect_col_vals_in_set(
+    columns = c(
+      "row_deletes", "row_inserts", "row_updates", "row_reorders",
+      "col_deletes", "col_inserts", "col_updates", "col_reorders"
+    ),
+    set = c(0)
+  )
+```
+
+:::
+
+::::
+
+## Comapring Datasets
+
+{{< fa brands youtube >}}[Find the difference between two datasets in R](https://www.youtube.com/watch?v=bKYUHFYAjtc){target="_blank"}
+
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/bKYUHFYAjtc?si=sPX9Eicva5B1Rh-x" title="Find the difference between two datasets in R" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Tehcncal Report Challenge
 
