@@ -1,6 +1,6 @@
 --- 
 title: Retrospective clinical data harmonisation Reporting Using R and Quarto
-author: Jeremy Selva [`r fontawesome::fa(name = "linkedin", fill = "#0077ac")`](https://www.linkedin.com/in/jeremy-selva-085b9112a/){target="_blank"} <br> @JauntyJJS [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS){target="_blank"} [`r fontawesome::fa(name = "fab fa-square-x-twitter", fill = "#000000")`](https://twitter.com/JauntyJJS){target="_blank"} [`r fontawesome::fa(name = "bluesky", fill = "#1084ff")`](https://bsky.app/profile/jauntyjjs.bsky.social){target="_blank"} [<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5f53e7;overflow:visible;position:relative;"><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54a102.5 102.5 0 0 1 -.9-13.9c85.6 20.9 158.7 9.1 178.8 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.3V197c0-58.5-64-56.6-64-6.9v114.2H90.2c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175z"/></svg>](https://fosstodon.org/@JauntyJJS){target="_blank"} <br> [*https://jeremy-selva.netlify.app* `r fontawesome::fa(name = "link", fill = "#666666")`](https://jeremy-selva.netlify.app/){target="_blank"} <br> For [HAT 2025 `r fontawesome::fa(name = "link", fill = "#666666")`](https://www.eventbrite.sg/o/cgh-harvest-analytics-together-hat-90682070963){target="_blank"}
+author: Jeremy Selva [`r fontawesome::fa(name = "linkedin", fill = "#0077ac")`](https://www.linkedin.com/in/jeremy-selva-085b9112a/){target="_blank"} <br> @JauntyJJS [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS){target="_blank"} [`r fontawesome::fa(name = "fab fa-square-x-twitter", fill = "#000000")`](https://twitter.com/JauntyJJS){target="_blank"} [`r fontawesome::fa(name = "bluesky", fill = "#1084ff")`](https://bsky.app/profile/jauntyjjs.bsky.social){target="_blank"} [<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5f53e7;overflow:visible;position:relative;"><path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54a102.5 102.5 0 0 1 -.9-13.9c85.6 20.9 158.7 9.1 178.8 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.3V197c0-58.5-64-56.6-64-6.9v114.2H90.2c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175z"/></svg>](https://fosstodon.org/@JauntyJJS){target="_blank"} <br> [*https://jeremy-selva.netlify.app* `r fontawesome::fa(name = "link", fill = "#666666")`](https://jeremy-selva.netlify.app/){target="_blank"} <br> For [Harvest Analytics Together (HAT) 2025 `r fontawesome::fa(name = "link", fill = "#666666")`](https://www.eventbrite.sg/o/cgh-harvest-analytics-together-hat-90682070963){target="_blank"}
 date: 2025-11-14
 date-format: "D[<sup style='font-size:65%;font-style:italic;'>th</sup>] MMMM YYYY"
 lightbox: true
@@ -21,6 +21,30 @@ format:
     highlight-style: arrow-dark
     # logo: images/qr.png
     include-after-body: no_logo_at_title_slide.js
+    include-in-header:
+      text: |
+        <meta name="github-repo" content="JauntyJJS/hat_2025 />
+        <meta name="twitter:title" content="Retrospective clinical data harmonisation Reporting Using R and Quarto" />
+        <meta name="twitter:description" content="Presentation for Harvest Analytics Together 2025." />
+        <meta name="twitter:url" content="https://jauntyjjs.github.io/hat_2025/" />
+        <meta name="twitter:image" content="https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/share-card.png" />
+        <meta name="twitter:image:alt" content="Title slide of Retrospective clinical data harmonisation Reporting Using R and Quarto presented at Harvest Analytics Together 2025." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@JauntyJJS" />
+        <meta name="twitter:site" content="@JauntyJJS" />
+        <meta property="og:title" content="Retrospective clinical data harmonisation Reporting Using R and Quarto" />
+        <meta property="og:description" content="Presentation for Harvest Analytics Together 2025." />
+        <meta property="og:url" content="https://jauntyjjs.github.io/hat_2025/" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/share-card.png" />
+        <meta property="og:image:alt" content="Title slide of Retrospective clinical data harmonisation Reporting Using R and Quarto presented at Harvest Analytics Together 2025." />
+        <meta property="og:site_name" content="Harvest Analytics Together 2025" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_UK" />
+        <meta property="article:author" content="Jeremy Selva" />
+title-slide-attributes:
+    data-background-image: "images/title.png"
+    data-background-size: contain
+    data-background-opacity: "1"
 
 --- 
 
@@ -74,6 +98,13 @@ Research Officer from [National Heart Centre Singapore](https://www.nhcs.com.sg/
 
 ![](images/allison_horst2.png){fig-alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster." fig-align="center" width="65%"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 [Taming the Data Beast from ["Cleaning Medical Data with R"](https://www.pipinghotdata.com/workshops/2023-06-06-cleaning-medical-data-with-r/){target="_blank"} workshop by Shannon Pileggi, Crystal Lewis and Peter Higgins presented at R/Medicine 2023. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 60%;"}.
 
 ## About Data Harmonisation
@@ -123,7 +154,7 @@ Data harmonisation is part of data wrangling process where
 Turn my sorrow into opportunities.
 
 ```{=html}
-<iframe width="990" height="560" src="https://jauntyjjs.github.io/useR-2024/#/title-slide" frameborder="0" allowfullscreen></iframe>
+<iframe width="970" height="550" src="https://jauntyjjs.github.io/useR-2024/#/title-slide" frameborder="0" allowfullscreen></iframe>
 ```
 
 ## Why a harmonisation report
@@ -586,7 +617,7 @@ Most commonly used {{< fa brands r-project >}} 📦 to create isolated project e
 -  {{< fa file-powerpoint >}} [Making your R project future-proof with renv](https://ecohealthalliance.github.io/targets-renv-example/outputs/renv-presentation){target="_blank"}.\
 
 ```{=html}
-<iframe width="800" height="400" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile" ></iframe>
+<iframe width="1000" height="400" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile" ></iframe>
 ```
 
 ## {{< fa brands r-project >}} "virtual environment" using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
@@ -757,6 +788,12 @@ ggplot2::ggsave(filename = here::here("figs", "built-barchart.png"))
 ```
 
 Works on my machine, works on yours!
+
+## Practise “safe paths”
+
+{{< fa brands youtube >}} [Efficient File Management in R with {fs} with Jadey Ryan](https://www.youtube.com/watch?v=X4i-yOBtn1s){target="_blank"}
+
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/X4i-yOBtn1s?si=wvCCKGqp-vXig_Lb" title="Efficient File Management in R with fs with Jadey Ryan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Start {{< fa brands r-project >}} Session in a "blank slate"
 
@@ -1971,7 +2008,7 @@ compare_results
 #| echo: true
 #| eval: false
 
-render_diff(compare_results)
+daff::render_diff(compare_results)
 ```
 
 ![](images/daff_image.png){fig-alt="Interactive results from daff." fig-align="center" width="87%"}
@@ -2968,3 +3005,70 @@ Cannot answer follow-up questions:
 Create a "heatmap"using Microsoft PowerPoint.
 
 ![](images/suggested_heatmap.png){fig-alt="A modified heatmap to show command variables." fig-align="center" width="100%"}
+
+## Summary
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/data_harmonisation_smaller.png){fig-alt="The data harmonization process: Study data variables collected from different sources need to be mapped to one another, classified into the generalized concepts they represent, and transformed into unified harmonized variables for analysis" fig-align="center" width="100%" .fragment}
+
+![](images/r_administration_summary.png){fig-alt="R Administration using pipes, namespacing, ,Renviron and .Rprofile file, R pacakges renv and pak and Posit Public Pacakge Manager." fig-align="center" width="100%" .fragment}
+
+
+:::
+
+::: {.column width="50%"}
+
+![](images/project_organisation_summary.png){fig-alt="R project organisation using a research compendium, R packages here, fs, rcompendium and always starting the project in a blank slate." fig-align="center" width="100%" .fragment}
+
+![](images/quarto_allison.png){fig-alt="Picture by Allison Horst about Quarto turning programming code to documents." fig-align="center" width="100%" .fragment}
+
+:::
+
+::::
+
+## Summary
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/variable_mapping_workflow.png){fig-alt="Variable Mapping Reporting Workflow. Starting with introducing the mapping procedure, writing code to do mapping ans validation, showing that the code works, clean up data for merging." fig-align="center" width="100%" .fragment}
+
+![](images/daff_image_smaller.png){fig-alt="An interactive output showing the difference between two datasets from the R package daff." fig-align="center" width="100%" .fragment}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/documentation_types_for_harmonisation.png){fig-alt="Four major documentation type in terms of data harmonisation" fig-align="center" width="90%" .fragment}
+
+![](images/suggested_heatmap.png){fig-alt="A modified heatmap to show command variables." fig-align="center" width="90%" .fragment}
+
+:::
+
+::::
+
+## Thank you
+
+:::: {.columns}
+
+Harmonisation project template: <https://github.com/JauntyJJS/harmonisation/>{target="_blank"}
+
+::: {.column width="50%"}
+
+![](images/data_harmonisation_github_page.png){fig-alt="Data harmonisation project template on Github." fig-align="center" width="100%"}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/198-feature-complete.png){fig-alt="Comic from Monkeyuser.com showing a lot of work needs to be done after adding a new feature." fig-align="center" width="80%"}
+
+[[Feature Complete](https://www.monkeyuser.com/2020/feature-complete/){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/){target="_blank"}]{style="font-size: 60%;"}
+
+:::
+
+::::
