@@ -202,55 +202,133 @@ What [*Did*]{.important} We Forget <br> to Teach You about {{< fa brands r-proje
 
 We will share a glimpse of "Everything else" R and its friends can do.
 
-## Project Organisation
+## Pipes
 
-[*Organise*]{.important} your project as you go instead of waiting for "tomorrow". 
+{{< fa brands r-project >}} $\geq$ 4.1.0 has a "pipe" symbol `|>` to make code easier to read.
 
-Data is cheap but time is expensive.
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-![](images/research_compendium.svg){fig-alt="Figure showing Research Compendium as a tool to sort out different analysis." fig-align="center" width="80%"}
-
-:::
-
-::: {.column width="50%"}
-
-![](images/project_layout.png){fig-alt="Comic from Monkeyuser.com showing that it is hard to get help with programming issues." fig-align="center" width="80%"}
-
-:::
-
-::::
-
-[[Research Compendium](https://book.the-turing-way.org/reproducible-research/compendia/){target="_blank"} by Scriberia from [The Turing Way project](https://book.the-turing-way.org/){target="_blank"} and Project Layout from [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510){target="_blank"}]{style="font-size: 60%;"}.
-
-## Project Organisation
-
-My harmoniation template organisation is based on the {{< fa brands r-project >}} 📦 [`rcompendium`](https://frbcesab.github.io/rcompendium/){target="_blank"} but there are others as well.
+Without `|>`
 
 ```{r}
-#| label: hexsession
+#| label: no pipe function example 1
+#| echo: true
+#| eval: false
+#| output: false
 
-hexsession::make_tile(
-  local_images = c(
-    here::here("images", "hex_rcompendium.png"),
-    here::here("images", "hex_workflowr.png"),
-    here::here("images", "hex_orderly.png")
-  ),
-  local_urls = c(
-    "https://frbcesab.github.io/rcompendium/",
-    "https://workflowr.github.io/workflowr/",
-    "https://mrc-ide.github.io/orderly/"
-  )
-)
+data_after_task_3 <- task_3(task_2(task_1(data, arg_1_2), arg_2_2, arg_2_3), arg_3_2, arg_3_3)
 
 ```
 
-<!-- ```{=html}
-<iframe width="800" height="200" src="./temp_hexsession/_hexout.html" title="Webpage example"></iframe>
-``` -->
+```{r}
+#| label: no pipe function example 2
+#| echo: true
+#| eval: false
+#| output: false
+
+data_after_task_1 <- task_1(data, arg_1_2)
+
+data_after_task_2 <- task_2(data_after_task_1, arg_2_2, arg_2_3)
+
+data_after_task_3 <- task_3(data_after_task_2, arg_3_2, arg_3_3)
+
+```
+
+With `|>`
+
+```{r}
+#| label: pipe function example
+#| echo: true
+#| eval: false
+#| output: false
+
+data_after_task_3 <- data |> 
+  task_1(arg_1_2) |> 
+  task_2(arg_2_2, arg_2_3) |>
+  task_3(arg_3_2, arg_3_3)
+
+```
+
+<br>
+
+Inspired from the Bash Pipe `|`
+
+``` {.bash filename="terminal" code-line-numbers="false"}
+# List files, then filter by row, then filter by column, then sort.
+ls -l | grep drw | awk '{print $9}' | sort
+```
+
+## Pipes
+
+-   2014+ {{< fa brands r-project >}} 📦 [magrittr](https://magrittr.tidyverse.org/){target="_blank"} pipe [`%>%`](https://magrittr.tidyverse.org/reference/pipe.html){target="_blank"}
+
+-   2021+ ({{< fa brands r-project >}} $\geq$ 4.1.0) native {{< fa brands r-project >}} pipe `|>`
+
+{{< fa blog >}} More details between the two pipes in [Understanding the native R pipe \|\>](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/){target="_blank"}.
+
+<iframe width="1000" height="400" src="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/" title="Understanding the native R pipe" ></iframe>
+
+## Namespacing
+
+[`dplyr::select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"}
+
+-   tells R explicitly to use the function `select` from the package `dplyr`
+
+-   can help to avoid name conflicts (e.g., `MASS::select()`)
+
+-   does not require `library(dplyr)`
+
+::: columns
+
+::: {.column width="45%"}
+
+:::{.center-h}
+[**Without Namespace**]{style="font-size: 80%;"}
+:::
+
+```{r}
+#| label: dplyr without namespace
+#| echo: true
+#| eval: false
+#| output: false
+
+library(dplyr)
+
+select(mtcars, mpg, cyl) 
+
+mtcars |>  
+  select(mpg, cyl) 
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+
+:::{.center-h}
+[**With Namespace**]{style="font-size: 80%;"}
+:::
+
+
+```{r}
+#| label: dplyr with namespace
+#| echo: true
+#| eval: false
+#| output: false
+
+# library(dplyr) not needed
+
+dplyr::select(mtcars, mpg, cyl) 
+
+mtcars |>  
+  dplyr::select(mpg, cyl) 
+```
+:::
+
+:::
+
+::: aside
+Adapted from [Iterating well with purrr](https://rstats-wtf.github.io/wtf-purrr-slides/){target="_blank"}
+:::
 
 ## {{< fa brands r-project >}} Session
 
@@ -330,38 +408,6 @@ Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_bla
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
-## Start {{< fa brands r-project >}} Session in a "blank slate"
-
-::: columns
-
-::: {.column width="50%"}
-
-:x: Avoid `rm(list = ls())`\
-
-![](images/persisted_options.png){fig-alt="Figure showing the options that persisted despite using rm(list = ls())." fig-align="center" width="100%"}
-[Slide from [Project oriented workflows](https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides){target="_blank"}]{style="font-size: 80%;"}.
-
-<br>
-
-:white_check_mark: Use [`usethis::use_blank_slate()`](https://usethis.r-lib.org/reference/use_blank_slate.html){target="_blank"}\
-
-````{.r filename="R console" code-line-numbers="false"}
-usethis::use_blank_slate()
-````
-
-:::
-
-::: {.column width="50%"}
-
-:white_check_mark: Tools -\> Global Options in RStudio.\
-
-![](images/blank_slate.png){fig-alt="Starting R Session in a blank slate." fig-align="center" width="100%"}
-
-:::
-
-:::
-
-
 ## States of {{< fa brands r-project >}} 📦
 
 {{< fa brands r-project >}} 📦 -- [Structure](https://r-pkgs.org/Structure.html){target="_blank"}
@@ -404,7 +450,7 @@ Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary {{< fa brand
 
 -   compiled ahead of time -> easiest / fastest to install
 
-![](images/binary_in_cran.png){fig-alt="Figure showing the Windows and Mac binary files of R package pretestcad." fig-align="center" width="80%"}
+![](images/binary_in_cran.png){fig-alt="Figure showing the Windows and Mac binary files of R package pretestcad." fig-align="center" width="70%"}
 
 ## R-universe and Posit Public Package Manager
 
@@ -582,9 +628,193 @@ Some advice ...
 
 ## Personal R Administration
 
-<https://rstats-wtf.github.io/wtf-personal-radmin-slides>{target="_blank"}
+{{< fa file-powerpoint >}} <https://rstats-wtf.github.io/wtf-personal-radmin-slides>{target="_blank"}
 
 <iframe width="1000" height="500" src="https://rstats-wtf.github.io/wtf-personal-radmin-slides" title="R Personal Administration" ></iframe>
+
+## Project Organisation
+
+[*Organise*]{.important} your project as you go instead of waiting for "tomorrow". 
+
+Data is cheap but time is expensive.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](images/research_compendium.svg){fig-alt="Figure showing Research Compendium as a tool to sort out different analysis." fig-align="center" width="80%"}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/project_layout.png){fig-alt="Comic from Monkeyuser.com showing that it is hard to get help with programming issues." fig-align="center" width="80%"}
+
+:::
+
+::::
+
+[[Research Compendium](https://book.the-turing-way.org/reproducible-research/compendia/){target="_blank"} by Scriberia from [The Turing Way project](https://book.the-turing-way.org/){target="_blank"} and Project Layout from [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510){target="_blank"}]{style="font-size: 60%;"}.
+
+## Project Organisation
+
+My harmoniation template organisation is based on the {{< fa brands r-project >}} 📦 [`rcompendium`](https://frbcesab.github.io/rcompendium){target="_blank"} but there are others ([`orderly`](https://github.com/mrc-ide/orderly){target="_blank"}, [`prodigenr`](https://rostools.github.io/prodigenr){target="_blank"} and [`workflowr`](https://workflowr.github.io/workflowr/){target="_blank"}) as well.
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+<iframe width="750" height="500" src="https://frbcesab.github.io/rcompendium/" title="R Package rcompendium homepage" ></iframe>
+
+:::
+
+::: {.column width="30%"}
+
+![](images/project_organisation_packages_2.png){fig-alt="Examples of R packages (rcompendium, orderly and workflowr) for project organisation." fig-align="center" width="100%"}
+
+:::
+
+::::
+
+## If the top of your {{< fa brands r-project >}} script is
+
+```{r}
+#| label: top of the script
+#| echo: true
+#| eval: false
+#| output: false
+
+setwd("C:\Users\jenny\path\that\only\I\have")
+rm(list = ls())
+
+```
+
+Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
+
+{{< fa blog >}} <https://tidyverse.org/blog/2017/12/workflow-vs-script/>{target="_blank"}
+
+<iframe width="1000" height="400" src="https://tidyverse.org/blog/2017/12/workflow-vs-script/" title="Tidyverse Blog on Project-oriented workflow" ></iframe>
+
+## Practise “safe paths”
+
+{{< fa brands r-project >}} 📦 with file system functions ([`fs`](https://fs.r-lib.org/){target="_blank"} and [`here`](https://here.r-lib.org/index.html){target="_blank"}).
+
+:::: columns
+
+::: {.column width="50%"}
+
+<iframe width="500" height="500" src="https://fs.r-lib.org/" title="R package fs homepage" ></iframe>
+
+:::
+
+::: {.column width="50%"}
+
+<iframe width="500" height="500" src="https://here.r-lib.org/index.html" title="R package here homepage" ></iframe>
+
+:::
+
+::::
+
+## Practise “safe paths”
+
+:x:Avoid typing absolute path in {{< fa brands r-project >}} script. Let {{< fa brands r-project >}} do it for you.\
+
+```{r}
+#| echo: true
+#| eval: false
+
+BAD <- "D://Jeremy//PortableR//RPortableWorkDirectory//"
+```
+
+<br>
+
+User's home directory
+
+```{r}
+#| label: home directory
+#| echo: true
+
+fs::path_home()
+```
+
+{{< fa brands r-project >}} Project directory
+
+```{r}
+#| label: project directory
+#| echo: true
+
+here::here()
+```
+
+<br>
+
+[`here::here()`](https://here.r-lib.org/reference/here.html){target="_blank"} does not create directories; that’s your job.
+
+## Practise “safe paths”
+
+:x:Avoid typing `/` or `\` manually. Let {{< fa brands r-project >}} do it for you.\
+
+```{r}
+#| label: alternative to / or \
+#| echo: true
+
+file.path("data", "raw-data.csv")
+fs::path_home("data", "raw-data.csv")
+here::here("data", "raw-data.csv")
+
+```
+
+<br>
+
+:white_check_mark: Use relative path within the {{< fa brands r-project >}} project\ directory.
+
+```{r}
+#| label: application of here
+#| echo: true
+#| eval: false
+
+readxl::read_excel(path = here::here("data-folder", "data.xlsx"))
+ggplot2::ggsave(filename = here::here("figs", "built-barchart.png"))
+```
+
+Works on my machine, works on yours!
+
+## Start {{< fa brands r-project >}} Session in a "blank slate"
+
+::: columns
+
+::: {.column width="50%"}
+
+:x: Avoid `rm(list = ls())`\
+
+![](images/persisted_options.png){fig-alt="Figure showing the options that persisted despite using rm(list = ls())." fig-align="center" width="100%"}
+[Slide from [Project oriented workflows](https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides){target="_blank"}]{style="font-size: 80%;"}.
+
+<br>
+
+:white_check_mark: Use [`usethis::use_blank_slate()`](https://usethis.r-lib.org/reference/use_blank_slate.html){target="_blank"}\
+
+````{.r filename="R console" code-line-numbers="false"}
+usethis::use_blank_slate()
+````
+
+:::
+
+::: {.column width="50%"}
+
+:white_check_mark: Tools -\> Global Options in RStudio.\
+
+![](images/blank_slate.png){fig-alt="Starting R Session in a blank slate." fig-align="center" width="100%"}
+
+:::
+
+:::
+
+## Project Oriented Workflow
+
+{{< fa file-powerpoint >}} <https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides>{target="_blank"}
+
+<iframe width="1000" height="500" src="https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides" title="Project Oriented Workflow" ></iframe>
 
 ## Quarto
 
@@ -612,7 +842,7 @@ A Quarto file is a plain text file that has the extension `.qmd` containing thre
 
 ## Quarto Level 1
 
-<https://kpuka.ca/resources/quarto_intro.html>{target="_blank"}
+{{< fa blog >}} <https://kpuka.ca/resources/quarto_intro.html>{target="_blank"}
 
 ```{=html}
 <iframe width="1000" height="550" src="https://kpuka.ca/resources/quarto_intro.html" title="Introduction to Quarto by Klajdi Puka, PhD" ></iframe>
@@ -624,11 +854,13 @@ A Quarto file is a plain text file that has the extension `.qmd` containing thre
 quarto pandoc -o custom-reference-doc.docx --print-default-data-file reference.docx
 ````
 
-<iframe width="1000" height="500" src="https://www.youtube.com/embed/8CQiVVgQoH0?si=ByW6sp-mrfCKtzbf" title="How to change document fonts & formats in Quarto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< fa brands youtube >}}[How to change document fonts & formats in Quarto (Word/Docx)](https://www.youtube.com/watch?v=8CQiVVgQoH0){target="_blank"}
+
+<iframe width="1000" height="450" src="https://www.youtube.com/embed/8CQiVVgQoH0?si=ByW6sp-mrfCKtzbf" title="How to change document fonts & formats in Quarto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Quarto Level 2
 
-<https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto/>{target="_blank"}
+{{< fa blog >}} [My word template for Quarto](https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto){target="_blank"}
 
 <iframe width="1000" height="550" src="https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto" title="Word templates from Andrew Wheeler" ></iframe>
 
@@ -638,11 +870,13 @@ quarto pandoc -o custom-reference-doc.docx --print-default-data-file reference.d
 quarto install tinytex
 ````
 
-<iframe width="1000" height="500" src="https://www.youtube.com/embed/OUWOx80eJqk?si=ptMrkq1pZWI9EqVn" title="Preparing RStudio to Generate PDF Files with Quarto and tinyTeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< fa brands youtube >}}[Preparing RStudio to Generate PDF Files with Quarto and tinyTeX](https://www.youtube.com/watch?v=OUWOx80eJqk){target="_blank"}
+
+<iframe width="1000" height="450" src="https://www.youtube.com/embed/OUWOx80eJqk?si=ptMrkq1pZWI9EqVn" title="Preparing RStudio to Generate PDF Files with Quarto and tinyTeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Quarto Level 2
 
-<https://christophertkenny.com/quarto.html>{target="_blank"}
+{{< fa blog >}} [Christopher Kenny's Quarto templates](https://christophertkenny.com/quarto.html){target="_blank"}
 
 <iframe width="1000" height="550" src="https://christophertkenny.com/quarto.html" title="Quarto pdf templates from Christopher Kenny" ></iframe>
 
@@ -911,7 +1145,7 @@ cohort_data_excel <- cohort_data_excel |>
 
 ## Automated capture of warnings (Excel)
 
-We can use the tee pipe operator [`%T>%`](https://magrittr.tidyverse.org/reference/tee.html){target="_blank"} from [magrittr](https://magrittr.tidyverse.org/){target="_blank"}.
+We can use the tee pipe operator [`%T>%`](https://magrittr.tidyverse.org/reference/tee.html){target="_blank"} from {{< fa brands r-project >}} 📦 [magrittr](https://magrittr.tidyverse.org/){target="_blank"}.
 
 :::: {.columns}
 
@@ -1193,7 +1427,7 @@ out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
 
 ## Variable Mapping
 
-Parameterized Quarto Reports Improve Understanding of Soil Health - [Posit Conference in 2023](https://www.youtube.com/playlist?list=PL9HYL-VRX0oRFZslRGHwHuwea7SvAATHp){target="_blank"} by [Jadey Ryan](https://jadeyryan.com/){target="_blank"}.
+{{< fa brands youtube >}} [Parameterized Quarto Reports Improve Understanding of Soil Health](https://www.youtube.com/watch?v=lbE5uOqfT70){target="_blank"} by [Jadey Ryan](https://jadeyryan.com/){target="_blank"}.
 
 <iframe width="1000" height="500" src="https://www.youtube.com/embed/lbE5uOqfT70?si=kvtl0rbJt_jU4oBW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -2102,7 +2336,7 @@ harmonisation/                            # Root of the project template.
 
 Collaborator wants different ways to report how data harmonisation is done.
 
-![](images/documentation_types.png){fig-alt="Four major documentation type." fig-align="center" width="70%"}
+![](images/documentation_types.png){fig-alt="Four major documentation type." fig-align="center" width="80%"}
 
 [The documentation system by [Divio](https://docs.divio.com/documentation-system/){target="_blank"}]{style="font-size: 60%;"}
 
@@ -2111,7 +2345,7 @@ Collaborator wants different ways to report how data harmonisation is done.
 
 Collaborator wants different ways to report how data harmonisation is done.
 
-![](images/documentation_types_for_harmonisation.png){fig-alt="Four major documentation type in terms of data harmonisation" fig-align="center" width="70%"}
+![](images/documentation_types_for_harmonisation.png){fig-alt="Four major documentation type in terms of data harmonisation" fig-align="center" width="80%"}
 
 
 ## Automated Technical Report (Reference)
@@ -2241,7 +2475,7 @@ purrr::walk(
 
 ## Automated Summary Report (How-to-Guide)
 
-[A similar method is done to create a summary report in word using [`flextable`](https://davidgohel.github.io/flextable/){target="_blank"}.]{ style="font-size: 80%;"}
+[A similar method is done to create a summary report in word using {{< fa brands r-project >}} 📦 [`flextable`](https://davidgohel.github.io/flextable/){target="_blank"}.]{ style="font-size: 80%;"}
 
 ![](images/summary_report.png){fig-alt="Preview of summary report." fig-align="center" width="80%"}
 
