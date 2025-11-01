@@ -19,7 +19,7 @@ format:
     transition: fade
     background-transition: fade
     highlight-style: arrow-dark
-    # logo: images/qr.png
+    logo: images/qr.png
     include-after-body: no_logo_at_title_slide.js
     include-in-header:
       text: |
@@ -87,7 +87,6 @@ library(ComplexUpset)
 library(daff)
 
 source("R/factor-reactable.R")
-source("R/integer-check.R")
 source("R/rounding.R")
 
 ```
@@ -98,14 +97,15 @@ Research Officer from [National Heart Centre Singapore](https://www.nhcs.com.sg/
 
 ![](images/allison_horst2.png){fig-alt="Picture by Allison Horst about a data analyst facing a dataset in the form of a monster." fig-align="center" width="65%"}
 
+
+[Taming the Data Beast from ["Cleaning Medical Data with R"](https://www.pipinghotdata.com/workshops/2023-06-06-cleaning-medical-data-with-r/){target="_blank"} workshop by Shannon Pileggi, Crystal Lewis and Peter Higgins presented at R/Medicine 2023. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 60%;"}.
+
 ::: footer
 
 [https://jauntyjjs.github.io/hat_2025
 `r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
 
 :::
-
-[Taming the Data Beast from ["Cleaning Medical Data with R"](https://www.pipinghotdata.com/workshops/2023-06-06-cleaning-medical-data-with-r/){target="_blank"} workshop by Shannon Pileggi, Crystal Lewis and Peter Higgins presented at R/Medicine 2023. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 60%;"}.
 
 ## About Data Harmonisation
 
@@ -119,11 +119,25 @@ Data harmonisation is part of data wrangling process where
 
 [Image from Mallya et al. Circ Cardiovasc Qual Outcomes. 2023 Nov; 16(11):e009938 doi: [10.1161/CIRCOUTCOMES.123.009938](https://doi.org/10.1161/CIRCOUTCOMES.123.009938){target="_blank"}]{style="font-size: 60%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## How it started
 
 ![](images/welcome.png){fig-alt="Figure showing me welcoming the collaborator to the project and sending them a data dictionary and template file for them to use and send the data back to me." fig-align="center" width="90%"}
 
 [[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## How it started
 
@@ -131,11 +145,25 @@ Data harmonisation is part of data wrangling process where
 
 [[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## How it started
 
 ![](images/collaborator_request_1.png){fig-alt="Figure showing the collaborator saying that they will send the data to me and ask me to do the data harmonisation instead." fig-align="center" width="90%"}
 
 [[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## How it started
 
@@ -143,11 +171,25 @@ Data harmonisation is part of data wrangling process where
 
 [[snapshot from Ready for QA | MonkeyUser 2SP Animation Video](https://www.youtube.com/watch?v=5Z8HDADU57U&ab_channel=MonkeyUser){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/)]{style="font-size: 60%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## How it started
 
 ![](images/qa_image_monkeyuser_9_times.png){fig-alt="A 3 by 3 repeared figure showing a sad guy receving a package/data full of bugs and issue." fig-align="center" width="90%"}
 
 [[snapshot from Ready for QA | MonkeyUser 2SP Animation Video](https://www.youtube.com/watch?v=5Z8HDADU57U&ab_channel=MonkeyUser){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/)]{style="font-size: 60%;"}.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## How it started
 
@@ -157,17 +199,38 @@ Turn my sorrow into opportunities.
 <iframe width="970" height="550" src="https://jauntyjjs.github.io/useR-2024/#/title-slide" frameborder="0" allowfullscreen></iframe>
 ```
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Why a harmonisation report
 
 ![](images/collaborator_request_2.png){fig-alt="Figure showing the collaborator saying that they need the harmonised dataset back with a report for higher management to show to data auditors." fig-align="center" width="90%"}
 
 [[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Why a harmonisation report
 
 Some data fields just cannot be planned in advanced.
 
 ![](images/ethnicity_table.png){fig-alt="Figure showing different race or ethnicity grouping from different collaborators that it is impossible to plan race or ethnicity grouping." fig-align="center" width="90%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Issues
 
@@ -197,22 +260,40 @@ There are limited resources on how to make a data harmonisation report.
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Harmonisation Project Template
 
 A template to offer a systematic way to report data harmonisation processes. 
 
 [Link: <https://jauntyjjs.github.io/harmonisation/>]
 
-```{=html}
 <iframe width="1000" height="500" src="https://jauntyjjs.github.io/harmonisation/" title="Harmonisation template" ></iframe>
-```
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Tools to create documentation
 
 ![](images/r_and_quarto.png){fig-alt="Figure showing the logo of the R programming language and hexsticker of Quarto." fig-align="center" width="80%"}
 
 [[R Programming Logo](https://www.cleanpng.com/png-scalable-vector-graphics-cran-statgraphics-rnn-vit-6890332/download-png.html){target="_blank"} from [CleanPNG](https://www.cleanpng.com/){target="_blank"} and [Quarto Hex Sticker](https://rstudio.github.io/cheatsheets/html/quarto.html){target="_blank"} from [Posit](https://posit.co/){target="_blank"}]{style="font-size: 60%;"}.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## 
 
@@ -224,6 +305,13 @@ What [*Did*]{.important} We Forget <br> to Teach You about {{< fa brands r-proje
 
 ![](images/what_is_R_programming.png){fig-alt="Figure showing a Google search on what is the R Programming Language." fig-align="center" width="60%"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ##
 
 ![](images/everything-else.png){fig-alt="Figure showing that R is taught only as a tool to do statistics but not other stuffs." fig-align="center" width="80%"}
@@ -233,6 +321,13 @@ What [*Did*]{.important} We Forget <br> to Teach You about {{< fa brands r-proje
 <br>
 
 We will share a glimpse of "Everything else" R and its friends can do.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Pipes
 
@@ -288,6 +383,13 @@ Inspired from the Bash Pipe `|`
 ls -l | grep drw | awk '{print $9}' | sort
 ```
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Pipes
 
 -   2014+ {{< fa brands r-project >}} 📦 [magrittr](https://magrittr.tidyverse.org/){target="_blank"} pipe [`%>%`](https://magrittr.tidyverse.org/reference/pipe.html){target="_blank"}
@@ -297,6 +399,13 @@ ls -l | grep drw | awk '{print $9}' | sort
 {{< fa blog >}} More details between the two pipes in [Understanding the native R pipe \|\>](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/){target="_blank"}.
 
 <iframe width="1000" height="400" src="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/" title="Understanding the native R pipe" ></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Namespacing
 
@@ -360,6 +469,13 @@ mtcars |>
 Adapted from [Iterating well with purrr](https://rstats-wtf.github.io/wtf-purrr-slides/){target="_blank"}
 :::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## {{< fa brands r-project >}} Session
 
 Before {{< fa brands r-project >}} starts up in a given project, it will perform the following steps
@@ -374,6 +490,13 @@ We can customise Step 1 and 2 using these two main text files.
 -  `.Rprofile` (Contains {{< fa brands r-project >}} code to be run in each session.)
 
 ![](images/start_up_enviromental_files.png){fig-alt="Figure showing the .Renviron and .Rprofile file in an R project template." fig-align="center" width="60%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## what goes in `.Renviron`
 
@@ -416,6 +539,13 @@ DB_PASS=p0stgr3s
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## what goes in `.Rprofile`
 
 :white_check_mark: set a default CRAN mirror.\
@@ -444,6 +574,13 @@ Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_bla
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## States of {{< fa brands r-project >}} 📦
 
 {{< fa brands r-project >}} 📦 -- [Structure](https://r-pkgs.org/Structure.html){target="_blank"}
@@ -454,6 +591,13 @@ Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-person
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Binary {{< fa brands r-project >}} 📦 Installation
 
 Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary {{< fa brands r-project >}} 📦 in CRAN.
@@ -461,6 +605,13 @@ Go for ({{< fa brands windows >}} | {{< fa brands apple >}}) binary {{< fa brand
 -   compiled ahead of time -> easiest / fastest to install
 
 ![](images/binary_in_cran.png){fig-alt="Figure showing the Windows and Mac binary files of R package pretestcad." fig-align="center" width="70%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## R-universe and Posit Public Package Manager
 
@@ -496,6 +647,13 @@ options(
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## How do I know I got a binary?
 
@@ -555,13 +713,27 @@ The downloaded binary packages are in
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Source {{< fa brands r-project >}} 📦 Installation
 
 Go for source {{< fa brands r-project >}} 📦 if you need the latest version urgently.
 
 ![](images/binary_not_latest.png){fig-alt="Figure showing the Windows binary files are not the latest version for R package parallelly." fig-align="center" width="70%"}
 
- {{< fa brands linux >}} only have source {{< fa brands r-project >}} 📦 in CRAN.
+{{< fa brands linux >}} only have source {{< fa brands r-project >}} 📦 in CRAN.
+ 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Source {{< fa brands r-project >}} 📦 Installation
 
@@ -601,13 +773,26 @@ Run `devtools::has_devel()` in console.
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Install using {{< fa brands r-project >}} 📦 [`pak`](https://pak.r-lib.org/index.html){target="_blank"}
 
 Consider using [`pak::pkg_install`](https://pak.r-lib.org/reference/pkg_install.html){target="_blank"} instead of `install.packages()`
 
-```{=html}
 <iframe width="1000" height="500" src="https://r-in-production.org/packages.html" title="R in Production Chapter 6 Package installation" ></iframe>
-```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 
 ## Isolated project environment using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
 
@@ -616,9 +801,14 @@ Most commonly used {{< fa brands r-project >}} 📦 to create isolated project e
 -  {{< fa brands youtube >}} [You should be using renv](https://www.youtube.com/watch?v=GwVx_pf2uz4){target="_blank"}.\
 -  {{< fa file-powerpoint >}} [Making your R project future-proof with renv](https://ecohealthalliance.github.io/targets-renv-example/outputs/renv-presentation){target="_blank"}.\
 
-```{=html}
 <iframe width="1000" height="400" src="https://rstudio.github.io/renv/articles/lockfile.html" title="Anatomy of a Lockfile" ></iframe>
-```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## {{< fa brands r-project >}} "virtual environment" using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
 
@@ -629,18 +819,37 @@ Some advice ...
 -  Indicate folders/files in the `.renvignore` file to ignore to speed up the snapshot process (`renv::snapshot`)
 -  You can update the repositories specified in the `renv.lock` file.
    -  {{< fa blog >}} [Shannon Pileggi's blog on `renv::restore()`](https://www.pipinghotdata.com/posts/2024-09-16-ease-renvrestore-by-updating-your-repositories-to-p3m/){target="_blank"}.
+   
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## New Kid for {{< fa brands r-project >}} 📦 managment [`Require`](https://require.predictiveecology.org/){target="_blank"}
 
-```{=html}
 <iframe width="1000" height="500" src="https://require.predictiveecology.org/" title="Homepage of R pacakage Require" ></iframe>
-```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Personal R Administration
 
 {{< fa file-powerpoint >}} <https://rstats-wtf.github.io/wtf-personal-radmin-slides>{target="_blank"}
 
 <iframe width="1000" height="500" src="https://rstats-wtf.github.io/wtf-personal-radmin-slides" title="R Personal Administration" ></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Project Organisation
 
@@ -666,6 +875,13 @@ Data is cheap but time is expensive.
 
 [[Research Compendium](https://book.the-turing-way.org/reproducible-research/compendia/){target="_blank"} by Scriberia from [The Turing Way project](https://book.the-turing-way.org/){target="_blank"} and Project Layout from [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510){target="_blank"}]{style="font-size: 60%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Project Organisation
 
 My harmoniation template organisation is based on the {{< fa brands r-project >}} 📦 [`rcompendium`](https://frbcesab.github.io/rcompendium){target="_blank"} but there are others ([`orderly`](https://github.com/mrc-ide/orderly){target="_blank"}, [`prodigenr`](https://rostools.github.io/prodigenr){target="_blank"} and [`workflowr`](https://workflowr.github.io/workflowr/){target="_blank"}) as well.
@@ -686,6 +902,13 @@ My harmoniation template organisation is based on the {{< fa brands r-project >}
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## If the top of your {{< fa brands r-project >}} script is
 
 ```{r}
@@ -704,6 +927,13 @@ Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
 {{< fa blog >}} <https://tidyverse.org/blog/2017/12/workflow-vs-script/>{target="_blank"}
 
 <iframe width="1000" height="400" src="https://tidyverse.org/blog/2017/12/workflow-vs-script/" title="Tidyverse Blog on Project-oriented workflow" ></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Practise “safe paths”
 
@@ -724,6 +954,13 @@ Jenny will come into your your office and SET YOUR COMPUTER ON FIRE 🔥.
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Practise “safe paths”
 
@@ -760,6 +997,13 @@ here::here()
 
 [`here::here()`](https://here.r-lib.org/reference/here.html){target="_blank"} does not create directories; that’s your job.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Practise “safe paths”
 
 :x:Avoid typing `/` or `\` manually. Let {{< fa brands r-project >}} do it for you.\
@@ -789,11 +1033,25 @@ ggplot2::ggsave(filename = here::here("figs", "built-barchart.png"))
 
 Works on my machine, works on yours!
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Practise “safe paths”
 
 {{< fa brands youtube >}} [Efficient File Management in R with {fs} with Jadey Ryan](https://www.youtube.com/watch?v=X4i-yOBtn1s){target="_blank"}
 
 <iframe width="1000" height="500" src="https://www.youtube.com/embed/X4i-yOBtn1s?si=wvCCKGqp-vXig_Lb" title="Efficient File Management in R with fs with Jadey Ryan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Start {{< fa brands r-project >}} Session in a "blank slate"
 
@@ -826,11 +1084,25 @@ usethis::use_blank_slate()
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Project Oriented Workflow
 
 {{< fa file-powerpoint >}} <https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides>{target="_blank"}
 
 <iframe width="1000" height="500" src="https://rstats-wtf.github.io/wtf-project-oriented-workflow-slides" title="Project Oriented Workflow" ></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto
 
@@ -839,15 +1111,36 @@ usethis::use_blank_slate()
 ![](images/quarto_allison.png){fig-alt="Picture by Allison Horst about Quarto turning programming code to documents." fig-align="center"}
 [[Artwork](https://allisonhorst.com/cetinkaya-rundel-lowndes-quarto-keynote){target="_blank"} from ["Hello, Quarto"](https://www.youtube.com/watch?v=p7Hxu4coDl8){target="_blank"} keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by [Allison Horst](https://allisonhorst.com/){target="_blank"}]{style="font-size: 80%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Open A Quarto Document
 
 Create a Quarto document
 
 ![](images/create_a_quarto_doc_grouped.png){fig-alt="Steps to create a Quarto document" fig-align="center"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Render to HTML Report
 
 ![](images/quarto_render.png){fig-alt="Steps to render a Quarto document to a report in html" fig-align="center"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto Level 1
 
@@ -856,13 +1149,25 @@ A Quarto file is a plain text file that has the extension `.qmd` containing thre
 ![](images/quarto_format.png){fig-alt="Quarto file has three contents: An optional YAML header surrounded by `---`s, Chunks of R code surrounded by ```s and Text mixed with markdown text formatting." fig-align="center"}
 [Simple Quarto file example from [R for Data Science (2e) Chapter 28 Quarto](https://r4ds.hadley.nz/quarto.html#quarto-basics)]{style="font-size: 80%;"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Quarto Level 1
 
 {{< fa blog >}} <https://kpuka.ca/resources/quarto_intro.html>{target="_blank"}
 
-```{=html}
 <iframe width="1000" height="550" src="https://kpuka.ca/resources/quarto_intro.html" title="Introduction to Quarto by Klajdi Puka, PhD" ></iframe>
-```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto Level 2
 
@@ -874,11 +1179,25 @@ quarto pandoc -o custom-reference-doc.docx --print-default-data-file reference.d
 
 <iframe width="1000" height="450" src="https://www.youtube.com/embed/8CQiVVgQoH0?si=ByW6sp-mrfCKtzbf" title="How to change document fonts & formats in Quarto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Quarto Level 2
 
 {{< fa blog >}} [My word template for Quarto](https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto){target="_blank"}
 
 <iframe width="1000" height="550" src="https://andrewpwheeler.com/2024/06/21/my-word-template-for-quarto" title="Word templates from Andrew Wheeler" ></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto Level 2
 
@@ -890,11 +1209,25 @@ quarto install tinytex
 
 <iframe width="1000" height="450" src="https://www.youtube.com/embed/OUWOx80eJqk?si=ptMrkq1pZWI9EqVn" title="Preparing RStudio to Generate PDF Files with Quarto and tinyTeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Quarto Level 2
 
 {{< fa blog >}} [Christopher Kenny's Quarto templates](https://christophertkenny.com/quarto.html){target="_blank"}
 
 <iframe width="1000" height="550" src="https://christophertkenny.com/quarto.html" title="Quarto pdf templates from Christopher Kenny" ></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Workflow with collaborators
 
@@ -904,17 +1237,38 @@ Collaborator can send the raw data once and you keep updating the cleaned data f
 
 [[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}.]{style="font-size: 60%;"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Workflow with collaborators
 
 ![](images/collaborator_request_3.png){fig-alt="Figure showing the collaborator saying that they need the updated raw data in addition to the harmonised data." fig-align="center" width="90%"}
 
 [[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Workflow with collaborators
 
 ![](images/collaborator_request_3_met.png){fig-alt="Figure showing the data analyst providing the updated raw data and harmonised data." fig-align="center" width="90%"}
 
 [[Cheerful Businessman](https://www.vecteezy.com/png/57446607-a-cheerful-little-businessman-carrying-a-briefcase-walks-confidently-on-a-bright-day-in-a-fun-animated-style-little-business-man-illustrationisolated-on-transparent-background){target="_blank"} designed by [Iftikhar Alam](https://www.vecteezy.com/members/iftikharalam){target="_blank"} from [Vecteezy](http://www.vecteezy.com){target="_blank"} and [Medical Doctor Man](https://creazilla.com/media/clipart/33960/trevor-medical-doctor-man){target="_blank"} from [Creazilla](https://creazilla.com/){target="_blank"}]{style="font-size: 60%;"}.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Workflow with collaborators
 
@@ -924,6 +1278,13 @@ Collaborator can update the raw data. For example, adding new clinical data, add
 
 [[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}.]{style="font-size: 60%;"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Workflow with collaborators
 
 New version means new bugs or reopen issues to fix. Is there an automated way to catch warnings/issues when reading these updated files ?
@@ -931,6 +1292,13 @@ New version means new bugs or reopen issues to fix. Is there an automated way to
 ![](images/collaborator_change_raw_data_issue.png){fig-alt="Picture showing that new version of raw data sent by collaborator can give new issues to a supposedly fixed problem" fig-align="center" width="80%"}
 
 [[Dataset vectors](https://www.vecteezy.com/vector-art/25844300-abstract-database-info-silhouette-illustration){target="_blank"} by [Vectora Artworks](https://www.vecteezy.com/members/vectoroartworks){target="_blank"} from [Vecteezy](https://www.vecteezy.com/){target="_blank"}. [Anticipate](https://www.monkeyuser.com/2022/anticipate/){target="_blank"} from [MonkeyUser.com](https://www.monkeyuser.com/){target="_blank"}]{style="font-size: 60%;"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Automated capture of warnings (csv)
 
@@ -980,6 +1348,13 @@ head(cohort_data_csv, n = 3)
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Automated capture of warnings (csv)
 
 If there are issues with the data, the output of [`readr::problems`](https://readr.tidyverse.org/reference/problems.html){target="_blank"} will be a tibble.
@@ -1006,6 +1381,13 @@ cohort_data_csv |>
   pointblank::expect_row_count_match(count = 0)
 
 ```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Automated capture of warnings (csv)
 
@@ -1058,6 +1440,13 @@ cohort_data_csv |>
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Automated capture of warnings (Excel)
 
 Is there an automated way to catch warnings/issues when reading Excel files ?
@@ -1084,6 +1473,13 @@ cohort_data_excel <- readxl::read_excel(
 ::: {.column width="50%"}
 
 ![](images/age_issue_excel.jpg){fig-alt="An Excel file with text data in the Age column." fig-align="center" width="100%"}
+
+:::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
 
 :::
 
@@ -1120,6 +1516,13 @@ testthat::expect_no_condition(
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Automated capture of warnings (Excel)
 
@@ -1158,6 +1561,13 @@ cohort_data_excel <- cohort_data_excel |>
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Automated capture of warnings (Excel)
 
@@ -1219,9 +1629,23 @@ testthat::expect_no_condition() |>
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Variable Mapping
 
 ![](images/variable_mapping_workflow.png){fig-alt="Variable Mapping Reporting Workflow. Starting with introducing the mapping procedure, writing code to do mapping ans validation, showing that the code works, clean up data for merging." fig-align="center" width="100%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Variable Mapping
 
@@ -1305,11 +1729,25 @@ cohort_csv_data |>
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Variable Mapping
 
 Let the reader know how the collaborator's data `Smoke History` is going to be mapped.
 
 ![](images/mapping_procedure.png){fig-alt="Documentation indicating how the collaborator's data Smoke History is going to be mapped or harmonised in Quarto code and output." fig-align="center" width="90%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Variable Mapping
 
@@ -1365,6 +1803,13 @@ smoking_data <- cohort_csv_data |>
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Variable Mapping
 
 ![](images/code_to_validate.png){fig-alt="Code to do validation." fig-align="center" width="30%"}
@@ -1405,6 +1850,13 @@ smoking_data <- smoking_data |>
 
 [Reference: <https://github.com/rstudio/pointblank/issues/578>{target="_blank"}]{style="font-size: 80%;"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Variable Mapping
 
 Make use of Quarto's [parameters](https://quarto.org/docs/computations/parameters.html){target="_blank"}, [conditional content](https://quarto.org/docs/authoring/conditional.html){target="_blank"} and `!expr` [knitr engine](https://quarto.org/docs/tools/rstudio.html#knitr-engine){target="_blank"} syntax to choose what code/items to run/display on your html, pdf or word report.
@@ -1441,11 +1893,25 @@ out_type <- knitr::opts_chunk$get("rmarkdown.pandoc.to")
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Variable Mapping
 
 {{< fa brands youtube >}} [Parameterized Quarto Reports Improve Understanding of Soil Health](https://www.youtube.com/watch?v=lbE5uOqfT70){target="_blank"} by [Jadey Ryan](https://jadeyryan.com/){target="_blank"}.
 
 <iframe width="1000" height="500" src="https://www.youtube.com/embed/lbE5uOqfT70?si=kvtl0rbJt_jU4oBW" title="Parameterized Quarto Reports Improve Understanding of Soil Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Variable Mapping
 
@@ -1480,6 +1946,13 @@ smoking_data |>
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Variable Mapping
 
 :::: {.columns}
@@ -1503,6 +1976,13 @@ smoking_data |>
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Variable Mapping
 
@@ -1539,6 +2019,13 @@ smoking_data |>
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Merging Harmonised Data
 
@@ -1663,6 +2150,13 @@ body_measurement_data |>
 
 How can we merge them without issues of missing rows or additional columns ?
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Merging Harmonised Data
 
 `unmatched = "error"` in [`dplyr::inner_join`](https://dplyr.tidyverse.org/reference/mutate-joins.html){target="_blank"} helps to avoid patients with no match.
@@ -1736,6 +2230,13 @@ three_penguins |>
 
 [Reference: <https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality>]{style="font-size: 80%;"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Merging Harmonised Data
 
 `unmatched = "error"` in [`dplyr::inner_join`](https://dplyr.tidyverse.org/reference/mutate-joins.html){target="_blank"} helps to avoid patients with no match.
@@ -1808,6 +2309,13 @@ three_penguins |>
 ::::
 
 [Reference: <https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality>]{style="font-size: 80%;"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Merging Harmonised Data
 
@@ -1883,6 +2391,13 @@ three_penguins |>
 ::::
 
 [Reference: <https://www.tidyverse.org/blog/2023/08/teach-tidyverse-23/#improved-and-expanded-_join-functionality>]{style="font-size: 80%;"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Merging Harmonised Data 
 
@@ -1972,6 +2487,13 @@ colnames(three_penguins)
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Comapring Datasets
 
 Use {{< fa brands r-project >}} 📦 [`daff`](https://davidgohel.github.io/flextable/){target="_blank"} to compare different version of harmonised datasets.
@@ -2015,6 +2537,13 @@ daff::render_diff(compare_results)
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Comapring Datasets
 
@@ -2075,6 +2604,13 @@ compare_same_summary
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Comapring Datasets
 
@@ -2140,11 +2676,25 @@ tibble::tibble(
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Comapring Datasets
 
 {{< fa brands youtube >}}[Find the difference between two datasets in R](https://www.youtube.com/watch?v=bKYUHFYAjtc){target="_blank"}
 
 <iframe width="1000" height="500" src="https://www.youtube.com/embed/bKYUHFYAjtc?si=sPX9Eicva5B1Rh-x" title="Find the difference between two datasets in R" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Tehcncal Report Challenge
 
@@ -2187,11 +2737,23 @@ There is a need to automate the creation of these reports.
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Quarto Books/Websites
 
-```{=html}
 <iframe width="1000" height="550" src="https://jauntyjjs-harmonisation-cohort-b.netlify.app/" title="Cohort_B Harmonisation Report in html" ></iframe>
-```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto Level 3
 
@@ -2212,6 +2774,13 @@ To make a Quarto book or website, we need a `_quarto.yml` and `index.qmd` file
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto Level 3
 
@@ -2306,6 +2875,13 @@ format:
         \end{flushleft}
 ---
 ````
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Quarto Level 3
 
@@ -2514,13 +3090,25 @@ harmonisation/                            # Root of the project template.
 ```
 ````
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Quarto (Reference)
 
 <https://quarto.org/>{target="_blank"}
 
-```{=html}
 <iframe width="1000" height="550" src="https://quarto.org/" title="Quarto Homepage" ></iframe>
-```
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Harmonisation Report Types
 
@@ -2530,12 +3118,26 @@ Collaborator wants different ways to report how data harmonisation is done.
 
 [The documentation system by [Divio](https://docs.divio.com/documentation-system/){target="_blank"}]{style="font-size: 60%;"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 
 ## Harmonisation Report Types
 
 Collaborator wants different ways to report how data harmonisation is done.
 
 ![](images/documentation_types_for_harmonisation.png){fig-alt="Four major documentation type in terms of data harmonisation" fig-align="center" width="80%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 
 ## Automated Technical Report (Reference)
@@ -2544,11 +3146,25 @@ Collaborator wants different ways to report how data harmonisation is done.
 
 ![](images/report_for_cohort_A.png){fig-alt="A preview of the _quarto.yml and relevant Quarto files for Cohort A." fig-align="center" width="60%"}
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Automated Technical Report (Reference)
 
 [We create an `index.qmd` file for each kind of report.]{style="font-size: 80%;"}
 
 ![](images/index_report_qmd.png){fig-alt="A preview of the index qmd file for technical reporting." fig-align="center" width="50%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Automated Technical Report (Reference)
 
@@ -2593,6 +3209,13 @@ fs::file_copy(
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Automated Technical Report (Reference)
 
@@ -2658,9 +3281,23 @@ purrr::walk(
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Automated Technical Report (Reference)
 
 ![](images/technical_report.png){fig-alt="Output of technical report." fig-align="center" width="80%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 
 ## Automated Summary Report (How-to-Guide)
@@ -2668,6 +3305,13 @@ purrr::walk(
 [A similar method is done to create a summary report in word using {{< fa brands r-project >}} 📦 [`flextable`](https://davidgohel.github.io/flextable/){target="_blank"}.]{ style="font-size: 80%;"}
 
 ![](images/summary_report.png){fig-alt="Preview of summary report." fig-align="center" width="80%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Overview Diagrams
 
@@ -2826,6 +3470,13 @@ demographic_venn_diagram
 ::::
 
 Venn diagram does not work for many (> 10) cohorts.
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Overview Diagrams
 
@@ -3000,11 +3651,25 @@ Cannot answer follow-up questions:
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Overview Diagrams
 
 Create a "heatmap"using Microsoft PowerPoint.
 
 ![](images/suggested_heatmap.png){fig-alt="A modified heatmap to show command variables." fig-align="center" width="100%"}
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
 
 ## Summary
 
@@ -3029,6 +3694,13 @@ Create a "heatmap"using Microsoft PowerPoint.
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Summary
 
 :::: {.columns}
@@ -3051,6 +3723,13 @@ Create a "heatmap"using Microsoft PowerPoint.
 
 ::::
 
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## Thank you
 
 :::: {.columns}
@@ -3072,3 +3751,10 @@ Harmonisation project template: <https://github.com/JauntyJJS/harmonisation/>{ta
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::

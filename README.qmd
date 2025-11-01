@@ -1,0 +1,8 @@
+---
+title: Harvest Analytics Together 2025 Presentation
+format: gfm
+---
+
+Here are the [source code](https://github.com/JauntyJJS/hat_2025){target="_blank"} for my [slides](https://jauntyjjs.github.io/hat_2025/){target="_blank"} presented at [Harvest Analytics Together 2025](https://www.eventbrite.sg/o/cgh-harvest-analytics-together-hat-90682070963){target="_blank"}.
+
+![](share-card.png){fig-alt="Title slide of Retrospective clinical data harmonisation reporting using R and Quarto presented at Harvest Analytics Together 2025." fig-align="center"}
