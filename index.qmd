@@ -827,6 +827,21 @@ Some advice ...
 
 :::
 
+## {{< fa brands r-project >}} "virtual environment" using [`renv`](https://rstudio.github.io/renv/index.html){target="_blank"}
+
+If you are frustrated about [renv::restore()](https://rstudio.github.io/renv/reference/restore.html){target="_blank"} ... please
+
+watch {{< fa brands youtube >}} [Practical {renv}](https://www.youtube.com/watch?v=l01u7Ue9pIQ){target="_blank"} and read {{< fa brands github >}} [Practical {renv} Materials](https://github.com/shannonpileggi/practical-renv){target="_blank"}
+
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/l01u7Ue9pIQ?si=jGGNLjJxwOAQUqDv" title="Practical renv with Shannon Pileggi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
 ## New Kid for {{< fa brands r-project >}} 📦 managment [`Require`](https://require.predictiveecology.org/){target="_blank"}
 
 <iframe width="1000" height="500" src="https://require.predictiveecology.org/" title="Homepage of R pacakage Require" ></iframe>
@@ -861,13 +876,13 @@ Data is cheap but time is expensive.
 
 ::: {.column width="50%"}
 
-![](images/research_compendium.svg){fig-alt="Figure showing Research Compendium as a tool to sort out different analysis." fig-align="center" width="80%"}
+![](images/project_layout.png){fig-alt="Comic from Monkeyuser.com showing that it is hard to get help with programming issues." fig-align="center" width="80%"}
 
 :::
 
 ::: {.column width="50%"}
 
-![](images/project_layout.png){fig-alt="Comic from Monkeyuser.com showing that it is hard to get help with programming issues." fig-align="center" width="80%"}
+![](images/research_compendium.svg){fig-alt="Figure showing Research Compendium as a tool to sort out different analysis." fig-align="center" width="80%"}
 
 :::
 
@@ -901,6 +916,19 @@ My harmoniation template organisation is based on the {{< fa brands r-project >}
 :::
 
 ::::
+
+::: footer
+
+[https://jauntyjjs.github.io/hat_2025
+`r fontawesome::fa(name = "link", fill = "#666666")`](https://jauntyjjs.github.io/hat_2025){target="_blank"} [`r fontawesome::fa(name = "github", fill = "#000000")`](https://github.com/JauntyJJS/hat_2025){target="_blank"} [`r fontawesome::fa(name = "file-pdf", fill = "#b50b00")`](https://raw.githubusercontent.com/JauntyJJS/hat_2025/main/index.pdf){target="_blank"}
+
+:::
+
+## Project Organisation
+
+[Research Compendium Tutorial](https://epiverse-trace.github.io/research-compendium/instructor/compendium.html){target="_blank"} by [Epiverse-TRACE](https://epiverse-trace.github.io/){target="_blank"} using {{< fa brands r-project >}} 📦 [`rcompendium`](https://frbcesab.github.io/rcompendium){target="_blank"}.
+
+<iframe width="1000" height="500" src="https://epiverse-trace.github.io/research-compendium/instructor/compendium.html" title="Anatomy of a Lockfile" ></iframe>
 
 ::: footer
 
