@@ -86,8 +86,8 @@ library(ggVennDiagram)
 library(ComplexUpset)
 library(daff)
 
-source("R/factor-reactable.R")
-source("R/rounding.R")
+source(here::here("R", "factor-reactable.R"))
+source(here::here("R", "rounding.R"))
 
 ```
 
@@ -271,7 +271,7 @@ There are limited resources on how to make a data harmonisation report.
 
 A template to offer a systematic way to report data harmonisation processes. 
 
-[Link: <https://jauntyjjs.github.io/harmonisation/>]
+Link: <https://jauntyjjs.github.io/harmonisation/>{target="_blank"}
 
 <iframe width="1000" height="500" src="https://jauntyjjs.github.io/harmonisation/" title="Harmonisation template" ></iframe>
 
@@ -824,7 +824,7 @@ Most commonly used {{< fa brands r-project >}} 📦 to create isolated project e
 Some advice ...
 
 -  In an existing project, use `renv::init(bare = TRUE)` to initiate renv with an empty {{< fa brands r-project >}} library and then install {{< fa brands r-project >}} 📦 manaully.
--  After installing 📦 [`pak`](https://pak.r-lib.org/){target="_blank"} in the `renv` environment, set `RENV_CONFIG_PAK_ENABLED=TRUE` in the `.Renviron` file for `renv::install()` to use {{< fa brands r-project >}} 📦 [`pak`](https://pak.r-lib.org/){target="_blank"} at the backend to install {{< fa brands r-project >}} 📦.
+-  After installing {{< fa brands r-project >}} 📦 [`pak`](https://pak.r-lib.org/){target="_blank"} in the `renv` environment, set `RENV_CONFIG_PAK_ENABLED=TRUE` in the `.Renviron` file for `renv::install()` to use {{< fa brands r-project >}} 📦 [`pak`](https://pak.r-lib.org/){target="_blank"} at the backend to install {{< fa brands r-project >}} 📦.
 -  Indicate folders/files in the `.renvignore` file to ignore to speed up the snapshot process (`renv::snapshot`)
 -  You can update the repositories specified in the `renv.lock` file.
    -  {{< fa blog >}} [Shannon Pileggi's blog on `renv::restore()`](https://www.pipinghotdata.com/posts/2024-09-16-ease-renvrestore-by-updating-your-repositories-to-p3m/){target="_blank"}.
@@ -2533,7 +2533,7 @@ colnames(three_penguins)
 
 :::
 
-## Comapring Datasets
+## Comparing Datasets
 
 Use {{< fa brands r-project >}} 📦 [`daff`](https://davidgohel.github.io/flextable/){target="_blank"} to compare different version of harmonised datasets.
 
@@ -2584,7 +2584,7 @@ daff::render_diff(compare_results)
 
 :::
 
-## Comapring Datasets
+## Comparing Datasets
 
 Use `summary()` to return a summary list.
 
@@ -2651,7 +2651,7 @@ compare_same_summary
 
 :::
 
-## Comapring Datasets
+## Comparing Datasets
 
 Use the summary list and [`pointblank::expect_col_vals_in_set`](https://rstudio.github.io/pointblank/reference/col_vals_in_set.html){target="_blank"} to do the validation automatically.
 
@@ -2728,7 +2728,7 @@ tibble::tibble(
 
 :::
 
-## Comapring Datasets
+## Comparing Datasets
 
 {{< fa brands youtube >}}[Find the difference between two datasets in R](https://www.youtube.com/watch?v=bKYUHFYAjtc){target="_blank"}
 
@@ -2741,7 +2741,7 @@ tibble::tibble(
 
 :::
 
-## Tehcncal Report Challenge
+## Technical Report Challenge
 
 :::: {.columns}
 
