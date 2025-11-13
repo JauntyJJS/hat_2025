@@ -535,6 +535,15 @@ DB_PASS=p0stgr3s
 
 ::::
 
+```{r}
+#| label: call environmental variables
+#| echo: true
+#| eval: true
+
+Sys.getenv("RENV_CONFIG_PAK_ENABLED")
+
+```
+
 ::: aside
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
 :::
@@ -549,7 +558,7 @@ Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-person
 ## what goes in `.Rprofile`
 
 :white_check_mark: set a default CRAN mirror.\
-:white_check_mark: customize [R prompt](https://github.com/gaborcsardi/prompt/){target="_blank"}.\
+:white_check_mark: customize R prompt.\
 
 ```r
 source("renv/activate.R")
@@ -563,12 +572,12 @@ options(
 )
 if (interactive()) prompt::set_prompt(prompt::prompt_fancy)
 ```
+Prompt Resources:
 
-Examples: <https://github.com/search?q=.Rprofile&type=repositories>{target="_blank"}
-
-{{< fa brands github >}} [csgillespie/rprofile](https://github.com/csgillespie/rprofile){target="_blank"}.\
+{{< fa brands r-project >}} 📦 -- [prompt](https://github.com/gaborcsardi/prompt){target="_blank"}.\
+{{< fa brands github >}} [xinxxxin/rprofile-custom-prompt.R](https://github.com/xinxxxin/rprofile-custom-prompt.R/tree/main){target="_blank"}.\
 {{< fa brands youtube >}} [Me, Myself and my Rprofile](https://www.youtube.com/watch?v=2rWi2KVcyjg){target="_blank"}.\
-{{< fa blog >}} [Customising your Rprofile](https://www.jumpingrivers.com/blog/customising-your-rprofile/){target="_blank"}.
+{{< fa blog >}} [Prompt-moting a custom R prompt](https://lapsedgeographer.london/2020-11/custom-r-prompt/){target="_blank"}.
 
 ::: aside
 Adapted from [Personal R Administration](https://rstats-wtf.github.io/wtf-personal-radmin-slides/#/how-do-i-know-i-got-a-binary){target="_blank"}
@@ -814,8 +823,8 @@ Most commonly used {{< fa brands r-project >}} 📦 to create isolated project e
 
 Some advice ...
 
--  Set `RENV_CONFIG_PAK_ENABLED=TRUE` in the `.Renviron` file for `renv::install()` uses `pak` at the backend to install {{< fa brands r-project >}} 📦.
 -  In an existing project, use `renv::init(bare = TRUE)` to initiate renv with an empty {{< fa brands r-project >}} library and then install {{< fa brands r-project >}} 📦 manaully.
+-  After installing 📦 [`pak`](https://pak.r-lib.org/){target="_blank"} in the `renv` environment, set `RENV_CONFIG_PAK_ENABLED=TRUE` in the `.Renviron` file for `renv::install()` to use {{< fa brands r-project >}} 📦 [`pak`](https://pak.r-lib.org/){target="_blank"} at the backend to install {{< fa brands r-project >}} 📦.
 -  Indicate folders/files in the `.renvignore` file to ignore to speed up the snapshot process (`renv::snapshot`)
 -  You can update the repositories specified in the `renv.lock` file.
    -  {{< fa blog >}} [Shannon Pileggi's blog on `renv::restore()`](https://www.pipinghotdata.com/posts/2024-09-16-ease-renvrestore-by-updating-your-repositories-to-p3m/){target="_blank"}.
@@ -924,11 +933,13 @@ My harmoniation template organisation is based on the {{< fa brands r-project >}
 
 :::
 
-## Project Organisation
+## Custom R Function Management
 
-[Research Compendium Tutorial](https://epiverse-trace.github.io/research-compendium/instructor/compendium.html){target="_blank"} by [Epiverse-TRACE](https://epiverse-trace.github.io/){target="_blank"} using {{< fa brands r-project >}} 📦 [`rcompendium`](https://frbcesab.github.io/rcompendium){target="_blank"}.
+It is better to organise your custom {{< fa brands r-project >}} functions into a {{< fa brands r-project >}} 📦 to make your code easier to re-use, document, and test.
 
-<iframe width="1000" height="500" src="https://epiverse-trace.github.io/research-compendium/instructor/compendium.html" title="Anatomy of a Lockfile" ></iframe>
+-  {{< fa book >}} [R package (2e) Chapter 1: The Whole Game](https://r-pkgs.org/whole-game.html){target="_blank"}.\
+
+<iframe width="1000" height="450" src="https://r-pkgs.org/whole-game.html" title="R Package rcompendium homepage" ></iframe>
 
 ::: footer
 
@@ -2652,6 +2663,7 @@ Use the summary list and [`pointblank::expect_col_vals_in_set`](https://rstudio.
 #| label: daff different example with pointblank
 #| echo: true
 #| error: true
+#| code-line-numbers: "|11-19"
 
 tibble::tibble(
   row_deletes = compare_different_summary$row_deletes,
@@ -2665,8 +2677,10 @@ tibble::tibble(
 ) |>
   pointblank::expect_col_vals_in_set(
     columns = c(
-      "row_deletes", "row_inserts", "row_updates", "row_reorders",
-      "col_deletes", "col_inserts", "col_updates", "col_reorders"
+      "row_deletes", "row_inserts", 
+      "row_updates", "row_reorders",
+      "col_deletes", "col_inserts", 
+      "col_updates", "col_reorders"
     ),
     set = c(0)
   )
@@ -2680,6 +2694,7 @@ tibble::tibble(
 #| label: daff same example with pointblank
 #| echo: true
 #| error: true
+#| code-line-numbers: "|11-19"
 
 tibble::tibble(
   row_deletes = compare_same_summary$row_deletes,
@@ -2693,8 +2708,10 @@ tibble::tibble(
 ) |>
   pointblank::expect_col_vals_in_set(
     columns = c(
-      "row_deletes", "row_inserts", "row_updates", "row_reorders",
-      "col_deletes", "col_inserts", "col_updates", "col_reorders"
+      "row_deletes", "row_inserts", 
+      "row_updates", "row_reorders",
+      "col_deletes", "col_inserts", 
+      "col_updates", "col_reorders"
     ),
     set = c(0)
   )
