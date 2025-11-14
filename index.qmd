@@ -1396,7 +1396,7 @@ head(cohort_data_csv, n = 3)
 
 ## Automated capture of warnings (csv)
 
-If there are issues with the data, the output of [`readr::problems`](https://readr.tidyverse.org/reference/problems.html){target="_blank"} will be a tibble.
+If there are issues with the data, the output of [`vroom::problems`](https://vroom.r-lib.org/reference/problems.html){target="_blank"} will be a tibble.
 
 ```{r}
 #| label: view problem in vroom
